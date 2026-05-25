@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bev17fqrcxpqq" path="res://Models/Board/Board.obj" id="3_ksrln"]
 [ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="4_ksrln"]
 [ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="4_qho0v"]
-[ext_resource type="Texture2D" uid="uid://g4rnkr8akka7" path="res://Sprites/Diamonds.png" id="5_yoty1"]
+[ext_resource type="Texture2D" uid="uid://bbnyqxwqertom" path="res://Sprites/Steedium.png" id="7_3csb4"]
 [ext_resource type="AudioStream" uid="uid://x3afvcso8lrc" path="res://Audio/Timer.ogg" id="8_7hltb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gf8vj"]
@@ -33,28 +33,28 @@ shader_parameter/outline_width = 1.0
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_57nr5"]
 points = PackedVector3Array(0.01875, 0.492188, 0.2, -0.01875, 0.492188, 0.2, 0.01875, 0.242141, 0.2, 0.01875, 0.492188, -0.2, -0.01875, 0.492188, -0.2, -0.01875, 0.242141, 0.2, 0.01875, 0.0109375, 0.0187157, 0.01875, 0.242141, -0.2, -0.01875, 0.242141, -0.2, -0.01875, 0.0109375, 0.0187157, 0.01875, 0.0109375, -0.0187549, -0.01875, 0.0109375, -0.0187549)
 
-[node name="Board" type="StaticBody3D"]
+[node name="Board" type="StaticBody3D" unique_id=1109074520]
 script = ExtResource("1_bpho7")
 hint = "I don't have enough to proceed."
 
-[node name="Floor" type="CSGMesh3D" parent="."]
+[node name="Floor" type="CSGMesh3D" parent="." unique_id=1813760892]
 transform = Transform3D(1, 0, 0, 0, 1.012, 0, 0, 0, 1, 0.5, -0.506, 0.5)
 operation = 2
 use_collision = true
 mesh = SubResource("BoxMesh_gf8vj")
 material = SubResource("StandardMaterial3D_qbq3j")
 
-[node name="Col" type="CollisionShape3D" parent="."]
+[node name="Col" type="CollisionShape3D" parent="." unique_id=1432728035]
 transform = Transform3D(1, 0, 0, 0, 1.012, 0, 0, 0, 1, 0.5, -0.506, 0.5)
 shape = SubResource("ConcavePolygonShape3D_kn65d")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1909209350]
 transform = Transform3D(2.29813, 0, -1.92836, 0, 3, 0, 1.92836, 0, 2.29813, 0.5, 0, 0.5)
 material_override = SubResource("StandardMaterial3D_yoty1")
 material_overlay = SubResource("ShaderMaterial_7hltb")
 mesh = ExtResource("3_ksrln")
 
-[node name="Label1" type="Label3D" parent="Mesh"]
+[node name="Label1" type="Label3D" parent="Mesh" unique_id=1620370547]
 transform = Transform3D(0, 0, -0.25, 0, 0.25, 0, 0.25, 0, 0, -0.02, 0.408, -0.03)
 texture_filter = 2
 modulate = Color(0.511371, 0.319731, 0.133429, 1)
@@ -63,7 +63,7 @@ text = "x12000"
 font = ExtResource("4_ksrln")
 horizontal_alignment = 0
 
-[node name="Label2" type="Label3D" parent="Mesh"]
+[node name="Label2" type="Label3D" parent="Mesh" unique_id=1022550336]
 transform = Transform3D(9.43724e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, 9.43724e-09, -0.02, 0.323, -0.001)
 texture_filter = 2
 modulate = Color(0.511371, 0.319731, 0.133429, 1)
@@ -75,17 +75,18 @@ prize."
 font = ExtResource("4_ksrln")
 width = 100.0
 
-[node name="Sprite" type="Sprite3D" parent="Mesh"]
+[node name="Sprite" type="Sprite3D" parent="Mesh" unique_id=1299850381]
 transform = Transform3D(0, 0, -0.115, 0, 0.115, 0, 0.115, 0, 0, -0.02, 0.408, -0.091)
 modulate = Color(0.956466, 0.892171, 0.713664, 1)
+pixel_size = 0.04
 texture_filter = 2
-texture = ExtResource("5_yoty1")
+texture = ExtResource("7_3csb4")
 
-[node name="Col2" type="CollisionShape3D" parent="."]
+[node name="Col2" type="CollisionShape3D" parent="." unique_id=208717150]
 transform = Transform3D(-2.29813, 0, 1.92836, 0, 3, 0, -1.92836, 0, -2.29813, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_57nr5")
 
-[node name="Timer" type="AudioStreamPlayer3D" parent="."]
+[node name="Timer" type="AudioStreamPlayer3D" parent="." unique_id=1104896506]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.8, 0.5)
 stream = ExtResource("8_7hltb")
 bus = &"SFX"

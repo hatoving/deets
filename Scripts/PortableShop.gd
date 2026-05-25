@@ -18,8 +18,8 @@ var currentItems = {
 	1 : {}
 }
 
-var diamondBonusItem = {
-	"desc" : "[font_size=27][wave amp=20.0 freq=2.0][color=yellow]Diamond Bonus-er[/color][/wave][font_size=18]\n\nAdds X to the bonus counter!",
+var steediumBonusItem = {
+	"desc" : "[font_size=27][wave amp=20.0 freq=2.0][color=yellow]Steedium Bonus[/color][/wave][font_size=18]\n\nAdds X to the bonus counter!",
 	"price" : 5,
 	"index" : 0
 }
@@ -62,7 +62,7 @@ func _ready() -> void:
 	currentItems[0].clear()
 	currentItems[1].clear()
 	
-	availableItems[2].item.origPrice = int(Global.currentGameLoop.diamondsNeededToEscape / 4)
+	availableItems[2].item.origPrice = int(Global.currentGameLoop.steediumNeededToEscape / 4.0)
 	availableItems[2].item.price = availableItems[2].item.origPrice
 	
 	Global.currentShop = self
@@ -72,11 +72,11 @@ func _ready() -> void:
 		
 func _regenItems():
 	var rand = randi_range(0, 1)
-	var diamondCount = Global.currentGameLoop.diamondsCollected
+	var steediumCount = Global.currentGameLoop.steediumCollected
 	
-	var modifiedDiamondItem = diamondBonusItem.duplicate(true)
-	modifiedDiamondItem["price"] = int(Global.currentGameLoop.diamondBonusPrice * SaveData.getGameSetting("items", "price_multiplier"))
-	currentItems[rand] = modifiedDiamondItem
+	var modifiedSteediumItem = steediumBonusItem.duplicate(true)
+	modifiedSteediumItem["price"] = int(Global.currentGameLoop.steediumBonusPrice * SaveData.getGameSetting("items", "price_multiplier"))
+	currentItems[rand] = modifiedSteediumItem
 	
 	var opposite = int(!rand)
 	var shuffled_keys = availableItems.keys()
@@ -85,17 +85,17 @@ func _regenItems():
 	for i in range(100):
 		for key in shuffled_keys:
 			var base_chance = availableItems[key].chance
-			var diamond_bonus = min(0.005 * diamondCount, 0.25)
+			var steedium_bonus = min(0.005 * steediumCount, 0.25)
 			
 			if key == 1:
-				diamond_bonus += 0.3
+				steedium_bonus += 0.3
 			elif key == 2:
 				if Global.currentGameLoop.valuableHorseItemsDestroyed == 4:
-					diamond_bonus += 0.3
+					steedium_bonus += 0.3
 				else:
-					diamond_bonus -= 0.1
+					steedium_bonus -= 0.1
 					
-			var final_chance = clamp(base_chance + diamond_bonus, 0.0, 1.0)
+			var final_chance = clamp(base_chance + steedium_bonus, 0.0, 1.0)
 			
 			if randf() < final_chance:
 				if availableItems[key].item.index == 0:
@@ -142,9 +142,9 @@ func _buyItem(which):
 	match boughtItem["index"]:
 		0:
 			boughtSomething = true
-			print("Adding " + str((Global.currentGameLoop.diamondBonusPrice / 2)) + " to bonus, price is now " + str(Global.currentGameLoop.diamondBonusPrice * 2))
-			Global.currentGameLoop.diamondBonus = (Global.currentGameLoop.diamondBonusPrice / 2)
-			Global.currentGameLoop.diamondBonusPrice = int((Global.currentGameLoop.diamondBonusPrice * (2 * SaveData.getGameSetting("items", "price_multiplier"))))
+			print("Adding " + str((Global.currentGameLoop.steediumBonusPrice / 2.0)) + " to bonus, price is now " + str(Global.currentGameLoop.steediumBonusPrice * 2))
+			Global.currentGameLoop.steediumBonus = (Global.currentGameLoop.steediumBonusPrice / 2.0)
+			Global.currentGameLoop.steediumBonusPrice = int((Global.currentGameLoop.steediumBonusPrice * (2 * SaveData.getGameSetting("items", "price_multiplier"))))
 		_:
 			if Global.currentGameLoop._giveItem(boughtItem["item"], 1) != -1:
 				boughtSomething = true
@@ -161,7 +161,7 @@ func _buyItem(which):
 		
 	$Sprite.texture = happyTex
 	$Sprite.scale.y = 0.3
-	Global.currentGameLoop._loseDiamonds(boughtItem["price"])
+	Global.currentGameLoop._loseSteedium(boughtItem["price"])
 	
 	itemRegenDuration += randf_range(1, 2)
 	itemRegenTimer = itemRegenDuration
@@ -215,23 +215,23 @@ func _process(delta: float) -> void:
 		if !regenItems:
 			for i in range(currentItems.size()):
 				if (currentItems[i])["index"] == 0:
-					Global.get_node("ShopUI/Control/Item" + str(i + 1) + "/Label").text = ((currentItems[i])["desc"] as String).replace("X", str(Global.currentGameLoop.diamondBonusPrice / 2))
+					Global.get_node("ShopUI/Control/Item" + str(i + 1) + "/Label").text = ((currentItems[i])["desc"] as String).replace("X", str(Global.currentGameLoop.steediumBonusPrice / 2.0))
 				else:
 					Global.get_node("ShopUI/Control/Item" + str(i + 1) + "/Label").text = (currentItems[i])["desc"]
-				Global.get_node("ShopUI/Control/Item" + str(i + 1) + "/Diamonds/DiamondsText").text = "[shake]" + str((currentItems[i])["price"])
+				Global.get_node("ShopUI/Control/Item" + str(i + 1) + "/Steedium/SteediumText").text = "[shake]" + str((currentItems[i])["price"])
 					
-				if Global.currentGameLoop.diamondsCollected < (currentItems[i])["price"]:
+				if Global.currentGameLoop.steediumCollected < (currentItems[i])["price"]:
 					Global.get_node("ShopUI/Control/Item" + str(i + 1) + "/Info").text = "[center][color=red][font_size=18]Press\n[font_size=36][shake]" + ("1" if i == 0 else "2") + "\n[font_size=18]"
 				else:
 					Global.get_node("ShopUI/Control/Item" + str(i + 1) + "/Info").text = "[center][color=green][font_size=18]Press\n[font_size=36][shake]" + ("1" if i == 0 else "2") + "\n[font_size=18]"
 					
 			if Input.is_action_just_pressed("deets_buyItem1Shop"):
-				if (Global.currentGameLoop.diamondsCollected >= (currentItems[0])["price"]):
+				if (Global.currentGameLoop.steediumCollected >= (currentItems[0])["price"]):
 					_buyItem(0)
 				else:
 					$No.play()
 			if Input.is_action_just_pressed("deets_buyItem2Shop"):
-				if (Global.currentGameLoop.diamondsCollected >= (currentItems[1])["price"]):
+				if (Global.currentGameLoop.steediumCollected >= (currentItems[1])["price"]):
 					_buyItem(1)
 				else:
 					$No.play()

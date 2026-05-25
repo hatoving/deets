@@ -76,8 +76,8 @@ func _process(delta: float) -> void:
 			explosionTimer = randf_range(0.1, 0.35)
 		if $Mesh.position.y < -1.0:
 			if Global.currentLevelGen != null:
-				Global.currentGameLoop.diamondBonusAmount += (int(Global.currentGameLoop.diamondsNeededToEscape / 4)) * Global.currentGameLoop.valuableHorseItemDiamondMult
-				Global.currentGameLoop.valuableHorseItemDiamondMult += 0.5
+				Global.currentGameLoop.steediumBonusAmount += (int(Global.currentGameLoop.steediumNeededToEscape / 4)) * Global.currentGameLoop.valuableHorseItemSteediumMult
+				Global.currentGameLoop.valuableHorseItemSteediumMult += 0.5
 				Global.currentGameLoop.valuableHorseItemsDestroyed += 1
 				Global.currentGameLoop.raiseSpeedMultHorse.emit(0.05)
 				destroy = false
@@ -85,7 +85,7 @@ func _process(delta: float) -> void:
 				if Global.currentGameLoop.valuableHorseItemsDestroyed != Global.currentGameLoop.valuableHorseItemAmount:
 					Global.gameUI_RevealEvent("Only [shake][color=maroon]" + (str(Global.currentGameLoop.valuableHorseItemAmount - Global.currentGameLoop.valuableHorseItemsDestroyed)) + "[/color][/shake] to go.")
 				if Global.currentGameLoop.valuableHorseItemsDestroyed == Global.currentGameLoop.valuableHorseItemAmount:
-					Global.gameUI_RevealEvent("Get to the very edge of the map. Make sure you have enough diamonds... and then escape.", 8.0)
+					Global.gameUI_RevealEvent("Get to the very edge of the map. Make sure you have enough steedium... and then escape.", 8.0)
 				$Audio.stop()
 				$Col.set_deferred("disabled", true)
 				$Mesh.visible = false

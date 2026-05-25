@@ -23,59 +23,59 @@ cell_height = 0.03
 border_size = 1.0
 agent_radius = 0.4
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" unique_id=101418043]
 script = ExtResource("1_njov2")
 
-[node name="Ambience" type="AudioStreamPlayer" parent="."]
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=275088048]
 stream = ExtResource("2_8tn2x")
 volume_db = 5.0
 autoplay = true
 bus = &"Ambience"
 
-[node name="AmbienceSpooky" type="AudioStreamPlayer" parent="."]
+[node name="AmbienceSpooky" type="AudioStreamPlayer" parent="." unique_id=390932810]
 stream = ExtResource("3_aq4fw")
 volume_db = -80.0
 autoplay = true
 bus = &"Ambience"
 
-[node name="AmbienceEvenSpookier" type="AudioStreamPlayer" parent="."]
+[node name="AmbienceEvenSpookier" type="AudioStreamPlayer" parent="." unique_id=2122371985]
 stream = ExtResource("4_mxnmf")
 bus = &"Ambience"
 
-[node name="Wind" type="AudioStreamPlayer" parent="."]
+[node name="Wind" type="AudioStreamPlayer" parent="." unique_id=840856532]
 stream = ExtResource("4_ivycn")
 volume_db = -80.0
 autoplay = true
 bus = &"Ambience"
 
-[node name="ScriptedEvents" type="Node" parent="."]
+[node name="ScriptedEvents" type="Node" parent="." unique_id=678047244]
 script = ExtResource("2_2au82")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=488741882]
 environment = SubResource("Environment_myinc")
 
-[node name="LevelGen" type="Node" parent="." node_paths=PackedStringArray("levelGenNode")]
+[node name="LevelGen" type="Node" parent="." unique_id=1986595901 node_paths=PackedStringArray("levelGenNode")]
 script = ExtResource("1_myinc")
 mazeWidth = 80
 mazeHeight = 50
 levelGenNode = NodePath("../LevelGeometry")
 
-[node name="LevelGeometry" type="Node3D" parent="."]
+[node name="LevelGeometry" type="Node3D" parent="." unique_id=1234966896]
 
-[node name="NavReg" type="NavigationRegion3D" parent="LevelGeometry"]
+[node name="NavReg" type="NavigationRegion3D" parent="LevelGeometry" unique_id=835760730]
 navigation_mesh = SubResource("NavigationMesh_myinc")
 
-[node name="Everything" type="Node3D" parent="LevelGeometry/NavReg"]
+[node name="Everything" type="Node3D" parent="LevelGeometry/NavReg" unique_id=1252957446]
 
-[node name="Valuable" type="Node3D" parent="LevelGeometry/NavReg"]
+[node name="Valuable" type="Node3D" parent="LevelGeometry/NavReg" unique_id=242912880]
 
-[node name="Walls" type="Node3D" parent="LevelGeometry"]
+[node name="Walls" type="Node3D" parent="LevelGeometry" unique_id=1636273432]
 
-[node name="Diamonds" type="Node3D" parent="LevelGeometry"]
+[node name="Steedium" type="Node3D" parent="LevelGeometry" unique_id=2121430519]
 
-[node name="HorseItems" type="Node3D" parent="LevelGeometry"]
+[node name="HorseItems" type="Node3D" parent="LevelGeometry" unique_id=1349611158]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1647837001]
 
 [connection signal="finished" from="AmbienceEvenSpookier" to="." method="_on_ambience_even_spookier_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

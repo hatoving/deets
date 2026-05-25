@@ -6,24 +6,24 @@ var horseSpawnTimer = 20
 var horseSpawnIndex = 0
 var horseAmount = 1
 
-var diamondsCollected = 0
-var diamondRegenDuration = 60
-var diamondRegenTimer = 0
+var steediumCollected = 0
+var steediumRegenDuration = 60
+var steediumRegenTimer = 0
 
-var diamondBonus = 0
+var steediumBonus = 0
 
-var diamondBonusAmount = 0
-var diamondLoseAmount = 0
-var diamondModTimer = 0.1
+var steediumBonusAmount = 0
+var steediumLoseAmount = 0
+var steediumModTimer = 0.1
 
-var diamondBonusPrice = 2
+var steediumBonusPrice = 2
 var isPlayerInShop = false
 
-var diamondsNeededToEscape = -1
+var steediumNeededToEscape = -1
 
 var valuableHorseItemsDestroyed = 0
 var valuableHorseItemAmount = 4
-var valuableHorseItemDiamondMult = 0.55
+var valuableHorseItemSteediumMult = 0.55
 
 var speedRunTimer = 0.0
 
@@ -147,32 +147,32 @@ func _ready() -> void:
 	Global.allowToPause = true
 	Global.showCrosshair = true
 	
-	diamondsNeededToEscape = (Global.currentMazeSize.x * Global.currentMazeSize.y) * 3
-	print("Gonna need " + str(diamondsNeededToEscape) + " to escape!")
+	steediumNeededToEscape = (Global.currentMazeSize.x * Global.currentMazeSize.y) * 3
+	print("Gonna need " + str(steediumNeededToEscape) + " to escape!")
 	
-	diamondRegenTimer = diamondRegenDuration
+	steediumRegenTimer = steediumRegenDuration
 	
 	valuableHorseItemAmount = SaveData.gameSettings["items.valuable_amount"]
 	itemsInInventory = SaveData.gameSettings["items.start"]
 	horseSpawnTimer = SaveData.getGameSetting("horse", "spawn_duration")
 	horseAmount = SaveData.getGameSetting("horse", "amount")
 	
-	diamondsCollected = SaveData.getGameSetting("player", "diamonds_collected")
-	diamondBonus = SaveData.getGameSetting("player", "diamond_bonus_collected")
+	steediumCollected = SaveData.getGameSetting("player", "steedium_collected")
+	steediumBonus = SaveData.getGameSetting("player", "steedium_bonus_collected")
 	dohorseEvents = SaveData.getGameSetting("horse", "spawn")
 	
 	Global.uiFade = false
 	Global.get_node("Misc/Control/Fade").color.a = 1.0
 	
-func _giveDiamonds(howMuch):
-	Global.gameUI_CollectDiamond(howMuch)
-	diamondsCollected += howMuch
-	diamondBonusAmount += diamondBonus
-	diamondModTimer = randf_range(0.0, 0.05)
+func _giveSteedium(howMuch):
+	Global.gameUI_CollectSteedium(howMuch)
+	steediumCollected += howMuch
+	steediumBonusAmount += steediumBonus
+	steediumModTimer = randf_range(0.0, 0.05)
 	
-func _loseDiamonds(howMuch):
-	diamondsCollected -= howMuch
-	Global.gameUI_LoseDiamond(howMuch)
+func _loseSteedium(howMuch):
+	steediumCollected -= howMuch
+	Global.gameUI_LoseSteedium(howMuch)
 	Global.currentPlayer._playPopLowPitched()
 
 func _process(delta: float) -> void:
@@ -243,28 +243,28 @@ func _process(delta: float) -> void:
 			($WorldEnvironment.environment as Environment).fog_light_color = Color.NAVAJO_WHITE
 			Global.currentPlayer._onGun()
 	
-	Global.get_node("GameUI/Control/Diamonds/Text").text = str(diamondsCollected)
-	if diamondBonusAmount > 0:
-		diamondModTimer -= delta
-		if diamondModTimer <= 0.0:
-			if diamondBonusAmount > 64:
-				diamondsCollected += 64
-				diamondBonusAmount -= 64
+	Global.get_node("GameUI/Control/Steedium/Text").text = str(steediumCollected)
+	if steediumBonusAmount > 0:
+		steediumModTimer -= delta
+		if steediumModTimer <= 0.0:
+			if steediumBonusAmount > 64:
+				steediumCollected += 64
+				steediumBonusAmount -= 64
 				Global.currentPlayer._playPop()
-				Global.gameUI_CollectDiamond(64)
-				diamondModTimer = 0
-			elif diamondBonusAmount > 128:
-				diamondsCollected += 128
-				diamondBonusAmount -= 128
+				Global.gameUI_CollectSteedium(64)
+				steediumModTimer = 0
+			elif steediumBonusAmount > 128:
+				steediumCollected += 128
+				steediumBonusAmount -= 128
 				Global.currentPlayer._playPop()
-				Global.gameUI_CollectDiamond(128)
-				diamondModTimer = 0
+				Global.gameUI_CollectSteedium(128)
+				steediumModTimer = 0
 			else:
-				diamondModTimer = randf_range(0.0, 0.02)
-				diamondBonusAmount -= 1
-				diamondsCollected += 1
+				steediumModTimer = randf_range(0.0, 0.02)
+				steediumBonusAmount -= 1
+				steediumCollected += 1
 				Global.currentPlayer._playPop()
-				Global.gameUI_CollectDiamond(1)
+				Global.gameUI_CollectSteedium(1)
 		
 	if dohorseEvents:
 		horseSpawnTimer -= delta
@@ -279,10 +279,10 @@ func _process(delta: float) -> void:
 				dohorseEvents = false
 			else:
 				horseSpawnTimer = SaveData.getGameSetting("horse", "spawn_duration")
-	diamondRegenTimer -= delta
-	if diamondRegenTimer <= 0:
-		$LevelGen.placeDiamonds()
-		Global.gameUI_RevealEvent("Placing some [color=cyan]diamonds[/color] around...")
-		diamondRegenDuration += randf_range(4, 8)
-		print("Diamond regen takes " + str(diamondRegenDuration) + " seconds now...")
-		diamondRegenTimer = diamondRegenDuration
+	steediumRegenTimer -= delta
+	if steediumRegenTimer <= 0:
+		$LevelGen.placeSteedium()
+		Global.gameUI_RevealEvent("Placing some [color=cyan]steedium[/color] around...")
+		steediumRegenDuration += randf_range(4, 8)
+		print("Steedium regen takes " + str(steediumRegenDuration) + " seconds now...")
+		steediumRegenTimer = steediumRegenDuration

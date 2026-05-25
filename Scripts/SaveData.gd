@@ -19,7 +19,7 @@ var settings = {
 var gameSettings = {
 	"maze.width" : 80,
 	"maze.height" : 50,
-	"maze.diamond_spawn_ratio" : 0.006,
+	"maze.steedium_spawn_ratio" : 0.006,
 	"maze.disable_spooky" : false,
 	
 	"items.valuable_amount" : 4,
@@ -31,8 +31,8 @@ var gameSettings = {
 	"horse.spawn" : true,
 	
 	"player.speed_multiplier" : 1.0,
-	"player.diamonds_collected" : 0,
-	"player.diamond_bonus_collected" : 0,
+	"player.steedium_collected" : 0,
+	"player.steedium_bonus_collected" : 0,
 	
 	"items.start" : {
 		0 : {
@@ -48,7 +48,7 @@ var gameSettings = {
 var defaultGameSettings = {
 	"maze.width" : 80,
 	"maze.height" : 50,
-	"maze.diamond_spawn_ratio" : 0.006,
+	"maze.steedium_spawn_ratio" : 0.006,
 	"maze.disable_spooky" : false,
 	
 	"items.valuable_amount" : 4,
@@ -60,8 +60,8 @@ var defaultGameSettings = {
 	"horse.spawn" : true,
 	
 	"player.speed_multiplier" : 1.0,
-	"player.diamonds_collected" : 0,
-	"player.diamond_bonus_collected" : 0,
+	"player.steedium_collected" : 0,
+	"player.steedium_bonus_collected" : 0,
 	
 	"items.start" : {
 		0 : {

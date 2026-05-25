@@ -235,9 +235,9 @@ func _playPopLowPitched():
 	
 func _onCollected(what, howMuch):
 	#print("collected " + str(howMuch) + " " + str(what))
-	if what == CollectableArea3D.COLLECTABLE_TYPE.DIAMOND:
+	if what == CollectableArea3D.COLLECTABLE_TYPE.STEEDIUM:
 		_playPop()
-		Global.currentGameLoop._giveDiamonds(howMuch)
+		Global.currentGameLoop._giveSteedium(howMuch)
 
 func _onCollectRangeEntered(area: Area3D) -> void:
 	#print("collect")

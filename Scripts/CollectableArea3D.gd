@@ -2,7 +2,7 @@ extends Area3D
 class_name CollectableArea3D
 
 enum COLLECTABLE_TYPE {
-	DIAMOND
+	STEEDIUM
 }
 @export var collectableType : COLLECTABLE_TYPE
 

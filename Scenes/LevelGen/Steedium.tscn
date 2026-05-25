@@ -1,24 +1,25 @@
 [gd_scene format=3 uid="uid://4ho0e3xsptwb"]
 
-[ext_resource type="Texture2D" uid="uid://g4rnkr8akka7" path="res://Sprites/Diamonds.png" id="1_0lb3a"]
-[ext_resource type="Script" uid="uid://xhfivt2s3evb" path="res://Scripts/Diamond.gd" id="1_eq0u7"]
-[ext_resource type="Script" uid="uid://do45le0unwioy" path="res://Scripts/CollectableArea3D.gd" id="3_s0br6"]
+[ext_resource type="Script" uid="uid://xhfivt2s3evb" path="res://Scripts/Steedium.gd" id="1_l633j"]
+[ext_resource type="Texture2D" uid="uid://bbnyqxwqertom" path="res://Sprites/Steedium.png" id="2_l633j"]
+[ext_resource type="Script" uid="uid://do45le0unwioy" path="res://Scripts/CollectableArea3D.gd" id="3_s1dvs"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_eq0u7"]
 radius = 0.2
 
-[node name="Diamond" type="Node3D" unique_id=142887350]
-script = ExtResource("1_eq0u7")
+[node name="Steedium" type="Node3D" unique_id=142887350]
+script = ExtResource("1_l633j")
 
 [node name="Sprite" type="Sprite3D" parent="." unique_id=801820251]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+pixel_size = 0.04
 texture_filter = 0
-texture = ExtResource("1_0lb3a")
+texture = ExtResource("2_l633j")
 
 [node name="Area" type="Area3D" parent="." unique_id=1151923673]
 collision_layer = 16
 collision_mask = 16
-script = ExtResource("3_s0br6")
+script = ExtResource("3_s1dvs")
 
 [node name="Col" type="CollisionShape3D" parent="Area" unique_id=1568409004]
 shape = SubResource("SphereShape3D_eq0u7")

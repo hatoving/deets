@@ -16,8 +16,8 @@ var lerpEngineTimeScaleTarget = 1.0
 
 var shopUI_XTarget = -342.0
 
-var shopUI_DiamondAdd = 0
-var shopUI_DiamondAddTimer = 0.0
+var shopUI_SteediumAdd = 0
+var shopUI_SteediumAddTimer = 0.0
 
 var gameUI_eventTimer = 0.0
 var gameUI_eventAlphaTarget = 0.0
@@ -59,26 +59,26 @@ func apply_font_override_recursive(node: Node, font: Font):
 	for child in node.get_children(true):
 		apply_font_override_recursive(child, font)
 
-func gameUI_CollectDiamond(howMuch):
-	$GameUI/Control/Diamonds.scale = Vector2(0.5, 1.5)
-	$GameUI/Control/DiamondAdd.modulate.a = 1.0
-	if shopUI_DiamondAdd < 0:
-		shopUI_DiamondAdd = 0
-	shopUI_DiamondAdd += howMuch
-	$GameUI/Control/DiamondAdd.text = "[color=green]+" + str(shopUI_DiamondAdd)
-	shopUI_DiamondAddTimer = 3
+func gameUI_CollectSteedium(howMuch):
+	$GameUI/Control/Steedium.scale = Vector2(0.5, 1.5)
+	$GameUI/Control/SteediumAdd.modulate.a = 1.0
+	if shopUI_SteediumAdd < 0:
+		shopUI_SteediumAdd = 0
+	shopUI_SteediumAdd += howMuch
+	$GameUI/Control/SteediumAdd.text = "[color=green]+" + str(shopUI_SteediumAdd)
+	shopUI_SteediumAddTimer = 3
 
 func gameUI_CollectItem(which):
 	$GameUI.get_node("Control/Hotbar" + str(which) + "/Tex").scale = Vector2(0.25, 1.0)
 	
-func gameUI_LoseDiamond(howMuch):
-	$GameUI/Control/Diamonds.scale = Vector2(0.5, 1.5)
-	$GameUI/Control/DiamondAdd.modulate.a = 1.0
-	if shopUI_DiamondAdd > 0:
-		shopUI_DiamondAdd = 0
-	shopUI_DiamondAdd -= howMuch
-	$GameUI/Control/DiamondAdd.text = "[color=red]" + str(shopUI_DiamondAdd)
-	shopUI_DiamondAddTimer = 3
+func gameUI_LoseSteedium(howMuch):
+	$GameUI/Control/Steedium.scale = Vector2(0.5, 1.5)
+	$GameUI/Control/SteediumAdd.modulate.a = 1.0
+	if shopUI_SteediumAdd > 0:
+		shopUI_SteediumAdd = 0
+	shopUI_SteediumAdd -= howMuch
+	$GameUI/Control/SteediumAdd.text = "[color=red]" + str(shopUI_SteediumAdd)
+	shopUI_SteediumAddTimer = 3
 	
 func gameUI_RevealEvent(what, duration : float = 3.0):
 	$Misc/Control/EventText.text = what
@@ -217,12 +217,12 @@ func _process(delta: float) -> void:
 		if currentGameLoop:
 			$Misc/Control/Timer.text = str(formatTime(currentGameLoop.speedRunTimer))
 		
-		$GameUI/Control/Diamonds.scale = $GameUI/Control/Diamonds.scale.lerp(Vector2(1.0, 1.0), 8.0 * delta)
-		$GameUI/Control/DiamondAdd.modulate.a = lerp($GameUI/Control/DiamondAdd.modulate.a, 0.0, .5 * delta)
-		if shopUI_DiamondAddTimer > 0:
-			shopUI_DiamondAddTimer -= delta
-		elif shopUI_DiamondAddTimer <= 0:
-			shopUI_DiamondAdd = 0
+		$GameUI/Control/Steedium.scale = $GameUI/Control/Steedium.scale.lerp(Vector2(1.0, 1.0), 8.0 * delta)
+		$GameUI/Control/SteediumAdd.modulate.a = lerp($GameUI/Control/SteediumAdd.modulate.a, 0.0, .5 * delta)
+		if shopUI_SteediumAddTimer > 0:
+			shopUI_SteediumAddTimer -= delta
+		elif shopUI_SteediumAddTimer <= 0:
+			shopUI_SteediumAdd = 0
 			
 		if currentGameLoop != null:
 			$GameUI/Control.get_node("Hotbar" + str(int(currentGameLoop.currentlySelectedItem))).texture = hotbarSelectedTex

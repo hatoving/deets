@@ -21,13 +21,13 @@ var fenceModel = preload("res://Scenes/LevelGen/Structures/Fence.tscn")
 var valuableHorseItemModel = preload("res://Scenes/LevelGen/Structures/ValuableHorseItem.tscn")
 
 var playerScene = preload("res://Scenes/LevelGen/Player.tscn")
-var diamondScene = preload("res://Scenes/LevelGen/Diamond.tscn")
+var steediumScene = preload("res://Scenes/LevelGen/Steedium.tscn")
 
 @export var mazeWidth = 10
 @export var mazeHeight = 10
 
-@export var diamondSpawnRatio = 0.00625
-var diamondLimit = 0
+@export var steediumSpawnRatio = 0.00625
+var steediumLimit = 0
 
 @export var levelGenNode : Node3D
 
@@ -47,11 +47,11 @@ func _ready() -> void:
 	
 	mazeWidth = SaveData.getGameSetting("maze", "width")
 	mazeHeight = SaveData.getGameSetting("maze", "height")
-	diamondSpawnRatio = SaveData.getGameSetting("maze", "diamond_spawn_ratio")
+	steediumSpawnRatio = SaveData.getGameSetting("maze", "steedium_spawn_ratio")
 	
 	randomize()
 	
-	diamondLimit = (mazeWidth * mazeHeight) * diamondSpawnRatio
+	steediumLimit = (mazeWidth * mazeHeight) * steediumSpawnRatio
 	Global.currentMazeSize = Vector2(mazeWidth, mazeHeight)
 	
 	if mazeWidth % 2 == 0:
@@ -105,7 +105,7 @@ func setPointAt(pos: Vector3, pointType : POINT_TYPE):
 	mazeData[Vector2(pos.x, pos.z)] = {
 		"node" : node,
 		"type" : pointType,
-		"hasDiamond" : false
+		"hasSteedium" : false
 	}
 	
 func removePointAt(pos: Vector2):
@@ -167,8 +167,8 @@ func checkFreeSpaces(pos : Vector2):
 		
 	return freeSpaces
 
-func placeDiamonds():
-	var diamondCount = 0
+func placeSteedium():
+	var steediumCount = 0
 	
 	for i in range(2):
 		for x in range(mazeWidth):
@@ -180,17 +180,17 @@ func placeDiamonds():
 					if mazeData.has(pos):
 						if mazeData[pos].type == POINT_TYPE.WALL or mazeData[pos].type == POINT_TYPE.OCCUPIED or mazeData[pos].type == POINT_TYPE.OCCUPIED_NO_MODEL:
 							continue
-						if !mazeData[pos].hasDiamond:
-							mazeData[pos].hasDiamond = true
+						if !mazeData[pos].hasSteedium:
+							mazeData[pos].hasSteedium = true
 						else:
 							break
 							
-						var diamond = diamondScene.instantiate()
-						diamond.position = Vector3(pos.x + 0.5, 6.0, pos.y + 0.5)
-						levelGenNode.get_node("Diamonds").add_child(diamond)
+						var steedium = steediumScene.instantiate()
+						steedium.position = Vector3(pos.x + 0.5, 6.0, pos.y + 0.5)
+						levelGenNode.get_node("Steedium").add_child(steedium)
 						
-						diamondCount += 1
-		if diamondCount >= diamondLimit:
+						steediumCount += 1
+		if steediumCount >= steediumLimit:
 			break
 		
 
@@ -300,7 +300,7 @@ func generateMaze():
 	fence.position.x = -1.0
 	add_child(fence)
 	
-	placeDiamonds()
+	placeSteedium()
 	levelGenNode.get_node("NavReg").bake_navigation_mesh()
 	
 	var signPositions = [

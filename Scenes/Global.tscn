@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://cii7iu7prh802" path="res://Audio/Music/Aftermath.mp3" id="2_vdf0c"]
 [ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="3_1rf5l"]
 [ext_resource type="AudioStream" uid="uid://bo8wjlgflvy5" path="res://Audio/cinematicBoom.ogg" id="3_ard7p"]
-[ext_resource type="Texture2D" uid="uid://g4rnkr8akka7" path="res://Sprites/Diamonds.png" id="3_b1ap6"]
 [ext_resource type="Texture2D" uid="uid://dyf6n2m0j2rbc" path="res://Sprites/Crosshair.png" id="5_b1ap6"]
+[ext_resource type="Texture2D" uid="uid://bbnyqxwqertom" path="res://Sprites/Steedium.png" id="5_yl847"]
 [ext_resource type="Texture2D" uid="uid://cw444jus8r4r6" path="res://Sprites/Inventory/hotbar_1.png" id="6_0pijh"]
 [ext_resource type="Texture2D" uid="uid://dorvf4k7hfici" path="res://Sprites/Hammer.png" id="6_pbn0o"]
 [ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Scenes/Options.tscn" id="9_vdf0c"]
@@ -249,23 +249,23 @@ _data = {
 &"ach": SubResource("Animation_n88pi")
 }
 
-[node name="Global" type="Node"]
+[node name="Global" type="Node" unique_id=1675969891]
 script = ExtResource("1_75gqh")
 
-[node name="MainMenu" type="AudioStreamPlayer" parent="."]
+[node name="MainMenu" type="AudioStreamPlayer" parent="." unique_id=1671487197]
 stream = ExtResource("2_vdf0c")
 volume_db = 3.0
 bus = &"Music"
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=766749439]
 stream = ExtResource("3_1rf5l")
 volume_db = 3.0
 bus = &"SFX"
 
-[node name="GameUI" type="CanvasLayer" parent="."]
+[node name="GameUI" type="CanvasLayer" parent="." unique_id=1551195308]
 layer = 0
 
-[node name="Control" type="Control" parent="GameUI"]
+[node name="Control" type="Control" parent="GameUI" unique_id=1405976614]
 modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 layout_mode = 3
@@ -276,7 +276,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Debug" type="RichTextLabel" parent="GameUI/Control"]
+[node name="Debug" type="RichTextLabel" parent="GameUI/Control" unique_id=1996604576]
 visible = false
 layout_mode = 1
 offset_left = 14.0
@@ -285,14 +285,14 @@ offset_right = 183.0
 offset_bottom = 281.0
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_offset_x = -1
 theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 text = "00:00:00"
 fit_content = true
 
-[node name="DiamondAdd" type="RichTextLabel" parent="GameUI/Control"]
+[node name="SteediumAdd" type="RichTextLabel" parent="GameUI/Control" unique_id=696261740]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -309,8 +309,8 @@ scale = Vector2(2, 2)
 pivot_offset = Vector2(30, 6)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
 theme_override_constants/shadow_outline_size = 0
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -319,7 +319,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ItemDesc0" type="RichTextLabel" parent="GameUI/Control"]
+[node name="ItemDesc0" type="RichTextLabel" parent="GameUI/Control" unique_id=2070694467]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -336,8 +336,8 @@ grow_vertical = 0
 pivot_offset = Vector2(60, 12)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
 theme_override_constants/shadow_outline_size = 0
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -346,7 +346,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ItemDesc1" type="RichTextLabel" parent="GameUI/Control"]
+[node name="ItemDesc1" type="RichTextLabel" parent="GameUI/Control" unique_id=593272433]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -363,8 +363,8 @@ grow_vertical = 0
 pivot_offset = Vector2(60, 12)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
 theme_override_constants/shadow_outline_size = 0
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -373,7 +373,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Diamonds" type="TextureRect" parent="GameUI/Control"]
+[node name="Steedium" type="TextureRect" parent="GameUI/Control" unique_id=676429035]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -388,10 +388,10 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(24, 26)
 mouse_filter = 2
-texture = ExtResource("3_b1ap6")
+texture = ExtResource("5_yl847")
 stretch_mode = 4
 
-[node name="Text" type="RichTextLabel" parent="GameUI/Control/Diamonds"]
+[node name="Text" type="RichTextLabel" parent="GameUI/Control/Steedium" unique_id=364803485]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 7
@@ -408,8 +408,8 @@ grow_vertical = 0
 scale = Vector2(3, 3)
 pivot_offset = Vector2(54, 4.5)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
 theme_override_constants/shadow_outline_size = 0
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 text = "0"
@@ -417,7 +417,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Hotbar0" type="TextureRect" parent="GameUI/Control"]
+[node name="Hotbar0" type="TextureRect" parent="GameUI/Control" unique_id=1634779279]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -433,7 +433,7 @@ grow_vertical = 0
 mouse_filter = 2
 texture = ExtResource("6_0pijh")
 
-[node name="Tex" type="TextureRect" parent="GameUI/Control/Hotbar0"]
+[node name="Tex" type="TextureRect" parent="GameUI/Control/Hotbar0" unique_id=2082264089]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -452,7 +452,7 @@ mouse_filter = 2
 texture = ExtResource("6_pbn0o")
 stretch_mode = 5
 
-[node name="Hotbar1" type="TextureRect" parent="GameUI/Control"]
+[node name="Hotbar1" type="TextureRect" parent="GameUI/Control" unique_id=1681289753]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -468,7 +468,7 @@ grow_vertical = 0
 mouse_filter = 2
 texture = ExtResource("6_0pijh")
 
-[node name="Tex" type="TextureRect" parent="GameUI/Control/Hotbar1"]
+[node name="Tex" type="TextureRect" parent="GameUI/Control/Hotbar1" unique_id=888965449]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -487,7 +487,7 @@ mouse_filter = 2
 texture = ExtResource("6_pbn0o")
 stretch_mode = 5
 
-[node name="ItemStack0" type="RichTextLabel" parent="GameUI/Control"]
+[node name="ItemStack0" type="RichTextLabel" parent="GameUI/Control" unique_id=1593888057]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -512,7 +512,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ItemStack1" type="RichTextLabel" parent="GameUI/Control"]
+[node name="ItemStack1" type="RichTextLabel" parent="GameUI/Control" unique_id=1935909008]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -537,10 +537,10 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ShopUI" type="CanvasLayer" parent="."]
+[node name="ShopUI" type="CanvasLayer" parent="." unique_id=1200653833]
 visible = false
 
-[node name="Control" type="Control" parent="ShopUI"]
+[node name="Control" type="Control" parent="ShopUI" unique_id=1232309554]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -550,7 +550,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Item1" type="ColorRect" parent="ShopUI/Control"]
+[node name="Item1" type="ColorRect" parent="ShopUI/Control" unique_id=475603903]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -563,7 +563,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.34902)
 
-[node name="Label" type="RichTextLabel" parent="ShopUI/Control/Item1"]
+[node name="Label" type="RichTextLabel" parent="ShopUI/Control/Item1" unique_id=1397768871]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 4
@@ -580,12 +580,12 @@ theme_override_constants/line_separation = -1
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
-text = "[font_size=27][wave amp=20.0 freq=2.0][color=yellow]Diamond Bonus-er[/color][/wave][font_size=18]
+text = "[font_size=27][wave amp=20.0 freq=2.0][color=yellow]Steedium Bonus[/color][/wave][font_size=18]
 
 Adds 5 to the bonus counter!"
 fit_content = true
 
-[node name="Info" type="RichTextLabel" parent="ShopUI/Control/Item1"]
+[node name="Info" type="RichTextLabel" parent="ShopUI/Control/Item1" unique_id=550207061]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 6
@@ -602,10 +602,10 @@ grow_vertical = 2
 pivot_offset = Vector2(41, 27)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -614,7 +614,7 @@ text = "[center][color=green][font_size=18]Press
 [font_size=18]"
 fit_content = true
 
-[node name="Diamonds" type="TextureRect" parent="ShopUI/Control/Item1"]
+[node name="Steedium" type="TextureRect" parent="ShopUI/Control/Item1" unique_id=2010770548]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -629,10 +629,10 @@ grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(24, 26)
 mouse_filter = 2
-texture = ExtResource("3_b1ap6")
+texture = ExtResource("5_yl847")
 stretch_mode = 5
 
-[node name="DiamondsText" type="RichTextLabel" parent="ShopUI/Control/Item1/Diamonds"]
+[node name="SteediumText" type="RichTextLabel" parent="ShopUI/Control/Item1/Steedium" unique_id=1241337510]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -648,8 +648,8 @@ grow_vertical = 0
 scale = Vector2(3, 3)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
 theme_override_constants/shadow_outline_size = 0
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -658,7 +658,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Item2" type="ColorRect" parent="ShopUI/Control"]
+[node name="Item2" type="ColorRect" parent="ShopUI/Control" unique_id=1441401245]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -671,7 +671,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.34902)
 
-[node name="Label" type="RichTextLabel" parent="ShopUI/Control/Item2"]
+[node name="Label" type="RichTextLabel" parent="ShopUI/Control/Item2" unique_id=1520477312]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 4
@@ -693,7 +693,7 @@ text = "[font_size=27][wave amp=20.0 freq=2.0][color=yellow]Hammer[/color][/wave
 You can break almost anything with this!"
 fit_content = true
 
-[node name="Info" type="RichTextLabel" parent="ShopUI/Control/Item2"]
+[node name="Info" type="RichTextLabel" parent="ShopUI/Control/Item2" unique_id=776701543]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 6
@@ -710,10 +710,10 @@ grow_vertical = 2
 pivot_offset = Vector2(41, 27)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -722,7 +722,7 @@ text = "[center][color=red][font_size=18]Press
 [font_size=18]"
 fit_content = true
 
-[node name="Diamonds" type="TextureRect" parent="ShopUI/Control/Item2"]
+[node name="Steedium" type="TextureRect" parent="ShopUI/Control/Item2" unique_id=1312559867]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -737,10 +737,10 @@ grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(24, 26)
 mouse_filter = 2
-texture = ExtResource("3_b1ap6")
+texture = ExtResource("5_yl847")
 stretch_mode = 5
 
-[node name="DiamondsText" type="RichTextLabel" parent="ShopUI/Control/Item2/Diamonds"]
+[node name="SteediumText" type="RichTextLabel" parent="ShopUI/Control/Item2/Steedium" unique_id=570189735]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -756,8 +756,8 @@ grow_vertical = 0
 scale = Vector2(3, 3)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
 theme_override_constants/shadow_outline_size = 0
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -766,7 +766,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HintText" type="RichTextLabel" parent="ShopUI/Control"]
+[node name="HintText" type="RichTextLabel" parent="ShopUI/Control" unique_id=205142750]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -782,8 +782,8 @@ grow_vertical = 2
 pivot_offset = Vector2(113.5, 6)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
 theme_override_constants/shadow_outline_size = 2
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -792,7 +792,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HintText2" type="RichTextLabel" parent="ShopUI/Control"]
+[node name="HintText2" type="RichTextLabel" parent="ShopUI/Control" unique_id=913396375]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -809,10 +809,10 @@ rotation = 1.5708
 pivot_offset = Vector2(113.5, 22.5)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -821,7 +821,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OutOfOrder" type="Control" parent="ShopUI"]
+[node name="OutOfOrder" type="Control" parent="ShopUI" unique_id=2087875424]
 visible = false
 texture_filter = 1
 layout_mode = 3
@@ -832,7 +832,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Info" type="ColorRect" parent="ShopUI/OutOfOrder"]
+[node name="Info" type="ColorRect" parent="ShopUI/OutOfOrder" unique_id=630511963]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -845,7 +845,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.34902)
 
-[node name="Label" type="RichTextLabel" parent="ShopUI/OutOfOrder/Info"]
+[node name="Label" type="RichTextLabel" parent="ShopUI/OutOfOrder/Info" unique_id=120349497]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 8
@@ -870,7 +870,7 @@ text = "[center][font_size=27][shake][color=yellow]We're currently out of order.
 Come back in X seconds for a restock."
 fit_content = true
 
-[node name="HintText2" type="RichTextLabel" parent="ShopUI/OutOfOrder"]
+[node name="HintText2" type="RichTextLabel" parent="ShopUI/OutOfOrder" unique_id=726051459]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -887,10 +887,10 @@ rotation = 1.5708
 pivot_offset = Vector2(113.5, 22.5)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -899,10 +899,10 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Misc" type="CanvasLayer" parent="."]
+[node name="Misc" type="CanvasLayer" parent="." unique_id=455910040]
 layer = 87
 
-[node name="Control" type="Control" parent="Misc"]
+[node name="Control" type="Control" parent="Misc" unique_id=1651060948]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -911,7 +911,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Timer" type="RichTextLabel" parent="Misc/Control"]
+[node name="Timer" type="RichTextLabel" parent="Misc/Control" unique_id=624718204]
 visible = false
 layout_mode = 0
 offset_left = 14.0
@@ -921,14 +921,14 @@ offset_bottom = 31.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 0.54902)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.54902)
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_offset_x = -1
 theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 text = "00:00:00"
 fit_content = true
 
-[node name="EventText" type="RichTextLabel" parent="Misc/Control"]
+[node name="EventText" type="RichTextLabel" parent="Misc/Control" unique_id=620531847]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
@@ -942,8 +942,8 @@ grow_horizontal = 2
 scale = Vector2(2, 2)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
 theme_override_constants/shadow_outline_size = 0
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -952,15 +952,13 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Misc/Control/EventText"]
-libraries = {
-&"": SubResource("AnimationLibrary_b1ap6")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Misc/Control/EventText" unique_id=1889486325]
+libraries/ = SubResource("AnimationLibrary_b1ap6")
 
-[node name="Boom" type="AudioStreamPlayer" parent="Misc/Control/EventText"]
+[node name="Boom" type="AudioStreamPlayer" parent="Misc/Control/EventText" unique_id=1693000281]
 stream = ExtResource("3_ard7p")
 
-[node name="HintText" type="RichTextLabel" parent="Misc/Control"]
+[node name="HintText" type="RichTextLabel" parent="Misc/Control" unique_id=708128137]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -977,8 +975,8 @@ scale = Vector2(2, 2)
 pivot_offset = Vector2(141.5, 6)
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = -39
 theme_override_constants/shadow_outline_size = 0
+theme_override_constants/outline_size = -39
 theme_override_fonts/normal_font = ExtResource("2_ard7p")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -986,7 +984,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Crosshair" type="TextureRect" parent="Misc/Control"]
+[node name="Crosshair" type="TextureRect" parent="Misc/Control" unique_id=471143050]
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 1
 anchors_preset = 8
@@ -1004,7 +1002,7 @@ mouse_filter = 2
 texture = ExtResource("5_b1ap6")
 stretch_mode = 5
 
-[node name="Fade" type="ColorRect" parent="Misc/Control"]
+[node name="Fade" type="ColorRect" parent="Misc/Control" unique_id=1961379671]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1014,10 +1012,10 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="Achievement" type="CanvasLayer" parent="Misc"]
+[node name="Achievement" type="CanvasLayer" parent="Misc" unique_id=1861225524]
 layer = 128
 
-[node name="XboxAch" type="TextureRect" parent="Misc/Achievement"]
+[node name="XboxAch" type="TextureRect" parent="Misc/Achievement" unique_id=1031563887]
 modulate = Color(1, 1, 1, 0)
 clip_children = 2
 anchors_preset = 5
@@ -1034,7 +1032,7 @@ mouse_filter = 2
 texture = ExtResource("10_f86ji")
 expand_mode = 1
 
-[node name="BG" type="TextureRect" parent="Misc/Achievement/XboxAch"]
+[node name="BG" type="TextureRect" parent="Misc/Achievement/XboxAch" unique_id=1818326431]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1048,7 +1046,7 @@ pivot_offset = Vector2(11.5, 11.5)
 mouse_filter = 2
 texture = ExtResource("11_x5224")
 
-[node name="Rings" type="TextureRect" parent="Misc/Achievement/XboxAch"]
+[node name="Rings" type="TextureRect" parent="Misc/Achievement/XboxAch" unique_id=553515612]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1063,7 +1061,7 @@ pivot_offset = Vector2(9.5, 9.5)
 mouse_filter = 2
 texture = ExtResource("12_jjvpv")
 
-[node name="Icon" type="TextureRect" parent="Misc/Achievement/XboxAch"]
+[node name="Icon" type="TextureRect" parent="Misc/Achievement/XboxAch" unique_id=1608619016]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1077,7 +1075,7 @@ pivot_offset = Vector2(4.5, 5.5)
 mouse_filter = 2
 texture = ExtResource("13_27fww")
 
-[node name="Label" type="Label" parent="Misc/Achievement/XboxAch"]
+[node name="Label" type="Label" parent="Misc/Achievement/XboxAch" unique_id=1568181591]
 layout_mode = 0
 offset_left = 33.6667
 offset_top = 2.33333
@@ -1090,19 +1088,17 @@ text = "Achivement unlocked!
 20G - supra binyot"
 vertical_alignment = 1
 
-[node name="Anim" type="AnimationPlayer" parent="Misc/Achievement/XboxAch"]
-libraries = {
-&"": SubResource("AnimationLibrary_63ice")
-}
+[node name="Anim" type="AnimationPlayer" parent="Misc/Achievement/XboxAch" unique_id=1858954135]
+libraries/ = SubResource("AnimationLibrary_63ice")
 
-[node name="SFX" type="AudioStreamPlayer" parent="Misc/Achievement/XboxAch"]
+[node name="SFX" type="AudioStreamPlayer" parent="Misc/Achievement/XboxAch" unique_id=798136141]
 stream = ExtResource("15_j5bh2")
 bus = &"SFX"
 
-[node name="PauseUI" type="CanvasLayer" parent="."]
+[node name="PauseUI" type="CanvasLayer" parent="." unique_id=858292930]
 layer = 98
 
-[node name="BG" type="ColorRect" parent="PauseUI"]
+[node name="BG" type="ColorRect" parent="PauseUI" unique_id=444911643]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1111,25 +1107,25 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.490196)
 
-[node name="Main" type="CanvasLayer" parent="PauseUI"]
+[node name="Main" type="CanvasLayer" parent="PauseUI" unique_id=553032455]
 layer = 99
 visible = false
 
-[node name="Resume" type="Button" parent="PauseUI/Main"]
+[node name="Resume" type="Button" parent="PauseUI/Main" unique_id=1284827151]
 offset_left = 52.0
 offset_top = 234.0
 offset_right = 202.0
 offset_bottom = 265.0
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("2_ard7p")
 theme_override_font_sizes/font_size = 18
 text = "Resume"
 flat = true
 alignment = 0
 
-[node name="HowToPlay" type="Button" parent="PauseUI/Main"]
+[node name="HowToPlay" type="Button" parent="PauseUI/Main" unique_id=1655779119]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -1138,23 +1134,23 @@ offset_top = 43.0
 offset_right = -43.0
 offset_bottom = 74.0
 grow_horizontal = 0
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("2_ard7p")
 theme_override_font_sizes/font_size = 18
 text = "How To Play"
 flat = true
 alignment = 2
 
-[node name="Options" type="Button" parent="PauseUI/Main"]
+[node name="Options" type="Button" parent="PauseUI/Main" unique_id=1745616295]
 offset_left = 52.0
 offset_top = 270.0
 offset_right = 202.0
 offset_bottom = 301.0
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("2_ard7p")
 theme_override_font_sizes/font_size = 18
 text = "Options
@@ -1162,26 +1158,26 @@ text = "Options
 flat = true
 alignment = 0
 
-[node name="Exit" type="Button" parent="PauseUI/Main"]
+[node name="Exit" type="Button" parent="PauseUI/Main" unique_id=1925170639]
 offset_left = 52.0
 offset_top = 306.0
 offset_right = 202.0
 offset_bottom = 337.0
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("2_ard7p")
 theme_override_font_sizes/font_size = 18
 text = "Exit"
 flat = true
 alignment = 0
 
-[node name="Options" parent="PauseUI" node_paths=PackedStringArray("mainMenu", "clickSFX") instance=ExtResource("9_vdf0c")]
+[node name="Options" parent="PauseUI" unique_id=1314644792 node_paths=PackedStringArray("mainMenu", "clickSFX") instance=ExtResource("9_vdf0c")]
 visible = false
 mainMenu = NodePath("../Main")
 clickSFX = NodePath("../../Click")
 
-[node name="HowToPlay" type="Control" parent="PauseUI"]
+[node name="HowToPlay" type="Control" parent="PauseUI" unique_id=1926343103]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -1191,7 +1187,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PauseUI/HowToPlay"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PauseUI/HowToPlay" unique_id=1118353701]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1209,17 +1205,18 @@ theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "[center]~ [wave][shake]How To Play[/shake][/wave] ~
 
-Playing the game is [color=yellow]simple[/color]. Collect as many [color=cyan]diamonds[/color] needed to escape, and destroy the four Valuable Horse Pedestals. There's a sign at the very edge of the maze that acts as a guide on how much you have left to do.
+Playing the game is [color=yellow]simple[/color]. Collect as much [color=cyan]Steedium[/color] needed to escape, and destroy the four Valuable Horse Pedestals. There's a sign at the very edge of the maze that acts as a guide on how much you have left to do.
 
 It won't be THAT easy though.
 You will have company.
 
-There's a store in the middle of the maze that can help you to speed up the process, but the items get pricier everytime you buy something from [color=orange]The Haykeeper[/color].
+There's a store in the middle of the maze that can help you to speed up the process, but the items get pricier everytime you buy something from
+[color=orange]The Haykeeper[/color].
 
 Good luck!"
 fit_content = true
 
-[node name="Back" type="Button" parent="PauseUI/HowToPlay"]
+[node name="Back" type="Button" parent="PauseUI/HowToPlay" unique_id=1041522187]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1233,9 +1230,9 @@ offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(75, 0)
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("2_ard7p")
 theme_override_font_sizes/font_size = 18
 text = "-> Done <-"

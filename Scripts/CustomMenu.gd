@@ -9,7 +9,7 @@ func _ready():
 func _process(delta: float) -> void:
 	$Pag1/Width/Label.text = "Maze Width (" + str(SaveData.getGameSetting("maze", "width")) + ")"
 	$Pag1/Height/Label.text = "Maze Height (" + str(SaveData.getGameSetting("maze", "height")) + ")"
-	$Pag1/Ratio/Label.text = "Diamond Sp. Ratio (" + str(SaveData.getGameSetting("maze", "diamond_spawn_ratio")) + ")"
+	$Pag1/Ratio/Label.text = "Steedium Sp. Ratio (" + str(SaveData.getGameSetting("maze", "steedium_spawn_ratio")) + ")"
 	$Pag1/Valuable/Label.text = "Pedestal Amount (" + str(SaveData.getGameSetting("items", "valuable_amount")) + ")"
 	$Pag1/PlayerSpeed/Label.text = "Player Spd. Mult. (" + str(SaveData.getGameSetting("player", "speed_multiplier")) + "x)"
 	$Pag1/HorseSpeed/Label.text = "Horse Spd. Mult (" + str(SaveData.getGameSetting("horse", "speed_multiplier")) + "x)"
@@ -47,7 +47,7 @@ func _getItemFromName(index):
 func _updateValuesFromCurrentSetting():
 	$Pag1/Width.value = SaveData.getGameSetting("maze", "width")
 	$Pag1/Height.value = SaveData.getGameSetting("maze", "height")
-	$Pag1/Ratio.value = SaveData.getGameSetting("maze", "diamond_spawn_ratio")
+	$Pag1/Ratio.value = SaveData.getGameSetting("maze", "steedium_spawn_ratio")
 	
 	$Pag1/Valuable.value = SaveData.getGameSetting("items", "valuable_amount")
 	
@@ -61,8 +61,8 @@ func _updateValuesFromCurrentSetting():
 	
 	$Pag1/Spooky.button_pressed = SaveData.getGameSetting("maze", "disable_spooky")
 	
-	$Pag2/DiamondsCollected.text = str( SaveData.getGameSetting("player", "diamonds_collected"))
-	$Pag2/DiamondsBonus.text = str( SaveData.getGameSetting("player", "diamond_bonus_collected"))
+	$Pag2/SteediumCollected.text = str( SaveData.getGameSetting("player", "steedium_collected"))
+	$Pag2/SteediumBonus.text = str( SaveData.getGameSetting("player", "steedium_bonus_collected"))
 	
 	$Pag2/ItemMult.value = SaveData.getGameSetting("items", "price_multiplier")
 	
@@ -91,7 +91,7 @@ func _on_height_value_changed(value: float) -> void:
 	SaveData.setGameSetting("maze", "height", int(value))
 
 func _on_ratio_value_changed(value: float) -> void:
-	SaveData.setGameSetting("maze", "diamond_spawn_ratio", value)
+	SaveData.setGameSetting("maze", "steedium_spawn_ratio", value)
 
 func _on_valuable_value_changed(value: float) -> void:
 	SaveData.setGameSetting("items", "valuable_amount", int(value))
@@ -148,11 +148,11 @@ func _on_go_pressed() -> void:
 func _on_horse_spawn_value_changed(value: float) -> void:
 	SaveData.setGameSetting("horse", "spawn_duration", value)
 
-func _on_diamonds_collected_text_changed(new_text: String) -> void:
-	SaveData.setGameSetting("player", "diamonds_collected", int(new_text))
+func _on_steedium_collected_text_changed(new_text: String) -> void:
+	SaveData.setGameSetting("player", "steedium_collected", int(new_text))
 
-func _on_diamonds_bonus_text_changed(new_text: String) -> void:
-	SaveData.setGameSetting("player", "diamond_bonus_collected", int(new_text))
+func _on_steedium_bonus_text_changed(new_text: String) -> void:
+	SaveData.setGameSetting("player", "steedium_bonus_collected", int(new_text))
 
 func _on_item_mult_value_changed(value: float) -> void:
 	SaveData.setGameSetting("items", "price_multiplier", value)
