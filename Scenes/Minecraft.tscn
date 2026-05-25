@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cck3lloldtk0b"]
 
-[ext_resource type="Script" uid="uid://bp4teveuh8r01" path="res://Code/MinecraftMenu.gd" id="1_tiqaw"]
+[ext_resource type="Script" uid="uid://bp4teveuh8r01" path="res://Scripts/MinecraftMenu.gd" id="1_tiqaw"]
 [ext_resource type="Texture2D" uid="uid://1g4uuu0exnw6" path="res://Sprites/Minecraft/Logo.png" id="2_7y3x7"]
 [ext_resource type="Texture2D" uid="uid://c7mfot08foyjt" path="res://Sprites/Minecraft/dirt.png" id="2_l40l2"]
 [ext_resource type="AudioStream" uid="uid://dl2sehypuw064" path="res://Audio/Music/Minecraft/0.mp3" id="3_t0wcs"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://wfjop27ih7ub" path="res://Sprites/Minecraft/ButtonHover.png" id="5_x5gxu"]
 [ext_resource type="Texture2D" uid="uid://d1jxg3b0iw00y" path="res://Sprites/Minecraft/MojangLogo.png" id="7_x5gxu"]
 [ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Scenes/Options.tscn" id="8_af4qr"]
-[ext_resource type="Script" uid="uid://dro3q88caq6ww" path="res://Code/LoadingScreenMinecraft.gd" id="9_srm5v"]
+[ext_resource type="Script" uid="uid://dro3q88caq6ww" path="res://Scripts/LoadingScreenMinecraft.gd" id="9_srm5v"]
 [ext_resource type="AudioStream" uid="uid://jti7wy1udov2" path="res://Audio/Minecraft/Click_stereo.ogg.mp3" id="11_frmff"]
 [ext_resource type="AudioStream" uid="uid://svedmuuskapx" path="res://Audio/pop.ogg" id="12_c2q7k"]
 

@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cds85unabj3cn"]
+[gd_scene format=3 uid="uid://cds85unabj3cn"]
 
-[ext_resource type="Script" uid="uid://ck5hgmemvppar" path="res://Code/Player.gd" id="1_0qd5t"]
+[ext_resource type="Script" uid="uid://ck5hgmemvppar" path="res://Scripts/Player.gd" id="1_0qd5t"]
 [ext_resource type="AudioStream" uid="uid://svedmuuskapx" path="res://Audio/pop.ogg" id="2_iqexb"]
 [ext_resource type="AudioStream" uid="uid://brufyyqvf7mr3" path="res://Audio/Player/footstep.ogg" id="2_ntcih"]
 [ext_resource type="AudioStream" uid="uid://dd5na2l620227" path="res://Audio/PlayerAppear.ogg" id="3_om2gm"]
-[ext_resource type="Script" uid="uid://cp274pbpav1wp" path="res://Code/SoundSensitiveArea3D.gd" id="3_pvqpi"]
+[ext_resource type="Script" uid="uid://cp274pbpav1wp" path="res://Scripts/SoundSensitiveArea3D.gd" id="3_pvqpi"]
 [ext_resource type="AudioStream" uid="uid://coapby6a1hd48" path="res://Audio/Player/Falling.wav" id="3_qngga"]
 [ext_resource type="AudioStream" uid="uid://b4a4wo07sshaa" path="res://Audio/Gun.ogg" id="5_qrlnb"]
 

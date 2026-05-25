@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b012b531nbxr5"]
+[gd_scene format=3 uid="uid://b012b531nbxr5"]
 
 [ext_resource type="Texture2D" uid="uid://ct6q0hh8rcxwy" path="res://Textures/fence.png" id="1_18ato"]
-[ext_resource type="Script" uid="uid://dcbqd6ubgxy6h" path="res://Code/Fence.gd" id="1_brlwy"]
+[ext_resource type="Script" uid="uid://dcbqd6ubgxy6h" path="res://Scripts/Fence.gd" id="1_brlwy"]
 [ext_resource type="AudioStream" uid="uid://brk4xdciv4u1o" path="res://Audio/FenceOpen.ogg" id="3_32th5"]
 [ext_resource type="AudioStream" uid="uid://8f7s4e5ym627" path="res://Audio/FenceClose.ogg" id="4_4rg0o"]
 [ext_resource type="ArrayMesh" uid="uid://brtqe2qgd2tnr" path="res://Models/Tube.obj" id="5_4rg0o"]

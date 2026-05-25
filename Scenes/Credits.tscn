@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://pmhlay158ll5"]
+[gd_scene format=3 uid="uid://pmhlay158ll5"]
 
 [ext_resource type="Texture2D" uid="uid://cfvnlfof4ys6c" path="res://Sprites/HorseBackground.png" id="1_4qwwl"]
-[ext_resource type="Script" uid="uid://3v0s42t3wape" path="res://Code/Credits.gd" id="1_k2yj5"]
+[ext_resource type="Script" uid="uid://3v0s42t3wape" path="res://Scripts/Credits.gd" id="1_k2yj5"]
 [ext_resource type="Shader" uid="uid://b7gxrmj6ufsw7" path="res://Shaders/Scroll.gdshader" id="1_obosj"]
 [ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="1_ynf4x"]
 [ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="5_xic2l"]

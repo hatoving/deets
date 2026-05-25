@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctc8ihblolj6n"]
+[gd_scene format=3 uid="uid://ctc8ihblolj6n"]
 
-[ext_resource type="Script" uid="uid://m8chyhpdlp0" path="res://Code/EndingAlt.gd" id="1_mqjkx"]
+[ext_resource type="Script" uid="uid://m8chyhpdlp0" path="res://Scripts/EndingAlt.gd" id="1_mqjkx"]
 [ext_resource type="AudioStream" uid="uid://dghpqn0ykdodc" path="res://Audio/Music/Toby Fox - His Theme.ogg" id="2_0dlp2"]
 [ext_resource type="AudioStream" uid="uid://cwopsks5axvv1" path="res://Audio/Undertale.ogg" id="3_t3piy"]
 [ext_resource type="Texture2D" uid="uid://c7g3u3vm4w46j" path="res://Sprites/EndingStory/0.png" id="5_c1l3a"]

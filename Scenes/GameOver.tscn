@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://be1rwkc43ok1p"]
+[gd_scene format=3 uid="uid://be1rwkc43ok1p"]
 
-[ext_resource type="Script" uid="uid://dxjwb1vspecc3" path="res://Code/GameOver.gd" id="1_xl4ts"]
+[ext_resource type="Script" uid="uid://dxjwb1vspecc3" path="res://Scripts/GameOver.gd" id="1_xl4ts"]
 [ext_resource type="AudioStream" uid="uid://cwopsks5axvv1" path="res://Audio/Undertale.ogg" id="3_758bs"]
 [ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="3_xl4ts"]
 

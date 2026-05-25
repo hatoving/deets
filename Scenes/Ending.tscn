@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfbgonrsbcx3g"]
+[gd_scene format=3 uid="uid://cfbgonrsbcx3g"]
 
-[ext_resource type="Script" uid="uid://b736yw3fod466" path="res://Code/Ending.gd" id="1_v0lf2"]
+[ext_resource type="Script" uid="uid://b736yw3fod466" path="res://Scripts/Ending.gd" id="1_v0lf2"]
 [ext_resource type="AudioStream" uid="uid://dghpqn0ykdodc" path="res://Audio/Music/Toby Fox - His Theme.ogg" id="1_yqk5q"]
 [ext_resource type="FontFile" uid="uid://n2wdukr0u5a4" path="res://Fonts/Determination Mono.ttf" id="2_jkr2r"]
 [ext_resource type="Texture2D" uid="uid://c7g3u3vm4w46j" path="res://Sprites/EndingStory/0.png" id="3_3v033"]

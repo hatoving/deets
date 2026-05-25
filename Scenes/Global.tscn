@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c62jfox75hss4"]
 
-[ext_resource type="Script" uid="uid://bi5jsvga2767g" path="res://Code/Global.gd" id="1_75gqh"]
+[ext_resource type="Script" uid="uid://bi5jsvga2767g" path="res://Scripts/Global.gd" id="1_75gqh"]
 [ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="2_ard7p"]
 [ext_resource type="AudioStream" uid="uid://cii7iu7prh802" path="res://Audio/Music/Aftermath.mp3" id="2_vdf0c"]
 [ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="3_1rf5l"]

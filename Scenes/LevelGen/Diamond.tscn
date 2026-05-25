@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4ho0e3xsptwb"]
+[gd_scene format=3 uid="uid://4ho0e3xsptwb"]
 
 [ext_resource type="Texture2D" uid="uid://g4rnkr8akka7" path="res://Sprites/Diamonds.png" id="1_0lb3a"]
-[ext_resource type="Script" uid="uid://xhfivt2s3evb" path="res://Code/Diamond.gd" id="1_eq0u7"]
-[ext_resource type="Script" uid="uid://do45le0unwioy" path="res://Code/CollectableArea3D.gd" id="3_s0br6"]
+[ext_resource type="Script" uid="uid://xhfivt2s3evb" path="res://Scripts/Diamond.gd" id="1_eq0u7"]
+[ext_resource type="Script" uid="uid://do45le0unwioy" path="res://Scripts/CollectableArea3D.gd" id="3_s0br6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_eq0u7"]
 radius = 0.2

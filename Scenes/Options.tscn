@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dacext5dba2fr"]
+[gd_scene format=3 uid="uid://dacext5dba2fr"]
 
-[ext_resource type="Script" uid="uid://dgsn7f6s04t3i" path="res://Code/Options.gd" id="1_bwr58"]
+[ext_resource type="Script" uid="uid://dgsn7f6s04t3i" path="res://Scripts/Options.gd" id="1_bwr58"]
 [ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="2_dfe3t"]
-[ext_resource type="Script" uid="uid://c2lkwc1n8wsns" path="res://Code/VideoSettings.gd" id="3_t1d33"]
-[ext_resource type="Script" uid="uid://c64emh8gv3rhc" path="res://Code/AudioSettings.gd" id="4_5pjjr"]
-[ext_resource type="Script" uid="uid://cbc4c5viujas" path="res://Code/GameSettings.gd" id="5_rakeu"]
+[ext_resource type="Script" uid="uid://c2lkwc1n8wsns" path="res://Scripts/VideoSettings.gd" id="3_t1d33"]
+[ext_resource type="Script" uid="uid://c64emh8gv3rhc" path="res://Scripts/AudioSettings.gd" id="4_5pjjr"]
+[ext_resource type="Script" uid="uid://cbc4c5viujas" path="res://Scripts/GameSettings.gd" id="5_rakeu"]
 
 [node name="Options" type="CanvasLayer"]
 layer = 99

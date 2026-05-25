@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bj5k1igaobwe7"]
+[gd_scene format=3 uid="uid://bj5k1igaobwe7"]
 
-[ext_resource type="Script" uid="uid://c1e8r0a2fkbsx" path="res://Code/ShopPointer.gd" id="1_70jsf"]
+[ext_resource type="Script" uid="uid://c1e8r0a2fkbsx" path="res://Scripts/ShopPointer.gd" id="1_70jsf"]
 [ext_resource type="Texture2D" uid="uid://c15s7gp3mqm6n" path="res://Textures/concrete_ground.png" id="2_pm6gx"]
 [ext_resource type="Texture2D" uid="uid://c74exlkoyglbs" path="res://Models/Board/texture.png" id="3_sdke8"]
 [ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="4_f36xa"]

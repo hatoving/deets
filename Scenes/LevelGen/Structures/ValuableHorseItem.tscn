@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3xkidypja043"]
+[gd_scene format=3 uid="uid://c3xkidypja043"]
 
 [ext_resource type="Texture2D" uid="uid://c15s7gp3mqm6n" path="res://Textures/concrete_ground.png" id="1_4hmb7"]
-[ext_resource type="Script" uid="uid://cqayeesy3rwr8" path="res://Code/ValuableHorseItems.gd" id="1_kb20i"]
+[ext_resource type="Script" uid="uid://cqayeesy3rwr8" path="res://Scripts/ValuableHorseItems.gd" id="1_kb20i"]
 [ext_resource type="Texture2D" uid="uid://8ipef6mif31a" path="res://Models/ValuableHorseItem/valuableHorseItem.png" id="2_mbkwc"]
 [ext_resource type="ArrayMesh" uid="uid://d22ux22wcqaku" path="res://Models/ValuableHorseItem/valuableHorseItem.obj" id="3_4ai7l"]
 [ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="4_d2lyj"]

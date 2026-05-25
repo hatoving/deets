@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://dts1fsoy7sjt6"]
+[gd_scene format=3 uid="uid://dts1fsoy7sjt6"]
 
-[ext_resource type="Script" uid="uid://t5lxpmfyght0" path="res://Code/Board.gd" id="1_bpho7"]
+[ext_resource type="Script" uid="uid://t5lxpmfyght0" path="res://Scripts/Board.gd" id="1_bpho7"]
 [ext_resource type="Texture2D" uid="uid://c15s7gp3mqm6n" path="res://Textures/concrete_ground.png" id="1_fgwdp"]
 [ext_resource type="Texture2D" uid="uid://c74exlkoyglbs" path="res://Models/Board/texture.png" id="2_57nr5"]
 [ext_resource type="ArrayMesh" uid="uid://bev17fqrcxpqq" path="res://Models/Board/Board.obj" id="3_ksrln"]

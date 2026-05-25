@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ckeiueqdv8s22"]
 
-[ext_resource type="Script" uid="uid://d05hj8ofpjm3o" path="res://Code/Boot.gd" id="1_0g2dh"]
+[ext_resource type="Script" uid="uid://d05hj8ofpjm3o" path="res://Scripts/Boot.gd" id="1_0g2dh"]
 [ext_resource type="Texture2D" uid="uid://bjc3q8sex7nrb" path="res://Sprites/Click.png" id="2_pbnua"]
-[ext_resource type="VideoStream" uid="uid://b0b024xrmyx5h" path="res://Intro.ogv" id="3_8ar81"]
+[ext_resource type="VideoStream" uid="uid://b0b024xrmyx5h" path="res://Audio/Intro.ogv" id="3_8ar81"]
 [ext_resource type="FontFile" uid="uid://c3h177hi5b8r3" path="res://Fonts/Munson_Roman.otf" id="4_2dheg"]
 
 [node name="Boot" type="Node" unique_id=1078130791]

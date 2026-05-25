@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://bc4lk6vvyvwd7"]
+[gd_scene format=3 uid="uid://bc4lk6vvyvwd7"]
 
-[ext_resource type="Script" uid="uid://wi2068yqla8l" path="res://Code/Horse.gd" id="1_gffeo"]
+[ext_resource type="Script" uid="uid://wi2068yqla8l" path="res://Scripts/Horse.gd" id="1_gffeo"]
 [ext_resource type="Texture2D" uid="uid://be0iblo106o5n" path="res://Sprites/Horse/horse_sheet.png" id="2_agco3"]
 [ext_resource type="AudioStream" uid="uid://blny8gefgcqvh" path="res://Audio/Horse/intrigue_new.ogg" id="3_txvvm"]
 [ext_resource type="Texture2D" uid="uid://dyg3a704r33re" path="res://Sprites/Horse/dead.png" id="3_uph3x"]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cilr42c1rd43c"]
+[gd_scene format=3 uid="uid://cilr42c1rd43c"]
 
 [ext_resource type="Texture2D" uid="uid://dbl0o2w4a84ph" path="res://Models/PortableShop/portableShop.png" id="1_4cja4"]
-[ext_resource type="Script" uid="uid://be4xl3ba6nq8t" path="res://Code/PortableShop.gd" id="1_lcwio"]
+[ext_resource type="Script" uid="uid://be4xl3ba6nq8t" path="res://Scripts/PortableShop.gd" id="1_lcwio"]
 [ext_resource type="ArrayMesh" uid="uid://5kwc0nui76ng" path="res://Models/PortableShop/portableShop.obj" id="2_0uax8"]
 [ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="2_37kxf"]
 [ext_resource type="Texture2D" uid="uid://dk3mjualxdrjo" path="res://Sprites/Haykeeper/idle.png" id="3_hs1o4"]
@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cc5f1gd0oxhal" path="res://Audio/Haykeeper/noitem.ogg" id="7_1rfu4"]
 [ext_resource type="AudioStream" uid="uid://dndmdd4js82oh" path="res://Audio/Haykeeper/outofstock.ogg" id="8_igwye"]
 [ext_resource type="AudioStream" uid="uid://dhuprjjihnrtr" path="res://Audio/Haykeeper/thankyou.ogg" id="9_y5oo4"]
-[ext_resource type="Script" uid="uid://cp274pbpav1wp" path="res://Code/SoundSensitiveArea3D.gd" id="10_y5oo4"]
+[ext_resource type="Script" uid="uid://cp274pbpav1wp" path="res://Scripts/SoundSensitiveArea3D.gd" id="10_y5oo4"]
 [ext_resource type="AudioStream" uid="uid://k0prb5v82vx2" path="res://Audio/Haykeeper/Full.ogg" id="12_cwvhv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4fcj"]

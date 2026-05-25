@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyqpcr83hb732"]
+[gd_scene format=3 uid="uid://cyqpcr83hb732"]
 
-[ext_resource type="Script" uid="uid://gdkg21eyr8ff" path="res://Code/Explosion.gd" id="1_eiqix"]
+[ext_resource type="Script" uid="uid://gdkg21eyr8ff" path="res://Scripts/Explosion.gd" id="1_eiqix"]
 [ext_resource type="Texture2D" uid="uid://januvyrpae7v" path="res://Sprites/ExplosionSheet.png" id="1_uagtg"]
 [ext_resource type="AudioStream" uid="uid://dayetnbinsuli" path="res://Audio/Explosion.ogg" id="2_eiqix"]
-[ext_resource type="Script" uid="uid://cp274pbpav1wp" path="res://Code/SoundSensitiveArea3D.gd" id="4_nqlub"]
+[ext_resource type="Script" uid="uid://cp274pbpav1wp" path="res://Scripts/SoundSensitiveArea3D.gd" id="4_nqlub"]
 
 [sub_resource type="Animation" id="Animation_xgve6"]
 length = 0.001

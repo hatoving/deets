@@ -31,7 +31,7 @@ general/stretch/mode="canvas_items"
 
 [autoload]
 
-SaveData="*res://Code/SaveData.gd"
+SaveData="*res://Scripts/SaveData.gd"
 Global="*res://Scenes/Global.tscn"
 NG="*res://addons/newgrounds/scripts/newgrounds.tscn"
 NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
@@ -52,6 +52,20 @@ project/assembly_name="DEETS"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg", "res://addons/gamejolt/plugin.cfg", "res://addons/newgrounds/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Audio/": "pink",
+"res://Fonts/": "purple",
+"res://Models/": "blue",
+"res://Scenes/": "teal",
+"res://Scripts/": "green",
+"res://Shaders/": "yellow",
+"res://Sprites/": "orange",
+"res://Textures/": "red",
+"res://addons/": "gray"
+}
 
 [global_group]
 
