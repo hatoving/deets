@@ -14,8 +14,6 @@
 [ext_resource type="Script" uid="uid://dro3q88caq6ww" path="res://Scripts/LoadingScreenMinecraft.gd" id="7_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://is6tls7ieq56" path="res://Sprites/Gun.png" id="7_qie43"]
 [ext_resource type="AudioStream" uid="uid://svedmuuskapx" path="res://Audio/pop.ogg" id="8_u7cqb"]
-[ext_resource type="Script" uid="uid://dy7ho7njcrm6u" path="res://Scripts/GamejoltMenu.gd" id="11_3fnrj"]
-[ext_resource type="Texture2D" uid="uid://bniokqr8whhhd" path="res://Sprites/Gamejolt.png" id="11_rnncn"]
 [ext_resource type="Script" uid="uid://dtnxj5jtcyb0x" path="res://Scripts/NewgroundsMenu.gd" id="13_1thib"]
 [ext_resource type="Texture2D" uid="uid://b5jgpskqvimlo" path="res://Sprites/NG.png" id="13_m04lp"]
 
@@ -39,7 +37,7 @@ thickness = 9
 
 [sub_resource type="ImageTexture" id="ImageTexture_31qfy"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=944476508]
 texture_filter = 3
 layout_mode = 3
 anchors_preset = 15
@@ -49,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iwfq2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=675962693]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="BG" type="TextureRect" parent="."]
+[node name="BG" type="TextureRect" parent="." unique_id=1106238597]
 modulate = Color(0.340541, 0.340541, 0.340541, 1)
 material = SubResource("ShaderMaterial_k2yj5")
 layout_mode = 1
@@ -76,14 +74,14 @@ grow_vertical = 2
 texture = ExtResource("2_qoqlk")
 stretch_mode = 1
 
-[node name="Custom" type="CanvasLayer" parent="." node_paths=PackedStringArray("menu", "controller")]
+[node name="Custom" type="CanvasLayer" parent="." unique_id=62018910 node_paths=PackedStringArray("menu", "controller")]
 layer = 128
 visible = false
 script = ExtResource("4_afec1")
 menu = NodePath("../Menu")
 controller = NodePath("..")
 
-[node name="Label2" type="Label" parent="Custom"]
+[node name="Label2" type="Label" parent="Custom" unique_id=789685192]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -105,7 +103,7 @@ text = "Custom Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pag1" type="Control" parent="Custom"]
+[node name="Pag1" type="Control" parent="Custom" unique_id=1929678829]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,7 +111,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Width" type="HSlider" parent="Custom/Pag1"]
+[node name="Width" type="HSlider" parent="Custom/Pag1" unique_id=944964987]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -133,7 +131,7 @@ max_value = 128.0
 value = 80.0
 rounded = true
 
-[node name="Label" type="Label" parent="Custom/Pag1/Width"]
+[node name="Label" type="Label" parent="Custom/Pag1/Width" unique_id=196910994]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -27.0
@@ -144,7 +142,7 @@ theme_override_font_sizes/font_size = 18
 text = "Maze Width (80)"
 vertical_alignment = 1
 
-[node name="Height" type="HSlider" parent="Custom/Pag1"]
+[node name="Height" type="HSlider" parent="Custom/Pag1" unique_id=1803771738]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -164,7 +162,7 @@ max_value = 128.0
 value = 80.0
 rounded = true
 
-[node name="Label" type="Label" parent="Custom/Pag1/Height"]
+[node name="Label" type="Label" parent="Custom/Pag1/Height" unique_id=1161759492]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -27.0
@@ -175,7 +173,7 @@ theme_override_font_sizes/font_size = 18
 text = "Maze Height (50)"
 vertical_alignment = 1
 
-[node name="Ratio" type="HSlider" parent="Custom/Pag1"]
+[node name="Ratio" type="HSlider" parent="Custom/Pag1" unique_id=505616585]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -195,7 +193,7 @@ max_value = 0.02
 step = 0.001
 value = 0.006
 
-[node name="Label" type="Label" parent="Custom/Pag1/Ratio"]
+[node name="Label" type="Label" parent="Custom/Pag1/Ratio" unique_id=974873890]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -27.0
@@ -206,7 +204,7 @@ theme_override_font_sizes/font_size = 18
 text = "Diamond Sp. Ratio (0.006)"
 vertical_alignment = 1
 
-[node name="Valuable" type="HSlider" parent="Custom/Pag1"]
+[node name="Valuable" type="HSlider" parent="Custom/Pag1" unique_id=528305446]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -225,7 +223,7 @@ max_value = 6.0
 value = 4.0
 rounded = true
 
-[node name="Label" type="Label" parent="Custom/Pag1/Valuable"]
+[node name="Label" type="Label" parent="Custom/Pag1/Valuable" unique_id=1955925923]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -27.0
@@ -236,7 +234,7 @@ theme_override_font_sizes/font_size = 18
 text = "Pedestal Amount (4)"
 vertical_alignment = 1
 
-[node name="PlayerSpeed" type="HSlider" parent="Custom/Pag1"]
+[node name="PlayerSpeed" type="HSlider" parent="Custom/Pag1" unique_id=1202962974]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -256,7 +254,7 @@ max_value = 5.0
 step = 0.05
 value = 1.0
 
-[node name="Label" type="Label" parent="Custom/Pag1/PlayerSpeed"]
+[node name="Label" type="Label" parent="Custom/Pag1/PlayerSpeed" unique_id=2055699029]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -27.0
@@ -267,7 +265,7 @@ theme_override_font_sizes/font_size = 18
 text = "Player Spd. Mult. ()"
 vertical_alignment = 1
 
-[node name="HorseSpeed" type="HSlider" parent="Custom/Pag1"]
+[node name="HorseSpeed" type="HSlider" parent="Custom/Pag1" unique_id=200572919]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -287,7 +285,7 @@ max_value = 5.0
 step = 0.05
 value = 1.0
 
-[node name="Label" type="Label" parent="Custom/Pag1/HorseSpeed"]
+[node name="Label" type="Label" parent="Custom/Pag1/HorseSpeed" unique_id=657161320]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -27.0
@@ -298,7 +296,7 @@ theme_override_font_sizes/font_size = 18
 text = "Horse Spd. Mult. ()"
 vertical_alignment = 1
 
-[node name="Item1" type="Control" parent="Custom/Pag1"]
+[node name="Item1" type="Control" parent="Custom/Pag1" unique_id=1991656573]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -312,7 +310,7 @@ offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Option" type="OptionButton" parent="Custom/Pag1/Item1"]
+[node name="Option" type="OptionButton" parent="Custom/Pag1/Item1" unique_id=848749391]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.715
@@ -340,7 +338,7 @@ popup/item_3/text = "Gun"
 popup/item_3/icon = ExtResource("7_qie43")
 popup/item_3/id = 3
 
-[node name="Label" type="Label" parent="Custom/Pag1/Item1/Option"]
+[node name="Label" type="Label" parent="Custom/Pag1/Item1/Option" unique_id=1730731876]
 layout_mode = 1
 offset_left = 6.0
 offset_top = -21.0
@@ -351,7 +349,7 @@ theme_override_font_sizes/font_size = 18
 text = "Item 1 Slot"
 vertical_alignment = 1
 
-[node name="TextEdit" type="LineEdit" parent="Custom/Pag1/Item1"]
+[node name="TextEdit" type="LineEdit" parent="Custom/Pag1/Item1" unique_id=1057770840]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.75
@@ -367,7 +365,7 @@ text = "0"
 max_length = 2
 virtual_keyboard_type = 2
 
-[node name="Item2" type="Control" parent="Custom/Pag1"]
+[node name="Item2" type="Control" parent="Custom/Pag1" unique_id=1487468405]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -381,7 +379,7 @@ offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Option" type="OptionButton" parent="Custom/Pag1/Item2"]
+[node name="Option" type="OptionButton" parent="Custom/Pag1/Item2" unique_id=158046635]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.715
@@ -409,7 +407,7 @@ popup/item_3/text = "Gun"
 popup/item_3/icon = ExtResource("7_qie43")
 popup/item_3/id = 3
 
-[node name="Label" type="Label" parent="Custom/Pag1/Item2/Option"]
+[node name="Label" type="Label" parent="Custom/Pag1/Item2/Option" unique_id=1401886430]
 layout_mode = 1
 offset_left = 6.0
 offset_top = -21.0
@@ -420,7 +418,7 @@ theme_override_font_sizes/font_size = 18
 text = "Item 2 Slot"
 vertical_alignment = 1
 
-[node name="TextEdit" type="LineEdit" parent="Custom/Pag1/Item2"]
+[node name="TextEdit" type="LineEdit" parent="Custom/Pag1/Item2" unique_id=1125717954]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.75
@@ -436,7 +434,7 @@ text = "0"
 max_length = 2
 virtual_keyboard_type = 2
 
-[node name="Spooky" type="Button" parent="Custom/Pag1"]
+[node name="Spooky" type="Button" parent="Custom/Pag1" unique_id=252799854]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -450,15 +448,15 @@ offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(75, 0)
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Disable \"Red Fog\" Mode : No"
 flat = true
 
-[node name="Pag2" type="Control" parent="Custom"]
+[node name="Pag2" type="Control" parent="Custom" unique_id=1693845660]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -467,7 +465,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HorseSpawn" type="HSlider" parent="Custom/Pag2"]
+[node name="HorseSpawn" type="HSlider" parent="Custom/Pag2" unique_id=18510141]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -488,7 +486,7 @@ step = 0.01
 value = 20.0
 rounded = true
 
-[node name="Label" type="Label" parent="Custom/Pag2/HorseSpawn"]
+[node name="Label" type="Label" parent="Custom/Pag2/HorseSpawn" unique_id=967606111]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -27.0
@@ -499,7 +497,7 @@ theme_override_font_sizes/font_size = 18
 text = "Horse Spawn Dur. (12s)"
 vertical_alignment = 1
 
-[node name="HorseAmount" type="HSlider" parent="Custom/Pag2"]
+[node name="HorseAmount" type="HSlider" parent="Custom/Pag2" unique_id=886692387]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -518,7 +516,7 @@ max_value = 20.0
 value = 1.0
 rounded = true
 
-[node name="Label" type="Label" parent="Custom/Pag2/HorseAmount"]
+[node name="Label" type="Label" parent="Custom/Pag2/HorseAmount" unique_id=1644962340]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -27.0
@@ -529,7 +527,7 @@ theme_override_font_sizes/font_size = 18
 text = "Horse Amount (1)"
 vertical_alignment = 1
 
-[node name="DiamondsCollected" type="LineEdit" parent="Custom/Pag2"]
+[node name="DiamondsCollected" type="LineEdit" parent="Custom/Pag2" unique_id=695388956]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -547,7 +545,7 @@ theme_override_font_sizes/font_size = 18
 placeholder_text = "Number"
 virtual_keyboard_type = 2
 
-[node name="Label" type="Label" parent="Custom/Pag2/DiamondsCollected"]
+[node name="Label" type="Label" parent="Custom/Pag2/DiamondsCollected" unique_id=37101794]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -43.5
@@ -559,7 +557,7 @@ text = "Diamonds Collected
 at Start"
 vertical_alignment = 1
 
-[node name="DiamondsBonus" type="LineEdit" parent="Custom/Pag2"]
+[node name="DiamondsBonus" type="LineEdit" parent="Custom/Pag2" unique_id=1944481610]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -577,7 +575,7 @@ theme_override_font_sizes/font_size = 18
 placeholder_text = "Number"
 virtual_keyboard_type = 2
 
-[node name="Label" type="Label" parent="Custom/Pag2/DiamondsBonus"]
+[node name="Label" type="Label" parent="Custom/Pag2/DiamondsBonus" unique_id=493488651]
 layout_mode = 1
 offset_left = -1.0
 offset_top = -42.0
@@ -589,7 +587,7 @@ text = "Diamonds Bonus
 Amount at Start"
 vertical_alignment = 1
 
-[node name="ItemMult" type="HSlider" parent="Custom/Pag2"]
+[node name="ItemMult" type="HSlider" parent="Custom/Pag2" unique_id=1159931948]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -609,7 +607,7 @@ max_value = 4.0
 step = 0.05
 value = 1.0
 
-[node name="Label" type="Label" parent="Custom/Pag2/ItemMult"]
+[node name="Label" type="Label" parent="Custom/Pag2/ItemMult" unique_id=988388571]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -27.0
@@ -620,7 +618,7 @@ theme_override_font_sizes/font_size = 18
 text = "Item Price Mult. (1.0)"
 vertical_alignment = 1
 
-[node name="SpawnHorse" type="Button" parent="Custom/Pag2"]
+[node name="SpawnHorse" type="Button" parent="Custom/Pag2" unique_id=942790440]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -634,15 +632,15 @@ offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(75, 0)
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Spawn Horse at all : Yes"
 flat = true
 
-[node name="Back" type="Button" parent="Custom"]
+[node name="Back" type="Button" parent="Custom" unique_id=486472552]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -655,15 +653,15 @@ offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(75, 0)
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Back"
 flat = true
 
-[node name="Go" type="Button" parent="Custom"]
+[node name="Go" type="Button" parent="Custom" unique_id=1605872188]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -676,15 +674,15 @@ offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(75, 0)
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "-> Go!! <-"
 flat = true
 
-[node name="Reset" type="Button" parent="Custom"]
+[node name="Reset" type="Button" parent="Custom" unique_id=34258397]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -697,15 +695,15 @@ offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(75, 0)
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Reset to Default"
 flat = true
 
-[node name="Left" type="Button" parent="Custom"]
+[node name="Left" type="Button" parent="Custom" unique_id=1258303413]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -714,15 +712,15 @@ offset_top = 29.0
 offset_right = -126.855
 offset_bottom = 60.0
 grow_horizontal = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "<<"
 flat = true
 
-[node name="Right" type="Button" parent="Custom"]
+[node name="Right" type="Button" parent="Custom" unique_id=1585618318]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -731,18 +729,18 @@ offset_top = 29.0
 offset_right = 173.145
 offset_bottom = 60.0
 grow_horizontal = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = ">>"
 flat = true
 
-[node name="Menu" type="CanvasLayer" parent="."]
+[node name="Menu" type="CanvasLayer" parent="." unique_id=801310162]
 layer = 80
 
-[node name="Logo" type="TextureRect" parent="Menu"]
+[node name="Logo" type="TextureRect" parent="Menu" unique_id=1159935834]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -756,7 +754,7 @@ pivot_offset = Vector2(240.5, 62.5)
 texture = ExtResource("3_h7a2f")
 stretch_mode = 4
 
-[node name="Edition" type="TextureRect" parent="Menu/Logo"]
+[node name="Edition" type="TextureRect" parent="Menu/Logo" unique_id=125218796]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -772,7 +770,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("5_fimr5")
 
-[node name="Label" type="Label" parent="Menu/Logo"]
+[node name="Label" type="Label" parent="Menu/Logo" unique_id=1955428018]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -802,7 +800,7 @@ this game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Journey" type="Button" parent="Menu"]
+[node name="Journey" type="Button" parent="Menu" unique_id=469085465]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -814,15 +812,15 @@ offset_right = 181.0
 offset_bottom = 5.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Start Game"
 flat = true
 
-[node name="Custom" type="Button" parent="Menu"]
+[node name="Custom" type="Button" parent="Menu" unique_id=1692897375]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -834,15 +832,15 @@ offset_right = 181.0
 offset_bottom = 42.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Start Custom Game"
 flat = true
 
-[node name="Label" type="Label" parent="Menu/Custom"]
+[node name="Label" type="Label" parent="Menu/Custom" unique_id=89943054]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -861,7 +859,7 @@ text = "Note: Most trophies will be disabled."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Options" type="Button" parent="Menu"]
+[node name="Options" type="Button" parent="Menu" unique_id=1764487943]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -873,15 +871,15 @@ offset_right = 181.0
 offset_bottom = 81.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Options"
 flat = true
 
-[node name="Credits" type="Button" parent="Menu"]
+[node name="Credits" type="Button" parent="Menu" unique_id=698331832]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -893,15 +891,15 @@ offset_right = 181.0
 offset_bottom = 119.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Credits"
 flat = true
 
-[node name="Quit" type="Button" parent="Menu"]
+[node name="Quit" type="Button" parent="Menu" unique_id=1585732449]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -913,47 +911,33 @@ offset_right = 181.0
 offset_bottom = 158.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Quit"
 flat = true
 
-[node name="Gamejolt" type="Button" parent="Menu"]
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 146.0
-offset_bottom = 41.0
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-text = "Game Jolt"
-flat = true
-alignment = 0
-
-[node name="Newgrounds" type="Button" parent="Menu"]
+[node name="Newgrounds" type="Button" parent="Menu" unique_id=559669930]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -145.0
+offset_left = -625.0
 offset_top = 15.0
-offset_right = -14.0
+offset_right = -494.0
 offset_bottom = 41.0
 grow_horizontal = 0
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Newgrounds"
 flat = true
 alignment = 2
 
-[node name="Label2" type="Label" parent="Menu"]
+[node name="Label2" type="Label" parent="Menu" unique_id=1031343620]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -982,7 +966,7 @@ to delete all save data"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="Menu"]
+[node name="Label3" type="Label" parent="Menu" unique_id=1704219070]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -1003,7 +987,7 @@ theme_override_font_sizes/font_size = 18
 text = "Best Time: "
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="Menu"]
+[node name="Label4" type="Label" parent="Menu" unique_id=1875889710]
 visible = false
 anchors_preset = 4
 anchor_top = 0.5
@@ -1025,199 +1009,12 @@ text = "HOSE NAME:
 "
 vertical_alignment = 1
 
-[node name="Gamejolt" type="CanvasLayer" parent="."]
-layer = 128
-visible = false
-script = ExtResource("11_3fnrj")
-
-[node name="BG" type="ColorRect" parent="Gamejolt"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1.27546e-06, 0.291127, 1.44392e-07, 0.843137)
-
-[node name="Label2" type="Label" parent="Gamejolt"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -222.0
-offset_top = 35.0
-offset_right = 222.0
-offset_bottom = 53.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 0
-theme_override_constants/paragraph_spacing = 0
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-text = "Log-in to Game Jolt to
-access trophies and
-leaderboards!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="RichTextLabel" parent="Gamejolt"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -184.0
-offset_top = 356.0
-offset_right = 184.0
-offset_bottom = 426.0
-grow_horizontal = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/normal_font = ExtResource("3_iwfq2")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "Awaiting input from player..."
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Gamejolt"]
-texture_filter = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -164.0
-offset_top = 110.0
-offset_right = 164.0
-offset_bottom = 150.0
-grow_horizontal = 2
-texture = ExtResource("11_rnncn")
-stretch_mode = 5
-
-[node name="Close" type="Button" parent="Gamejolt"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = 189.0
-offset_right = 75.0
-offset_bottom = 220.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-text = "Close"
-flat = true
-
-[node name="Log" type="Button" parent="Gamejolt"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = 80.0
-offset_right = -75.0
-offset_bottom = 111.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-text = "Log-in"
-flat = true
-
-[node name="Reset" type="Button" parent="Gamejolt"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 75.0
-offset_top = 80.0
-offset_right = 225.0
-offset_bottom = 111.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-text = "Reset Trophies"
-flat = true
-
-[node name="Username" type="LineEdit" parent="Gamejolt"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -35.0
-offset_right = 125.0
-offset_bottom = -3.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(100, 16)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-
-[node name="Label" type="Label" parent="Gamejolt/Username"]
-layout_mode = 1
-offset_left = 3.0
-offset_top = -28.0
-offset_right = 199.0
-offset_bottom = -2.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-text = "Username"
-vertical_alignment = 1
-
-[node name="GameToken" type="LineEdit" parent="Gamejolt"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = 37.0
-offset_right = 125.0
-offset_bottom = 69.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(100, 16)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-virtual_keyboard_type = 6
-secret = true
-
-[node name="Label" type="Label" parent="Gamejolt/GameToken"]
-layout_mode = 1
-offset_left = 3.0
-offset_top = -28.0
-offset_right = 199.0
-offset_bottom = -2.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-text = "Game Token"
-vertical_alignment = 1
-
-[node name="Newgrounds" type="CanvasLayer" parent="."]
+[node name="Newgrounds" type="CanvasLayer" parent="." unique_id=413324161]
 layer = 128
 visible = false
 script = ExtResource("13_1thib")
 
-[node name="BG" type="ColorRect" parent="Newgrounds"]
+[node name="BG" type="ColorRect" parent="Newgrounds" unique_id=613853267]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1225,7 +1022,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.336362, 0.197737, 0.0448659, 0.843137)
 
-[node name="Label2" type="Label" parent="Newgrounds"]
+[node name="Label2" type="Label" parent="Newgrounds" unique_id=406353750]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1249,7 +1046,7 @@ leaderboards!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="RichTextLabel" parent="Newgrounds"]
+[node name="Label3" type="RichTextLabel" parent="Newgrounds" unique_id=1876357703]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1259,9 +1056,9 @@ offset_right = 184.0
 offset_bottom = 371.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/normal_font = ExtResource("3_iwfq2")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
@@ -1270,7 +1067,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Newgrounds"]
+[node name="TextureRect" type="TextureRect" parent="Newgrounds" unique_id=1145415613]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1285,7 +1082,7 @@ pivot_offset = Vector2(95, 0)
 texture = ExtResource("13_m04lp")
 stretch_mode = 5
 
-[node name="Close" type="Button" parent="Newgrounds"]
+[node name="Close" type="Button" parent="Newgrounds" unique_id=754533647]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1297,15 +1094,15 @@ offset_right = 75.0
 offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Close"
 flat = true
 
-[node name="Log" type="Button" parent="Newgrounds"]
+[node name="Log" type="Button" parent="Newgrounds" unique_id=2061160464]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1317,32 +1114,32 @@ offset_right = 75.0
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
 text = "Click here to log-in
 to your account."
 flat = true
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=303007831]
 stream = ExtResource("6_e2xy7")
 volume_db = 3.0
 bus = &"SFX"
 
-[node name="Pop" type="AudioStreamPlayer" parent="."]
+[node name="Pop" type="AudioStreamPlayer" parent="." unique_id=1540166883]
 stream = ExtResource("8_u7cqb")
 volume_db = -1.0
 pitch_scale = 0.4
 bus = &"SFX_Filtered"
 
-[node name="Options" parent="." node_paths=PackedStringArray("mainMenu", "clickSFX") instance=ExtResource("6_cqjrg")]
+[node name="Options" parent="." unique_id=1164424636 node_paths=PackedStringArray("mainMenu", "clickSFX") instance=ExtResource("6_cqjrg")]
 visible = false
 mainMenu = NodePath("../Menu")
 clickSFX = NodePath("../Click")
 
-[node name="Loading" type="Control" parent="." node_paths=PackedStringArray("bg", "pop")]
+[node name="Loading" type="Control" parent="." unique_id=1311837282 node_paths=PackedStringArray("bg", "pop")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1354,7 +1151,7 @@ script = ExtResource("7_e2xy7")
 bg = NodePath("../BG")
 pop = NodePath("../Pop")
 
-[node name="Label2" type="Label" parent="Loading"]
+[node name="Label2" type="Label" parent="Loading" unique_id=1527565181]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1380,10 +1177,10 @@ text = "Loading world"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer2" type="Timer" parent="Loading"]
+[node name="Timer2" type="Timer" parent="Loading" unique_id=1652666216]
 one_shot = true
 
-[node name="HSlider" type="HSlider" parent="Loading"]
+[node name="HSlider" type="HSlider" parent="Loading" unique_id=1882832742]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1406,7 +1203,7 @@ step = 0.1
 editable = false
 scrollable = false
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=2082929183]
 
 [connection signal="value_changed" from="Custom/Pag1/Width" to="Custom" method="_on_width_value_changed"]
 [connection signal="value_changed" from="Custom/Pag1/Height" to="Custom" method="_on_height_value_changed"]
@@ -1435,11 +1232,7 @@ scrollable = false
 [connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Menu/Gamejolt" to="." method="_on_gamejolt_pressed"]
 [connection signal="pressed" from="Menu/Newgrounds" to="." method="_on_newgrounds_pressed"]
-[connection signal="pressed" from="Gamejolt/Close" to="Gamejolt" method="_on_close_pressed"]
-[connection signal="pressed" from="Gamejolt/Log" to="Gamejolt" method="_on_log_pressed"]
-[connection signal="pressed" from="Gamejolt/Reset" to="Gamejolt" method="_on_reset_pressed"]
 [connection signal="pressed" from="Newgrounds/Close" to="Newgrounds" method="_on_close_pressed"]
 [connection signal="pressed" from="Newgrounds/Log" to="Newgrounds" method="_on_log_pressed"]
 [connection signal="timeout" from="Loading/Timer2" to="Loading" method="_on_timer_2_timeout"]

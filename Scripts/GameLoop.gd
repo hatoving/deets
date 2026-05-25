@@ -286,5 +286,3 @@ func _process(delta: float) -> void:
 		diamondRegenDuration += randf_range(4, 8)
 		print("Diamond regen takes " + str(diamondRegenDuration) + " seconds now...")
 		diamondRegenTimer = diamondRegenDuration
-	
-	Global.change_discord_state("game")

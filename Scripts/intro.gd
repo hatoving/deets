@@ -77,8 +77,6 @@ func _process(delta: float) -> void:
 				cutsceneTimer = nextDuration
 				beginIndex += 1
 				updateIndex = true
-	
-	Global.change_discord_state("intro")
 
 func _on_horse_talk_begin_body_entered(body: Node3D) -> void:
 	if body.name.contains("Player"):

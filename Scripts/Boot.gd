@@ -16,7 +16,6 @@ func _ready() -> void:
 		$Click/Button.pivot_offset = $Click/Button.size / 2
 	else:
 		_start_boot_vid()
-	Global.change_discord_state("start")
 
 func _go():
 	print(SaveData.gameSave.whereAt)

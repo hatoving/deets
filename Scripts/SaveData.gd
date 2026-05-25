@@ -99,49 +99,41 @@ var achDetail = {
 	"leaving" : {
 		"name" : "Fuck this shit",
 		"points" : 5,
-		"gamejoltID" : "265362",
 		"newgroundsID" : NewgroundsIds.MedalId.FuckThisShit
 	},
 	"allHintsWrong" : {
 		"name" : "Who are you again?",
 		"points" : 5,
-		"gamejoltID" : "265363",
 		"newgroundsID" : NewgroundsIds.MedalId.WhoAreYouAgain
 	},
 	"horseFood" : {
 		"name" : "But HOW hungry can one horse be?",
 		"points" : 10,
-		"gamejoltID" : "265364",
 		"newgroundsID" : NewgroundsIds.MedalId.ButHowHungryCanOneHorseBe
 	},
 	"gun" : {
 		"name" : "Shot dead in the bronx",
 		"points" : 15,
-		"gamejoltID" : "265365",
 		"newgroundsID" : NewgroundsIds.MedalId.ShotDeadInTheBronx
 	},
 	"gun2" : {
 		"name" : "Why even use a hammer when you have this",
 		"points" : 10,
-		"gamejoltID" : "265366",
 		"newgroundsID" : NewgroundsIds.MedalId.WhyEvenUseAHammerWhenYouHaveThis
 	},
 	"die" : {
 		"name" : "Neigh.",
 		"points" : 5,
-		"gamejoltID" : "265367",
 		"newgroundsID" : NewgroundsIds.MedalId.Neigh
 	},
 	"beat" : {
 		"name" : "The prize of a lifetime",
 		"points" : 20,
-		"gamejoltID" : "265368",
 		"newgroundsID" : NewgroundsIds.MedalId.ThePrizeOfALifetime
 	},
 	"customBeat" : {
 		"name" : "This one was super hard, guys",
 		"points" : 5,
-		"gamejoltID" : "265369",
 		"newgroundsID" : NewgroundsIds.MedalId.ThisOneWasSuperHardGuys
 	}
 }
@@ -205,9 +197,6 @@ func _unlockAch(key):
 			if i != "customBeat" and Global.customMode:
 				return
 			var loggedin = false
-			if Global.gamejolt_loggedIn:
-				loggedin = true
-				Global.gamejolt.trophy_add_achieved(int(achDetail[i].gamejoltID))
 			if NG.signed_in:
 				loggedin = true
 				NG.medal_unlock(achDetail[i].newgroundsID)

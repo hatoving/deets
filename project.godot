@@ -33,9 +33,8 @@ general/stretch/mode="canvas_items"
 
 SaveData="*res://Scripts/SaveData.gd"
 Global="*res://Scenes/Global.tscn"
-NG="*res://addons/newgrounds/scripts/newgrounds.tscn"
-NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+NG="*uid://cx0lbddb6da4w"
+NGCloudSave="*uid://bhdr174ad0y5f"
 
 [display]
 
@@ -51,7 +50,7 @@ project/assembly_name="DEETS"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg", "res://addons/gamejolt/plugin.cfg", "res://addons/newgrounds/plugin.cfg")
+enabled=PackedStringArray("res://addons/newgrounds/plugin.cfg")
 
 [file_customization]
 

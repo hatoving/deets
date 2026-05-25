@@ -89,5 +89,3 @@ func _process(delta: float) -> void:
 		cutsceneTimer = nextDuration
 		index += 1
 		updateIndex = true
-	
-	Global.change_discord_state("leave")

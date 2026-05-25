@@ -110,10 +110,7 @@ func _process(delta: float) -> void:
 		$Menu/Label4.text = url if url != null else "no"
 		
 		if url != null and url.contains("isolated.ungrounded.net"):
-			$Menu/Gamejolt.visible = false
 			$Menu/Newgrounds.visible = true
-	
-	Global.change_discord_state("menu")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.is_echo():
@@ -179,9 +176,6 @@ func _on_custom_pressed() -> void:
 		else:
 			$Custom.show()
 			$Menu.hide()
-
-func _on_gamejolt_pressed() -> void:
-	$Gamejolt.visible = true
 
 func _on_newgrounds_pressed() -> void:
 	$Newgrounds.visible = true

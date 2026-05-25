@@ -95,9 +95,6 @@ func _process(delta: float) -> void:
 	$RichTextLabel.visible_ratio += delta
 	
 	if SaveData.getSetting("gameplay", "leaderboard") and submit:
-		if Global.gamejolt_loggedIn and !submittedGJ:
-			Global.gamejolt.scores_add(Global.formatTime(Global.finalTime), Global.finalTime, "", 1001059)
-			submittedGJ = true
 		if NG.signed_in and !submittedNG:
 			submittedNG = true
 			NG.scoreboard_submit_time(NewgroundsIds.ScoreboardId.DefaultGame, Global.finalTime)
@@ -230,5 +227,3 @@ func _process(delta: float) -> void:
 		cutsceneTimer = nextDuration
 		index += 1
 		updateIndex = true
-	
-	Global.change_discord_state("won")

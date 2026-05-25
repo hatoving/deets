@@ -15,10 +15,6 @@ func _ready() -> void:
 		SaveData._unlockAch("die")
 	
 	$Timer.start(2.0)
-	
-
-func _process(delta: float) -> void:
-	Global.change_discord_state("dead")
 
 func _on_timer_timeout() -> void:
 	$Undertale.play()

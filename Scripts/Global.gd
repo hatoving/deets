@@ -12,10 +12,6 @@ var currentMazeData
 
 var os = OS.get_name()
 
-var gamejolt : GameJoltAPI
-var gamejolt_loggedIn = false
-
-
 var lerpEngineTimeScaleTarget = 1.0
 
 var shopUI_XTarget = -342.0
@@ -121,9 +117,9 @@ func _showHowToPlayStraight():
 
 func formatTime(timeSeconds: float, addText : bool = true) -> String:
 	var total_milliseconds = int(timeSeconds * 1000)
-	var hours = total_milliseconds / 3600000
-	var minutes = (total_milliseconds % 3600000) / 60000
-	var seconds = (total_milliseconds % 60000) / 1000
+	var hours = total_milliseconds / 3600000.0
+	var minutes = (total_milliseconds % 3600000) / 60000.0
+	var seconds = (total_milliseconds % 60000) / 1000.0
 	var milliseconds = total_milliseconds % 1000
 	
 	return ("%02d:%02d:%02d:%02d" % [hours, minutes, seconds, milliseconds]) + (("\nCUSTOM" if customMode else "") if addText else "")
@@ -153,27 +149,7 @@ func updatePitch(bus_name: String, effect_index: int) -> void:
 	var effect := AudioServer.get_bus_effect(bus_index, effect_index) as AudioEffectPitchShift
 	effect.pitch_scale = lerp(effect.pitch_scale, lerpEngineTimeScaleTarget, 0.3)
 
-func _ready() -> void:
-	var gj = GameJoltAPI.new()
-	gj.name = "GameJoltAPI"
-	add_child(gj)
-	gamejolt = gj
-	
-	gamejolt.game_id = "988422"
-	gamejolt.private_key = "9b38d8656daf983951253b2c81d80d01"
-	#gamejolt.user_auth("hatoving", "gametokentoving@534")
-	
-	if Global.os != "Web":
-		DiscordRPC.app_id = 1364620385571831888
-		DiscordRPC.large_image = "title"
-		DiscordRPC.large_image_text = "horse"
-		DiscordRPC.start_timestamp = int(Time.get_unix_time_from_system())
-
 func _process(delta: float) -> void:
-	if gamejolt == null:
-		if get_node("GameJoltAPI"):
-			gamejolt = $GameJoltAPI
-			
 	if SaveData.gameSave.whereAt < 1:
 		if Global.os == "Web":
 			$PauseUI/Main/Exit.visible = false
@@ -288,43 +264,6 @@ func _process(delta: float) -> void:
 	
 	$ShopUI/OutOfOrder/Info.position.x = $ShopUI/Control/Item1.position.x
 	$ShopUI/OutOfOrder/HintText2.position.x = $ShopUI/Control/Item1.position.x + 311.0
-
-func change_discord_state(state: String) -> void:
-	if os != "Web":
-		if state == "start":
-			DiscordRPC.state = "revving up"
-			DiscordRPC.details = "the best video game that features a horse (question mark)"
-		elif state == "intro":
-			DiscordRPC.state = "straight introing it"
-			DiscordRPC.details = "the best video game that features a horse (question mark)"
-			DiscordRPC.small_image = "intro"
-			DiscordRPC.small_image_text = "your fate is sealed"
-		elif state == "menu":
-			DiscordRPC.state = "in da menu"
-			DiscordRPC.details = "the best video game that features a horse (question mark)"
-			DiscordRPC.small_image = "menu"
-			DiscordRPC.small_image_text = "hurry up and play buddy"
-		elif state == "game":
-			DiscordRPC.state = "escaping the 'horse of maze'"
-			DiscordRPC.details = "the best video game that features a horse (question mark)"
-			DiscordRPC.small_image = "game"
-			DiscordRPC.small_image_text = "good luck (youll need it)"
-		elif state == "won":
-			DiscordRPC.state = "getting one dolla"
-			DiscordRPC.details = "the best video game that features a horse (question mark)"
-			DiscordRPC.small_image = "won"
-			DiscordRPC.small_image_text = "congrats ig"
-		elif state == "leave":
-			DiscordRPC.state = "doing something better than this"
-			DiscordRPC.details = "the best video game that features a horse (question mark)"
-			DiscordRPC.small_image = "leave"
-			DiscordRPC.small_image_text = "fuck this shit im out"
-		elif state == "dead":
-			DiscordRPC.state = "dead."
-			DiscordRPC.details = "the best video game that features a horse (question mark)"
-			DiscordRPC.small_image = "dead"
-			DiscordRPC.small_image_text = "L bozo"
-		DiscordRPC.refresh()
 
 func _onPauseMain_ResumePressed() -> void:
 	lastMenu = $PauseUI/Main
