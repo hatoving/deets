@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckeiueqdv8s22"]
+[gd_scene format=3 uid="uid://ckeiueqdv8s22"]
 
 [ext_resource type="Script" uid="uid://d05hj8ofpjm3o" path="res://boot.gd" id="1_6cbyf"]
 [ext_resource type="VideoStream" uid="uid://b0b024xrmyx5h" path="res://Intro.ogv" id="2_tgoet"]
 [ext_resource type="Texture2D" uid="uid://bjc3q8sex7nrb" path="res://Sprites/Click.png" id="2_x8jv0"]
 [ext_resource type="FontFile" uid="uid://c3h177hi5b8r3" path="res://Fonts/Munson_Roman.otf" id="3_pd6mx"]
 
-[node name="Boot" type="Node"]
+[node name="Boot" type="Node" unique_id=1078130791]
 script = ExtResource("1_6cbyf")
 
-[node name="Click" type="Control" parent="."]
+[node name="Click" type="Control" parent="." unique_id=1289302275]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="Click"]
+[node name="BG" type="ColorRect" parent="Click" unique_id=1641252260]
 modulate = Color(0.341176, 0.341176, 0.341176, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Button" type="TextureButton" parent="Click"]
+[node name="Button" type="TextureButton" parent="Click" unique_id=1794261642]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,7 +43,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_x8jv0")
 stretch_mode = 4
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1907582375]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -52,7 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="Control"]
+[node name="BG" type="ColorRect" parent="Control" unique_id=411716570]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,7 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Video" type="VideoStreamPlayer" parent="Control"]
+[node name="Video" type="VideoStreamPlayer" parent="Control" unique_id=662764903]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,7 +80,7 @@ stream = ExtResource("2_tgoet")
 buffering_msec = 250
 bus = &"Master_Filtered"
 
-[node name="Text" type="RichTextLabel" parent="Control"]
+[node name="Text" type="RichTextLabel" parent="Control" unique_id=106625736]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -99,7 +99,7 @@ Headphones recommended
 or some bullshit idk"
 fit_content = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=595500798]
 one_shot = true
 
 [connection signal="mouse_entered" from="Click/Button" to="." method="_on_click_mouse_entered"]

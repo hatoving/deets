@@ -8,14 +8,20 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="deets"
-config/version="1.0.2"
+config/name="DEETS"
+config/description="Horse?"
+config/version="1.1.0"
 run/main_scene="uid://ckeiueqdv8s22"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/use_custom_user_dir=true
+config/custom_user_dir_name="DEETS"
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://pbjy0yfc55os"
-config/windows_native_icon="res://icon.ico"
 
 [audio]
 
@@ -38,6 +44,10 @@ window/size/viewport_height=480
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="deets"
 
 [editor_plugins]
 
@@ -161,6 +171,6 @@ textures/vram_compression/import_etc2_astc=true
 environment/ssao/quality=0
 environment/ssil/quality=0
 environment/glow/upscale_mode=0
-environment/screen_space_reflection/roughness_quality=0
 environment/subsurface_scattering/subsurface_scattering_quality=0
 environment/volumetric_fog/use_filter=0
+environment/screen_space_reflection/roughness_quality=0
