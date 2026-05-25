@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dlmjot35qurvq"]
 
-[ext_resource type="Shader" uid="uid://b7gxrmj6ufsw7" path="res://Shaders/Scroll.gdshader" id="1_h7a2f"]
+[ext_resource type="Shader" uid="uid://6tovx0gcayfv" path="res://Shaders/Scroll.gdshader" id="1_h7a2f"]
 [ext_resource type="Script" uid="uid://cqo46rechwyed" path="res://Scripts/MainMenu.gd" id="1_iwfq2"]
-[ext_resource type="Texture2D" uid="uid://cfvnlfof4ys6c" path="res://Sprites/HorseBackground.png" id="2_qoqlk"]
+[ext_resource type="Texture2D" uid="uid://clnojsm478ou7" path="res://Sprites/BackgroundNoHorse.png" id="2_riqfo"]
 [ext_resource type="Texture2D" uid="uid://cd1paiyx306jc" path="res://Sprites/Logo.png" id="3_h7a2f"]
 [ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="3_iwfq2"]
+[ext_resource type="Texture2D" uid="uid://dy11y08ywgsbj" path="res://Sprites/Background.png" id="4_7v4os"]
 [ext_resource type="Script" uid="uid://dkxa6ojulscp3" path="res://Scripts/CustomMenu.gd" id="4_afec1"]
 [ext_resource type="Texture2D" uid="uid://c27cfwctp85rs" path="res://Sprites/Edition.pnv.png" id="5_fimr5"]
 [ext_resource type="Texture2D" uid="uid://c47kb70i38u3c" path="res://Sprites/HorseFood.png" id="6_31qfy"]
@@ -17,9 +18,15 @@
 [ext_resource type="Script" uid="uid://dtnxj5jtcyb0x" path="res://Scripts/NewgroundsMenu.gd" id="13_1thib"]
 [ext_resource type="Texture2D" uid="uid://b5jgpskqvimlo" path="res://Sprites/NG.png" id="13_m04lp"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2yj5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7v4os"]
 shader = ExtResource("1_h7a2f")
-shader_parameter/speed = 0.35
+shader_parameter/speed = 0.1
+shader_parameter/zoom = Vector2(0.4, 0.4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjscj"]
+shader = ExtResource("1_h7a2f")
+shader_parameter/speed = 0.2
+shader_parameter/zoom = Vector2(0.4, 0.4)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_qie43"]
 color = Color(0.311588, 0.311588, 0.311588, 1)
@@ -56,22 +63,36 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="BG" type="TextureRect" parent="." unique_id=1106238597]
-modulate = Color(0.340541, 0.340541, 0.340541, 1)
-material = SubResource("ShaderMaterial_k2yj5")
+[node name="BG" type="Control" parent="." unique_id=763847548]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -766.0
-offset_top = -539.0
-offset_right = 766.0
-offset_bottom = 539.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_qoqlk")
+
+[node name="TextureRect" type="TextureRect" parent="BG" unique_id=656374912]
+texture_filter = 1
+material = SubResource("ShaderMaterial_7v4os")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_riqfo")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="BG" unique_id=358871873]
+texture_filter = 1
+material = SubResource("ShaderMaterial_pjscj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7v4os")
 stretch_mode = 1
 
 [node name="Custom" type="CanvasLayer" parent="." unique_id=62018910 node_paths=PackedStringArray("menu", "controller")]
@@ -1144,7 +1165,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_e2xy7")
-bg = NodePath("../BG")
+bg = NodePath("")
 pop = NodePath("../Pop")
 
 [node name="Label2" type="Label" parent="Loading" unique_id=1527565181]

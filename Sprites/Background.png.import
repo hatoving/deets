@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfvnlfof4ys6c"
-path="res://.godot/imported/HorseBackground.png-c128cf766f79303f7f3552d986b5f9f9.ctex"
+uid="uid://dy11y08ywgsbj"
+path="res://.godot/imported/Background.png-35d93eb57723ae0fb58ad0b59abe54b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HorseBackground.png"
-dest_files=["res://.godot/imported/HorseBackground.png-c128cf766f79303f7f3552d986b5f9f9.ctex"]
+source_file="res://Sprites/Background.png"
+dest_files=["res://.godot/imported/Background.png-35d93eb57723ae0fb58ad0b59abe54b6.ctex"]
 
 [params]
 

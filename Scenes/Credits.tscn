@@ -1,16 +1,23 @@
 [gd_scene format=3 uid="uid://pmhlay158ll5"]
 
-[ext_resource type="Texture2D" uid="uid://cfvnlfof4ys6c" path="res://Sprites/HorseBackground.png" id="1_4qwwl"]
 [ext_resource type="Script" uid="uid://3v0s42t3wape" path="res://Scripts/Credits.gd" id="1_k2yj5"]
-[ext_resource type="Shader" uid="uid://b7gxrmj6ufsw7" path="res://Shaders/Scroll.gdshader" id="1_obosj"]
+[ext_resource type="Shader" uid="uid://6tovx0gcayfv" path="res://Shaders/Scroll.gdshader" id="1_obosj"]
 [ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="1_ynf4x"]
+[ext_resource type="Texture2D" uid="uid://clnojsm478ou7" path="res://Sprites/BackgroundNoHorse.png" id="3_lpub1"]
+[ext_resource type="Texture2D" uid="uid://dy11y08ywgsbj" path="res://Sprites/Background.png" id="4_640q4"]
 [ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="5_xic2l"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2yj5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qoai"]
 shader = ExtResource("1_obosj")
-shader_parameter/speed = 0.35
+shader_parameter/speed = 0.1
+shader_parameter/zoom = Vector2(0.4, 0.4)
 
-[node name="Credits" type="Control"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jpdlp"]
+shader = ExtResource("1_obosj")
+shader_parameter/speed = 0.2
+shader_parameter/zoom = Vector2(0.4, 0.4)
+
+[node name="Credits" type="Control" unique_id=2100615855]
 texture_filter = 3
 layout_mode = 3
 anchors_preset = 15
@@ -20,26 +27,48 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k2yj5")
 
-[node name="BG" type="TextureRect" parent="."]
-modulate = Color(0.340541, 0.340541, 0.340541, 1)
-material = SubResource("ShaderMaterial_k2yj5")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=445068733]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -766.0
-offset_top = -539.0
-offset_right = 766.0
-offset_bottom = 539.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("1_4qwwl")
+color = Color(0, 0, 0, 1)
+
+[node name="BG" type="Control" parent="." unique_id=1300094355]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="BG" unique_id=141122067]
+texture_filter = 1
+material = SubResource("ShaderMaterial_5qoai")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lpub1")
 stretch_mode = 1
 
-[node name="Text" type="RichTextLabel" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="BG" unique_id=449222855]
+texture_filter = 1
+material = SubResource("ShaderMaterial_jpdlp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_640q4")
+stretch_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="." unique_id=1806920290]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 15
@@ -164,7 +193,7 @@ If I missed some assets, or if I've accidentally used yours without permission, 
 
 "
 
-[node name="Arrow" type="Label" parent="."]
+[node name="Arrow" type="Label" parent="." unique_id=259462105]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 15.0
@@ -174,7 +203,7 @@ theme_override_fonts/font = ExtResource("1_ynf4x")
 theme_override_font_sizes/font_size = 64
 text = "↓"
 
-[node name="Back" type="Button" parent="."]
+[node name="Back" type="Button" parent="." unique_id=1917441744]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -187,17 +216,17 @@ offset_right = 181.0
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_fonts/font = ExtResource("1_ynf4x")
 theme_override_font_sizes/font_size = 18
 text = "Back to Menu"
 flat = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1541203348]
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1175850988]
 stream = ExtResource("5_xic2l")
 volume_db = 3.0
 bus = &"SFX"
