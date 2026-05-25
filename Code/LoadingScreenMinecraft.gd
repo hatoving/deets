@@ -28,4 +28,4 @@ func _on_timer_2_timeout() -> void:
 	else:
 		Global.uiFade = true
 		Global.get_node("Misc/Control/Fade").color.a = 1.0
-		get_tree().change_scene_to_file("res://Level.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Level.tscn")

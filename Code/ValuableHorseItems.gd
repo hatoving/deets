@@ -10,7 +10,7 @@ var done = false
 
 var screamTimer = 0.0
 
-var explosionScene = preload("res://LevelGen/Explosion.tscn")
+var explosionScene = preload("res://Scenes/LevelGen/Explosion.tscn")
 var explosionTimer = 0.0
 
 func _ready() -> void:

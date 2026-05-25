@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c62jfox75hss4"]
+[gd_scene format=3 uid="uid://c62jfox75hss4"]
 
 [ext_resource type="Script" uid="uid://bi5jsvga2767g" path="res://Code/Global.gd" id="1_75gqh"]
 [ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="2_ard7p"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dyf6n2m0j2rbc" path="res://Sprites/Crosshair.png" id="5_b1ap6"]
 [ext_resource type="Texture2D" uid="uid://cw444jus8r4r6" path="res://Sprites/Inventory/hotbar_1.png" id="6_0pijh"]
 [ext_resource type="Texture2D" uid="uid://dorvf4k7hfici" path="res://Sprites/Hammer.png" id="6_pbn0o"]
-[ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Options.tscn" id="9_vdf0c"]
+[ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Scenes/Options.tscn" id="9_vdf0c"]
 [ext_resource type="Texture2D" uid="uid://c552qij2v45do" path="res://Sprites/Achievements/UnlockStyle/Xbox/base.png" id="10_f86ji"]
 [ext_resource type="Texture2D" uid="uid://diokyotbvmhgi" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon_bg.png" id="11_x5224"]
 [ext_resource type="Texture2D" uid="uid://bsbqko746uxke" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon_rings.png" id="12_jjvpv"]

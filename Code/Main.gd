@@ -1,6 +1,6 @@
 extends Node
 
-var root_scene_path = "res://Test.tscn"
+var root_scene_path = "res://Scenes/Test.tscn"
 var current_scene = null
 
 func _ready():

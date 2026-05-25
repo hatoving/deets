@@ -82,7 +82,7 @@ func _process(delta: float) -> void:
 				SaveData._unlockAch("leaving")
 				updateIndex = false
 			4:
-				get_tree().change_scene_to_file("res://GameOver.tscn")
+				get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 	
 	cutsceneTimer -= delta
 	if cutsceneTimer <= 0.0:

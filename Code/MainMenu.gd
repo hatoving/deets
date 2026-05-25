@@ -98,7 +98,7 @@ func _process(delta: float) -> void:
 			SaveData._loadGame()
 			
 			Global.get_node("MainMenu").stop()
-			get_tree().change_scene_to_file("res://Boot.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Boot.tscn")
 	else:
 		deleteTimer = 6.0
 		
@@ -168,7 +168,7 @@ func _on_quit_pressed() -> void:
 		get_tree().quit()
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://Credits.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
 
 
 func _on_custom_pressed() -> void:

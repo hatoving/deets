@@ -1,6 +1,6 @@
 extends InteractableStaticBody3D
 
-var explosionScene = preload("res://LevelGen/Explosion.tscn")
+var explosionScene = preload("res://Scenes/LevelGen/Explosion.tscn")
 
 @export var introManager : Node
 

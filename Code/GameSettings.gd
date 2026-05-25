@@ -28,11 +28,11 @@ func _on_speedrun_pressed() -> void:
 
 func _on_horsecraft_pressed() -> void:
 	Global.get_node("MainMenu").stop()
-	get_tree().change_scene_to_file("res://Minecraft.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Minecraft.tscn")
 
 func _on_intro_pressed() -> void:
 	Global.get_node("MainMenu").stop()
-	get_tree().change_scene_to_file("res://Intro.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Intro.tscn")
 
 func _on_leaderbaord_pressed() -> void:
 	SaveData.setSetting("gameplay", "leaderboard", !SaveData.getSetting("gameplay", "leaderboard"))

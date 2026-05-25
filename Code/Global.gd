@@ -350,7 +350,7 @@ func _on_exit_pressed() -> void:
 		_togglePause()
 		gameUI_reveal = false
 		$GameUI/Control.modulate.a = 0.0
-		get_tree().change_scene_to_file("res://MainMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 
 func _on_backHTP_pressed() -> void:
 	lastMenu = $PauseUI/Main

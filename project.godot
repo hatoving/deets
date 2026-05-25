@@ -32,7 +32,7 @@ general/stretch/mode="canvas_items"
 [autoload]
 
 SaveData="*res://Code/SaveData.gd"
-Global="*res://Global.tscn"
+Global="*res://Scenes/Global.tscn"
 NG="*res://addons/newgrounds/scripts/newgrounds.tscn"
 NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
@@ -47,7 +47,7 @@ window/stretch/aspect="expand"
 
 [dotnet]
 
-project/assembly_name="deets"
+project/assembly_name="DEETS"
 
 [editor_plugins]
 

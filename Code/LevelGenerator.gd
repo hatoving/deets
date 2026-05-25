@@ -10,18 +10,18 @@ enum POINT_TYPE {
 	END
 }
 
-var thing = preload("res://LevelGen/Structures/thing.tscn")
+var thing = preload("res://Scenes/LevelGen/Structures/thing.tscn")
 
-var borderModel = preload("res://LevelGen/Structures/Border.tscn")
-var floorModel = preload("res://LevelGen/Structures/Floor.tscn")
-var shopModel = preload("res://LevelGen/Structures/PortableShop.tscn")
-var boardModel = preload("res://LevelGen/Structures/Board.tscn")
-var shopPointerModel = preload("res://LevelGen/Structures/ShopPointer.tscn")
-var fenceModel = preload("res://LevelGen/Structures/Fence.tscn")
-var valuableHorseItemModel = preload("res://LevelGen/Structures/ValuableHorseItem.tscn")
+var borderModel = preload("res://Scenes/LevelGen/Structures/Border.tscn")
+var floorModel = preload("res://Scenes/LevelGen/Structures/Floor.tscn")
+var shopModel = preload("res://Scenes/LevelGen/Structures/PortableShop.tscn")
+var boardModel = preload("res://Scenes/LevelGen/Structures/Board.tscn")
+var shopPointerModel = preload("res://Scenes/LevelGen/Structures/ShopPointer.tscn")
+var fenceModel = preload("res://Scenes/LevelGen/Structures/Fence.tscn")
+var valuableHorseItemModel = preload("res://Scenes/LevelGen/Structures/ValuableHorseItem.tscn")
 
-var playerScene = preload("res://LevelGen/Player.tscn")
-var diamondScene = preload("res://LevelGen/Diamond.tscn")
+var playerScene = preload("res://Scenes/LevelGen/Player.tscn")
+var diamondScene = preload("res://Scenes/LevelGen/Diamond.tscn")
 
 @export var mazeWidth = 10
 @export var mazeHeight = 10

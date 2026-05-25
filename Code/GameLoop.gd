@@ -73,7 +73,7 @@ var itemsInInventory = {
 var currentlySelectedItem = 0
 var endTimer = 5.0
 
-var horseScene = preload("res://LevelGen/Structures/Horse.tscn")
+var horseScene = preload("res://Scenes/LevelGen/Structures/Horse.tscn")
 
 signal alertHorseOfSound(Vector3)
 signal rageHorse()
@@ -195,7 +195,7 @@ func _process(delta: float) -> void:
 		endTimer -= delta
 		if endTimer <= 0.0:
 			Global.finalTime = speedRunTimer
-			get_tree().change_scene_to_file("res://Ending.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Ending.tscn")
 	
 	if Global.currentPlayer:
 		if Global.currentPlayer.position.y >= 0.0 and !start:

@@ -22,11 +22,11 @@ func _go():
 	print(SaveData.gameSave.whereAt)
 	match int(SaveData.gameSave.whereAt):
 		0:
-			get_tree().change_scene_to_file("res://Intro.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Intro.tscn")
 		1:
-			get_tree().change_scene_to_file("res://Minecraft.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Minecraft.tscn")
 		2:
-			get_tree().change_scene_to_file("res://MainMenu.tscn")
+			get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 
 func _start_boot_vid() -> void:
 	$Click.hide()

@@ -30,13 +30,13 @@ func _on_try_again_pressed() -> void:
 	Global.gameUI_reveal = false
 	Global.get_node("GameUI/Control").modulate.a = 0.0
 	if SaveData.gameSave.whereAt > 1:
-		get_tree().change_scene_to_file("res://Level.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Level.tscn")
 	else:
-		get_tree().change_scene_to_file("res://Intro.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Intro.tscn")
 
 
 func _on_quit_pressed() -> void:
 	if SaveData.gameSave.whereAt > 1:
-		get_tree().change_scene_to_file("res://MainMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	else:
 		get_tree().quit()

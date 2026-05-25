@@ -38,7 +38,7 @@ func _on_back_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 
 
 func _on_text_meta_clicked(meta: Variant) -> void:

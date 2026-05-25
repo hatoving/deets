@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dlmjot35qurvq"]
+[gd_scene format=3 uid="uid://dlmjot35qurvq"]
 
 [ext_resource type="Shader" uid="uid://b7gxrmj6ufsw7" path="res://Shaders/Scroll.gdshader" id="1_h7a2f"]
 [ext_resource type="Script" uid="uid://cqo46rechwyed" path="res://Code/MainMenu.gd" id="1_iwfq2"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dkxa6ojulscp3" path="res://Code/CustomMenu.gd" id="4_afec1"]
 [ext_resource type="Texture2D" uid="uid://c27cfwctp85rs" path="res://Sprites/Edition.pnv.png" id="5_fimr5"]
 [ext_resource type="Texture2D" uid="uid://c47kb70i38u3c" path="res://Sprites/HorseFood.png" id="6_31qfy"]
-[ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Options.tscn" id="6_cqjrg"]
+[ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Scenes/Options.tscn" id="6_cqjrg"]
 [ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="6_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://dorvf4k7hfici" path="res://Sprites/Hammer.png" id="7_61cf8"]
 [ext_resource type="Script" uid="uid://dro3q88caq6ww" path="res://Code/LoadingScreenMinecraft.gd" id="7_e2xy7"]

@@ -223,7 +223,7 @@ func _process(delta: float) -> void:
 				$Logo.hide()
 				updateIndex = false
 			22:
-				get_tree().change_scene_to_file("res://Credits.tscn")
+				get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
 	
 	cutsceneTimer -= delta
 	if cutsceneTimer <= 0.0:

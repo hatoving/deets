@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ckeiueqdv8s22"]
 
-[ext_resource type="Script" uid="uid://d05hj8ofpjm3o" path="res://boot.gd" id="1_6cbyf"]
-[ext_resource type="VideoStream" uid="uid://b0b024xrmyx5h" path="res://Intro.ogv" id="2_tgoet"]
-[ext_resource type="Texture2D" uid="uid://bjc3q8sex7nrb" path="res://Sprites/Click.png" id="2_x8jv0"]
-[ext_resource type="FontFile" uid="uid://c3h177hi5b8r3" path="res://Fonts/Munson_Roman.otf" id="3_pd6mx"]
+[ext_resource type="Script" uid="uid://d05hj8ofpjm3o" path="res://Code/Boot.gd" id="1_0g2dh"]
+[ext_resource type="Texture2D" uid="uid://bjc3q8sex7nrb" path="res://Sprites/Click.png" id="2_pbnua"]
+[ext_resource type="VideoStream" uid="uid://b0b024xrmyx5h" path="res://Intro.ogv" id="3_8ar81"]
+[ext_resource type="FontFile" uid="uid://c3h177hi5b8r3" path="res://Fonts/Munson_Roman.otf" id="4_2dheg"]
 
 [node name="Boot" type="Node" unique_id=1078130791]
-script = ExtResource("1_6cbyf")
+script = ExtResource("1_0g2dh")
 
 [node name="Click" type="Control" parent="." unique_id=1289302275]
 layout_mode = 3
@@ -40,7 +40,7 @@ offset_bottom = 82.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("2_x8jv0")
+texture_normal = ExtResource("2_pbnua")
 stretch_mode = 4
 
 [node name="Control" type="Control" parent="." unique_id=1907582375]
@@ -76,7 +76,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.335, 0.335)
 pivot_offset = Vector2(960, 540)
-stream = ExtResource("2_tgoet")
+stream = ExtResource("3_8ar81")
 buffering_msec = 250
 bus = &"Master_Filtered"
 
@@ -92,7 +92,7 @@ offset_left = -163.0
 offset_right = 163.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_pd6mx")
+theme_override_fonts/normal_font = ExtResource("4_2dheg")
 bbcode_enabled = true
 text = "[center]
 Headphones recommended

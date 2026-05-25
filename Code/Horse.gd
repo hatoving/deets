@@ -583,4 +583,4 @@ func _on_jumpscare_finished() -> void:
 	if currentState == STATE.JUMPSCARE:
 		Global.gameUI_reveal = false
 		Global.get_node("GameUI/Control").modulate.a = 0.0
-		get_tree().change_scene_to_file("res://GameOver.tscn")
+		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
