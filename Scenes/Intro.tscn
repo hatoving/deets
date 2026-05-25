@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bu7i1vlr21m0o" path="res://Models/Border/moss.png" id="3_iysgs"]
 [ext_resource type="ArrayMesh" uid="uid://52japcqohy" path="res://Models/Border/border.obj" id="4_1rpvy"]
 [ext_resource type="AudioStream" uid="uid://d3kt3tuqyqpaa" path="res://Audio/Amb/wind.ogg" id="4_4ad6s"]
-[ext_resource type="Texture2D" uid="uid://dtx3ep31fqtua" path="res://Sprites/Horse.png" id="4_33olo"]
 [ext_resource type="PackedScene" uid="uid://53orkuh65en6" path="res://Models/Door/DoorwayFront.tscn" id="4_465o5"]
 [ext_resource type="PackedScene" uid="uid://cds85unabj3cn" path="res://Scenes/LevelGen/Player.tscn" id="4_iysgs"]
+[ext_resource type="Texture2D" uid="uid://dhf3eso3lwpcg" path="res://Sprites/Horse/Sheet.png" id="4_l06km"]
 [ext_resource type="PackedScene" uid="uid://c63b5awj52f4h" path="res://Models/Chair/ExecutiveChair1.tscn" id="5_4ad6s"]
 [ext_resource type="Script" uid="uid://jjs41ypgty8g" path="res://Scripts/HorseIntro.gd" id="5_465o5"]
 [ext_resource type="PackedScene" uid="uid://c5vnshh7i27ra" path="res://Models/Desk/LShapedDesk1.tscn" id="5_7136s"]
@@ -35,6 +35,10 @@ fog_density = 0.6781
 fog_height = 16.15
 fog_height_density = -5.1967
 volumetric_fog_density = 0.637
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf0pv"]
+atlas = ExtResource("4_l06km")
+region = Rect2(1545, 0, 199, 199)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqww8"]
 shading_mode = 0
@@ -89,10 +93,10 @@ startingRotation = Vector2(0.129, -1.62)
 jumpAtStart = false
 
 [node name="Horse" type="Sprite3D" parent="." unique_id=1942357006 node_paths=PackedStringArray("theEntireFuckingFloor", "player")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 14.7, 4, 4.3)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 14.7, 4, 4.3)
 billboard = 2
 texture_filter = 2
-texture = ExtResource("4_33olo")
+texture = SubResource("AtlasTexture_pf0pv")
 script = ExtResource("5_465o5")
 theEntireFuckingFloor = NodePath("../LevelGeometry/Floor")
 player = NodePath("../Player")

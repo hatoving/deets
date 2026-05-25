@@ -162,7 +162,7 @@ func _die():
 
 func _process(delta: float) -> void:
 	if lerpAnim:
-		$Sprite.scale.y = lerp($Sprite.scale.y, 2.0, 5.0 * delta)
+		$Sprite.scale.y = lerp($Sprite.scale.y, 1.3, 5.0 * delta)
 	
 	if Global.pauseGame or Global.currentGameLoop.pauseCoreGameStuff:
 		return
@@ -209,7 +209,7 @@ func _process(delta: float) -> void:
 			$Gallop.pitch_scale = randf_range(0.8, 1.2)
 			$Gallop.play()
 			if lerpAnim:
-				$Sprite.scale.y = 1.65
+				$Sprite.scale.y = 1.1
 			gallopTimer = gallopWaitDuration
 			
 		if !playerSpotted and !tired and !Global.currentGameLoop.endGame:
@@ -404,7 +404,7 @@ func _process(delta: float) -> void:
 				$Yum.play()
 				yumTimer = randf_range(1.0, 2.0)
 				
-			$Sprite.scale.y = randf_range(1.9, 2.1)
+			$Sprite.scale.y = randf_range(1.2, 1.4)
 			
 			var max = 10.0 if !Global.currentGameLoop.endGame else 3.0
 			if waitTimer >= max:
@@ -419,7 +419,7 @@ func _process(delta: float) -> void:
 				playerSpotted = false
 				gonnaEat = false
 				lerpAnim = true
-				$Sprite.scale.y = 1.8
+				$Sprite.scale.y = 1.1
 				
 		STATE.JUMPSCARE:
 			speed = 0
@@ -445,8 +445,8 @@ func _process(delta: float) -> void:
 			player.lerpFOVToCustom = true
 			player.targetFOV = 35.0
 			
-			$Sprite.scale.x = randf_range(1.5, 2.5)
-			$Sprite.scale.y = randf_range(1.9, 2.1)
+			$Sprite.scale.x = randf_range(1.0, 1.6)
+			$Sprite.scale.y = randf_range(1.2, 1.4)
 			
 			Global.currentGameLoop.fogDensityTarget = 5.0
 		STATE.DEAD:

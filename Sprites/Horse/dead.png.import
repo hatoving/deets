@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyg3a704r33re"
-path.s3tc="res://.godot/imported/dead.png-7d63c041577408bb371e34ed95b73dbb.s3tc.ctex"
-path.etc2="res://.godot/imported/dead.png-7d63c041577408bb371e34ed95b73dbb.etc2.ctex"
+path.s3tc="res://.godot/imported/Dead.png-9e19e5fa44ad7485432c6223d288ce60.s3tc.ctex"
+path.etc2="res://.godot/imported/Dead.png-9e19e5fa44ad7485432c6223d288ce60.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Horse/dead.png"
-dest_files=["res://.godot/imported/dead.png-7d63c041577408bb371e34ed95b73dbb.s3tc.ctex", "res://.godot/imported/dead.png-7d63c041577408bb371e34ed95b73dbb.etc2.ctex"]
+source_file="res://Sprites/Horse/Dead.png"
+dest_files=["res://.godot/imported/Dead.png-9e19e5fa44ad7485432c6223d288ce60.s3tc.ctex", "res://.godot/imported/Dead.png-9e19e5fa44ad7485432c6223d288ce60.etc2.ctex"]
 
 [params]
 

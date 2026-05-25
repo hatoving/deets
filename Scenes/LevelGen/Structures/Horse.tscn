@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bc4lk6vvyvwd7"]
 
 [ext_resource type="Script" uid="uid://wi2068yqla8l" path="res://Scripts/Horse.gd" id="1_gffeo"]
-[ext_resource type="Texture2D" uid="uid://be0iblo106o5n" path="res://Sprites/Horse/horse_sheet.png" id="2_agco3"]
+[ext_resource type="Texture2D" uid="uid://dhf3eso3lwpcg" path="res://Sprites/Horse/Sheet.png" id="2_pf0pv"]
 [ext_resource type="AudioStream" uid="uid://blny8gefgcqvh" path="res://Audio/Horse/intrigue_new.ogg" id="3_txvvm"]
-[ext_resource type="Texture2D" uid="uid://dyg3a704r33re" path="res://Sprites/Horse/dead.png" id="3_uph3x"]
+[ext_resource type="Texture2D" uid="uid://dyg3a704r33re" path="res://Sprites/Horse/Dead.png" id="3_uph3x"]
 [ext_resource type="AudioStream" uid="uid://burnkjq5qdt6r" path="res://Audio/Jumpscare.ogg" id="4_3nlbc"]
 [ext_resource type="AudioStream" uid="uid://duutyme22p34e" path="res://Audio/Horse/gallop.ogg" id="4_lmfhu"]
 [ext_resource type="AudioStream" uid="uid://cdrv76be06btq" path="res://Audio/Horse/IntrigueAngry.mp3" id="5_anewe"]
@@ -27,20 +27,20 @@ size = Vector3(0.8, 2, 0.8)
 height = 1.0
 radius = 9.5
 
-[node name="Horse" type="CharacterBody3D"]
+[node name="Horse" type="CharacterBody3D" unique_id=1943846191]
 collision_layer = 2
 collision_mask = 2
 safe_margin = 0.01
 script = ExtResource("1_gffeo")
 
-[node name="Ray" type="RayCast3D" parent="."]
+[node name="Ray" type="RayCast3D" parent="." unique_id=1666685368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 0, 6)
 collision_mask = 262144
 hit_from_inside = true
 debug_shape_custom_color = Color(0.843137, 0.52549, 0.65098, 0)
 
-[node name="Ray2" type="RayCast3D" parent="."]
+[node name="Ray2" type="RayCast3D" parent="." unique_id=168865659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 0, 6)
 collision_mask = 524288
@@ -48,134 +48,134 @@ hit_from_inside = true
 debug_shape_custom_color = Color(0.843137, 0.52549, 0.65098, 0)
 debug_shape_thickness = 5
 
-[node name="Col" type="CollisionShape3D" parent="."]
+[node name="Col" type="CollisionShape3D" parent="." unique_id=1831510862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_lmfhu")
 debug_color = Color(0.746094, 0.398545, 0.618322, 0.42)
 
-[node name="Death" type="Area3D" parent="."]
+[node name="Death" type="Area3D" parent="." unique_id=10923008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 32768
 collision_mask = 32768
 
-[node name="Col" type="CollisionShape3D" parent="Death"]
+[node name="Col" type="CollisionShape3D" parent="Death" unique_id=1462570392]
 shape = SubResource("BoxShape3D_txvvm")
 debug_color = Color(0.971736, 0, 0.445914, 0.42)
 
-[node name="Agent" type="NavigationAgent3D" parent="."]
+[node name="Agent" type="NavigationAgent3D" parent="." unique_id=1003717037]
 path_desired_distance = 0.1
 target_desired_distance = 0.1
 keep_y_velocity = false
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 1, 1)
 
-[node name="Sprite" type="Sprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+[node name="Sprite" type="Sprite3D" parent="." unique_id=1271835846]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 1, 0)
 billboard = 2
 texture_filter = 2
-texture = ExtResource("2_agco3")
+texture = ExtResource("2_pf0pv")
 hframes = 8
 
-[node name="DeadSprite" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="DeadSprite" type="Sprite3D" parent="." unique_id=1374259716]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 1, 0)
 visible = false
 billboard = 2
 texture_filter = 2
 texture = ExtResource("3_uph3x")
 
-[node name="SmallSFX" type="Area3D" parent="."]
+[node name="SmallSFX" type="Area3D" parent="." unique_id=1769272043]
 collision_layer = 2
 collision_mask = 2
 monitorable = false
 priority = 100
 
-[node name="Col" type="CollisionShape3D" parent="SmallSFX"]
+[node name="Col" type="CollisionShape3D" parent="SmallSFX" unique_id=1015164694]
 shape = SubResource("CylinderShape3D_xf5x7")
 debug_color = Color(0.924556, 4.73607e-05, 0.679582, 0.42)
 
-[node name="Intrigue" type="AudioStreamPlayer3D" parent="."]
+[node name="Intrigue" type="AudioStreamPlayer3D" parent="." unique_id=1134426168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("3_txvvm")
 volume_db = -10.0
 bus = &"SFX_Filtered"
 
-[node name="IntrigueMad" type="AudioStreamPlayer3D" parent="."]
+[node name="IntrigueMad" type="AudioStreamPlayer3D" parent="." unique_id=557664068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("5_anewe")
 volume_db = -10.0
 bus = &"SFX_Filtered"
 
-[node name="Mad" type="AudioStreamPlayer3D" parent="."]
+[node name="Mad" type="AudioStreamPlayer3D" parent="." unique_id=1671173776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("5_x3sep")
 max_db = -3.0
 bus = &"SFX_Filtered"
 
-[node name="Jumpscare" type="AudioStreamPlayer3D" parent="."]
+[node name="Jumpscare" type="AudioStreamPlayer3D" parent="." unique_id=820538326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("4_3nlbc")
 bus = &"SFX_Filtered"
 
-[node name="Gallop" type="AudioStreamPlayer3D" parent="."]
+[node name="Gallop" type="AudioStreamPlayer3D" parent="." unique_id=1404296375]
 stream = ExtResource("4_lmfhu")
 volume_db = -2.0
 panning_strength = 0.75
 bus = &"SFX_Filtered"
 
-[node name="Spotted" type="AudioStreamPlayer3D" parent="."]
+[node name="Spotted" type="AudioStreamPlayer3D" parent="." unique_id=1919941590]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("5_bmst0")
 volume_db = -10.0
 bus = &"SFX_Filtered"
 
-[node name="PedestalDialogue" type="AudioStreamPlayer3D" parent="."]
+[node name="PedestalDialogue" type="AudioStreamPlayer3D" parent="." unique_id=1884851611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("6_txvvm")
 volume_db = -15.0
 bus = &"SFX_Filtered"
 
-[node name="HorseFood" type="AudioStreamPlayer3D" parent="."]
+[node name="HorseFood" type="AudioStreamPlayer3D" parent="." unique_id=1479318578]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("7_lmfhu")
 volume_db = -25.0
 bus = &"SFX_Filtered"
 
-[node name="Munch" type="AudioStreamPlayer3D" parent="."]
+[node name="Munch" type="AudioStreamPlayer3D" parent="." unique_id=2016559283]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("8_pew3w")
 volume_db = -10.0
 bus = &"SFX_Filtered"
 
-[node name="Yum" type="AudioStreamPlayer3D" parent="."]
+[node name="Yum" type="AudioStreamPlayer3D" parent="." unique_id=459626272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("8_bmst0")
 volume_db = -22.0
 bus = &"SFX_Filtered"
 
-[node name="Chase" type="AudioStreamPlayer3D" parent="."]
+[node name="Chase" type="AudioStreamPlayer3D" parent="." unique_id=209944695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("6_pew3w")
 volume_db = -10.0
 bus = &"SFX_Filtered"
 
-[node name="DeadDialogue" type="AudioStreamPlayer3D" parent="."]
+[node name="DeadDialogue" type="AudioStreamPlayer3D" parent="." unique_id=225225783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("6_pew3w")
 volume_db = -15.0
 bus = &"SFX_Filtered"
 
-[node name="Random" type="AudioStreamPlayer3D" parent="."]
+[node name="Random" type="AudioStreamPlayer3D" parent="." unique_id=1333587895]
 stream = ExtResource("11_g4lq5")
 volume_db = -18.0
 bus = &"SFX_Filtered"
 
-[node name="Tired" type="AudioStreamPlayer3D" parent="."]
+[node name="Tired" type="AudioStreamPlayer3D" parent="." unique_id=605441644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 stream = ExtResource("7_agco3")
 volume_db = -20.0
 bus = &"SFX_Filtered"
 
-[node name="LookAt" type="Node3D" parent="."]
+[node name="LookAt" type="Node3D" parent="." unique_id=59018279]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
 
 [connection signal="body_entered" from="Death" to="." method="_onDeathBody3DEntered"]
