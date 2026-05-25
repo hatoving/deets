@@ -7,12 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://cwopsks5axvv1" path="res://Audio/Undertale.ogg" id="3_7d0o6"]
 [ext_resource type="AudioStream" uid="uid://br2xwujouy4ip" path="res://Audio/UnoDolla.ogg" id="4_rj42i"]
 [ext_resource type="Texture2D" uid="uid://dva6xbvi05s0m" path="res://Sprites/EndingStory/logo.png" id="5_5p1fv"]
-[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="7_qg73n"]
+[ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="7_keknu"]
 
-[node name="Ending" type="CanvasLayer"]
+[node name="Ending" type="CanvasLayer" unique_id=305351409]
 script = ExtResource("1_v0lf2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1311736178]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,22 +20,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=38563041]
 stream = ExtResource("1_yqk5q")
 volume_db = -2.0
 autoplay = true
 bus = &"Music"
 
-[node name="Undertale" type="AudioStreamPlayer" parent="."]
+[node name="Undertale" type="AudioStreamPlayer" parent="." unique_id=650452395]
 stream = ExtResource("3_7d0o6")
 volume_db = -2.0
 bus = &"SFX"
 
-[node name="UnoDolla" type="AudioStreamPlayer" parent="."]
+[node name="UnoDolla" type="AudioStreamPlayer" parent="." unique_id=1256736884]
 stream = ExtResource("4_rj42i")
 bus = &"SFX_Filtered"
 
-[node name="StoryPanel" type="TextureRect" parent="."]
+[node name="StoryPanel" type="TextureRect" parent="." unique_id=1082630849]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -49,7 +49,7 @@ pivot_offset = Vector2(120, 0)
 texture = ExtResource("3_3v033")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1649020438]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -67,7 +67,7 @@ text = "as the player fell down,
 escaping from the hors..."
 fit_content = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1404734698]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,8 +80,8 @@ offset_right = 217.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("7_qg73n")
-theme_override_font_sizes/normal_font_size = 18
+theme_override_fonts/normal_font = ExtResource("7_keknu")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]Congratulations!
 
@@ -93,7 +93,7 @@ Life is not meaningless
 after all..."
 fit_content = true
 
-[node name="Logo" type="TextureRect" parent="."]
+[node name="Logo" type="TextureRect" parent="." unique_id=1873773933]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -110,7 +110,7 @@ pivot_offset = Vector2(122, 27.5)
 texture = ExtResource("5_5p1fv")
 stretch_mode = 5
 
-[node name="Fade" type="ColorRect" parent="."]
+[node name="Fade" type="ColorRect" parent="." unique_id=738141978]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

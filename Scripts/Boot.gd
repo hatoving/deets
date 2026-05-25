@@ -23,7 +23,7 @@ func _go():
 		0:
 			get_tree().change_scene_to_file("res://Scenes/Intro.tscn")
 		1:
-			get_tree().change_scene_to_file("res://Scenes/Minecraft.tscn")
+			get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 		2:
 			get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 

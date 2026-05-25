@@ -37,30 +37,6 @@ var goStraightToUnpauseFromHTP = false
 var finalTime = 70
 var customMode = false
 
-const RANDOM_TEXT = [
-	"type horse\nbackwards",
-	"deets nuts",
-	"yahiamice loves\nthis game",
-	"horse",
-	"time to horse\naround",
-	"we endorse godot",
-	"gun? gun!",
-	"el horso",
-	"neigh",
-	"the next step in\nhorse gaming",
-	"l to the m\nto the a to the o",
-	"why the fuck are\nyou playing this",
-	"yes, horse hell\nIS real",
-	"the horse is\ncastrated",
-	"flint and steed!",
-	"now with 200% less\nboss fights!",
-	"friday night\nfoalin'",
-	"purchase our new\nhorse DLC",
-	"go play\nymfp",
-	"117 different\nendings",
-	"a light shines!"
-]
-
 @onready var lastMenu = $PauseUI/Main
 
 @onready var hotbarSelectedTex = preload("res://Sprites/Inventory/hotbar_1.png")
@@ -69,10 +45,6 @@ const RANDOM_TEXT = [
 @onready var gameUI : CanvasLayer = $GameUI
 @onready var shopUI : CanvasLayer = $ShopUI
 @onready var miscUI : CanvasLayer = $Misc
-
-func gameUI_ChangeFont(font_path: String):
-	var new_font = load(font_path)
-	apply_font_override_recursive(self, new_font)
 
 func apply_font_override_recursive(node: Node, font: Font):
 	if node is Control and !node.get_path().get_concatenated_names().contains("Achievement"):
@@ -197,10 +169,8 @@ func _process(delta: float) -> void:
 	
 	if get_tree().current_scene:
 		if get_tree().current_scene.name == "Level" or get_tree().current_scene.name == "Intro":
-			$PauseUI/Options/Game/Horsecraft.disabled = true
 			$PauseUI/Options/Game/Intro.disabled = true
 		else:
-			$PauseUI/Options/Game/Horsecraft.disabled = false
 			$PauseUI/Options/Game/Intro.disabled = false
 	
 	if !pauseGame and (currentPlayer != null):

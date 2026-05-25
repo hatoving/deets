@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dxjwb1vspecc3" path="res://Scripts/GameOver.gd" id="1_xl4ts"]
 [ext_resource type="AudioStream" uid="uid://cwopsks5axvv1" path="res://Audio/Undertale.ogg" id="3_758bs"]
-[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="3_xl4ts"]
+[ext_resource type="FontFile" uid="uid://ckbyu7w4e5nyt" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus-regular.ttf" id="3_uib17"]
+[ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="4_uib17"]
 
-[node name="GameOver" type="CanvasLayer"]
+[node name="GameOver" type="CanvasLayer" unique_id=1613748146]
 layer = 128
 script = ExtResource("1_xl4ts")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1039292200]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,12 +17,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Undertale" type="AudioStreamPlayer" parent="."]
+[node name="Undertale" type="AudioStreamPlayer" parent="." unique_id=452542467]
 stream = ExtResource("3_758bs")
 pitch_scale = 0.36
 bus = &"SFX_Filtered"
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=426479173]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -30,7 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Text" type="RichTextLabel" parent="Control"]
+[node name="Text" type="RichTextLabel" parent="Control" unique_id=688615311]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,21 +39,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -43.0
-offset_top = -69.0
+offset_top = -95.0
 offset_right = 43.0
-offset_bottom = -15.0
+offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2.398)
 pivot_offset = Vector2(43, 27)
-theme_override_fonts/normal_font = ExtResource("3_xl4ts")
+theme_override_fonts/normal_font = ExtResource("3_uib17")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "[center][color=maroon]GAME
 OVER"
 fit_content = true
 
-[node name="TryAgain" type="Button" parent="Control"]
+[node name="TryAgain" type="Button" parent="Control" unique_id=239676237]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,15 +66,16 @@ offset_right = 181.0
 offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("3_xl4ts")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_uib17")
+theme_override_font_sizes/font_size = 22
 text = "Try Again"
 flat = true
 
-[node name="Quit" type="Button" parent="Control"]
+[node name="Quit" type="Button" parent="Control" unique_id=1766405592]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -86,15 +88,16 @@ offset_right = 181.0
 offset_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("3_xl4ts")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_uib17")
+theme_override_font_sizes/font_size = 22
 text = "Quit to Main Menu"
 flat = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=842873588]
 one_shot = true
 
 [connection signal="pressed" from="Control/TryAgain" to="." method="_on_try_again_pressed"]

@@ -13,7 +13,6 @@ func _ready() -> void:
 	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	Global.showCrosshair = false
-	Global.gameUI_ChangeFont("res://Fonts/Munson_Roman.otf")
 	
 	Global.get_node("Misc/Control/Fade").color.a = 1.0
 	Global.uiFade = false

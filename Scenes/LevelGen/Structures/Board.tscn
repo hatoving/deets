@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c15s7gp3mqm6n" path="res://Textures/concrete_ground.png" id="1_fgwdp"]
 [ext_resource type="Texture2D" uid="uid://c74exlkoyglbs" path="res://Models/Board/texture.png" id="2_57nr5"]
 [ext_resource type="ArrayMesh" uid="uid://bev17fqrcxpqq" path="res://Models/Board/Board.obj" id="3_ksrln"]
-[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="4_ksrln"]
 [ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="4_qho0v"]
+[ext_resource type="FontFile" uid="uid://8c1hx00iue5y" path="res://Fonts/PublicPixel.ttf" id="6_06m65"]
 [ext_resource type="Texture2D" uid="uid://bbnyqxwqertom" path="res://Sprites/Steedium.png" id="7_3csb4"]
 [ext_resource type="AudioStream" uid="uid://x3afvcso8lrc" path="res://Audio/Timer.ogg" id="8_7hltb"]
 
@@ -60,7 +60,8 @@ texture_filter = 2
 modulate = Color(0.511371, 0.319731, 0.133429, 1)
 outline_modulate = Color(0, 0, 0, 0)
 text = "x12000"
-font = ExtResource("4_ksrln")
+font = ExtResource("6_06m65")
+font_size = 20
 horizontal_alignment = 0
 
 [node name="Label2" type="Label3D" parent="Mesh" unique_id=1022550336]
@@ -72,7 +73,8 @@ text = "Congratulations.
 Now interact with
 me and get your
 prize."
-font = ExtResource("4_ksrln")
+font = ExtResource("6_06m65")
+font_size = 30
 width = 100.0
 
 [node name="Sprite" type="Sprite3D" parent="Mesh" unique_id=1299850381]

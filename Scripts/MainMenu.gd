@@ -1,5 +1,28 @@
 extends Control
 
+const RANDOM_TEXT = [
+	"type horse\nbackwards",
+	"deets nuts",
+	"yahiamice loves\nthis game",
+	"horse",
+	"time to horse\naround",
+	"we endorse godot",
+	"gun? gun!",
+	"el horso",
+	"neigh",
+	"the next step in\nhorse gaming",
+	"l to the m\nto the a to the o",
+	"why the fuck are\nyou playing this",
+	"yes, horse hell\nIS real",
+	"the horse is\ncastrated",
+	"flint and steed!",
+	"now with 200% less\nboss fights!",
+	"friday night\nfoalin'",
+	"purchase our new\nhorse DLC",
+	"go play\nymfp",
+	"117 different\nendings",
+	"a light shines!"
+]
 const SECRET = ["E", "S", "R", "O", "H"]
 
 var tween: Tween
@@ -13,18 +36,13 @@ func _ready() -> void:
 	Global.allowToPause = false
 	Global.enableTimer = false
 	
-	var rand = randi() % 2
-	if rand == 1:
-		$Menu/Logo/Edition.show()
-	
-	Global.gameUI_ChangeFont("res://Fonts/Monocraft.ttf")
 	Global.gameUI_DisableHint()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	Global.uiFade = false
 	Global.get_node("Misc/Control/Fade").color.a = 1.0
 	
-	$Menu/Logo/Label.text = Global.RANDOM_TEXT[randi_range(0, Global.RANDOM_TEXT.size() - 1)]
+	$Menu/Logo/Label.text = RANDOM_TEXT[randi_range(0, RANDOM_TEXT.size() - 1)]
 	start_bounce()
 	
 	if !Global.get_node("MainMenu").playing:

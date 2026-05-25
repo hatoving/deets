@@ -149,7 +149,7 @@ func _process(delta: float) -> void:
 					indexDuration = 0.0
 					indexUpdate = false
 				12:
-					get_tree().change_scene_to_file("res://Scenes/Minecraft.tscn")
+					get_tree().change_scene_to_file("res://Scenes/Level.tscn")
 					pass
 				
 		cutsceneTimer -= delta

@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dacext5dba2fr"]
 
 [ext_resource type="Script" uid="uid://dgsn7f6s04t3i" path="res://Scripts/Options.gd" id="1_bwr58"]
-[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="2_dfe3t"]
+[ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="2_6f4k2"]
 [ext_resource type="Script" uid="uid://c2lkwc1n8wsns" path="res://Scripts/VideoSettings.gd" id="3_t1d33"]
 [ext_resource type="Script" uid="uid://c64emh8gv3rhc" path="res://Scripts/AudioSettings.gd" id="4_5pjjr"]
 [ext_resource type="Script" uid="uid://cbc4c5viujas" path="res://Scripts/GameSettings.gd" id="5_rakeu"]
 
-[node name="Options" type="CanvasLayer"]
+[node name="Options" type="CanvasLayer" unique_id=1566857398]
 layer = 99
 script = ExtResource("1_bwr58")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1561672451]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -19,13 +19,15 @@ offset_top = 64.0
 offset_right = 48.0
 offset_bottom = 87.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Gameplay"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Left" type="Button" parent="."]
+[node name="Left" type="Button" parent="." unique_id=1863036948]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -34,15 +36,16 @@ offset_top = 61.0
 offset_right = -126.855
 offset_bottom = 92.0
 grow_horizontal = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "<<"
 flat = true
 
-[node name="Right" type="Button" parent="."]
+[node name="Right" type="Button" parent="." unique_id=699856114]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -51,15 +54,16 @@ offset_top = 61.0
 offset_right = 173.145
 offset_bottom = 92.0
 grow_horizontal = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = ">>"
 flat = true
 
-[node name="Video" type="Control" parent="."]
+[node name="Video" type="Control" parent="." unique_id=1042511831]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -70,7 +74,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("3_t1d33")
 
-[node name="Fullscreen" type="Button" parent="Video"]
+[node name="Fullscreen" type="Button" parent="Video" unique_id=1638222645]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -83,15 +87,16 @@ offset_right = 181.0
 offset_bottom = -93.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Fullscreen : False"
 flat = true
 
-[node name="Resolution" type="Button" parent="Video"]
+[node name="Resolution" type="Button" parent="Video" unique_id=1662696559]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -104,15 +109,16 @@ offset_right = 181.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Screen Resolution : 640x480"
 flat = true
 
-[node name="V-Sync" type="Button" parent="Video"]
+[node name="V-Sync" type="Button" parent="Video" unique_id=785452725]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -125,15 +131,16 @@ offset_right = 181.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "V-Sync : True"
 flat = true
 
-[node name="Audio" type="Control" parent="."]
+[node name="Audio" type="Control" parent="." unique_id=215903503]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -144,7 +151,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_5pjjr")
 
-[node name="Master" type="HSlider" parent="Audio"]
+[node name="Master" type="HSlider" parent="Audio" unique_id=427660109]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -160,7 +167,7 @@ grow_vertical = 2
 min_value = -80.0
 max_value = 0.0
 
-[node name="Label" type="Label" parent="Audio/Master"]
+[node name="Label" type="Label" parent="Audio/Master" unique_id=782993945]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -170,13 +177,15 @@ offset_top = -33.0
 offset_right = 30.0
 offset_bottom = -10.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Master (100%)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Music" type="HSlider" parent="Audio"]
+[node name="Music" type="HSlider" parent="Audio" unique_id=1713678487]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -192,7 +201,7 @@ grow_vertical = 2
 min_value = -72.0
 max_value = 0.0
 
-[node name="Label" type="Label" parent="Audio/Music"]
+[node name="Label" type="Label" parent="Audio/Music" unique_id=730844827]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -202,13 +211,15 @@ offset_top = -33.0
 offset_right = 30.0
 offset_bottom = -10.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Music (100%)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SFX" type="HSlider" parent="Audio"]
+[node name="SFX" type="HSlider" parent="Audio" unique_id=229040522]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -224,7 +235,7 @@ grow_vertical = 2
 min_value = -72.0
 max_value = 0.0
 
-[node name="Label" type="Label" parent="Audio/SFX"]
+[node name="Label" type="Label" parent="Audio/SFX" unique_id=206130381]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -234,13 +245,15 @@ offset_top = -33.0
 offset_right = 30.0
 offset_bottom = -10.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "SFX (100%)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Ambience" type="HSlider" parent="Audio"]
+[node name="Ambience" type="HSlider" parent="Audio" unique_id=1561832207]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -256,7 +269,7 @@ grow_vertical = 2
 min_value = -72.0
 max_value = 0.0
 
-[node name="Label" type="Label" parent="Audio/Ambience"]
+[node name="Label" type="Label" parent="Audio/Ambience" unique_id=1767011525]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -266,13 +279,15 @@ offset_top = -33.0
 offset_right = 30.0
 offset_bottom = -10.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Ambience (100%)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Game" type="Control" parent="."]
+[node name="Game" type="Control" parent="." unique_id=134517698]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -282,7 +297,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("5_rakeu")
 
-[node name="Sensitivity" type="HSlider" parent="Game"]
+[node name="Sensitivity" type="HSlider" parent="Game" unique_id=1921481937]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -299,7 +314,7 @@ max_value = 0.05
 step = 0.001
 value = 0.01
 
-[node name="Label" type="Label" parent="Game/Sensitivity"]
+[node name="Label" type="Label" parent="Game/Sensitivity" unique_id=1622350139]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -309,13 +324,15 @@ offset_top = -33.0
 offset_right = 30.0
 offset_bottom = -10.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Camera Sensitvity (0.01)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FOV" type="HSlider" parent="Game"]
+[node name="FOV" type="HSlider" parent="Game" unique_id=1087808839]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -332,7 +349,7 @@ min_value = 60.0
 max_value = 120.0
 value = 90.0
 
-[node name="Label" type="Label" parent="Game/FOV"]
+[node name="Label" type="Label" parent="Game/FOV" unique_id=2045322283]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -342,13 +359,15 @@ offset_top = -33.0
 offset_right = 30.0
 offset_bottom = -10.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Field of View (90.0)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Speedrun" type="Button" parent="Game"]
+[node name="Speedrun" type="Button" parent="Game" unique_id=820241618]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -361,15 +380,16 @@ offset_right = 181.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Speedrun Timer : False"
 flat = true
 
-[node name="Leaderbaord" type="Button" parent="Game"]
+[node name="Leaderbaord" type="Button" parent="Game" unique_id=1711768853]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -386,15 +406,16 @@ tooltip_text = "Submit your time to the leaderboards
 when you beat the game in it's default
 settings, regardless if it is your best time
 or not."
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Submit Time to Leaderboard : True"
 flat = true
 
-[node name="Horsecraft" type="Button" parent="Game"]
+[node name="Intro" type="Button" parent="Game" unique_id=1979158103]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -402,41 +423,21 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -181.0
-offset_top = -141.0
+offset_top = -123.0
 offset_right = 181.0
-offset_bottom = -110.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
-text = "Go Back to Horsecraft"
-flat = true
-
-[node name="Intro" type="Button" parent="Game"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -181.0
-offset_top = -105.0
-offset_right = 181.0
-offset_bottom = -74.0
-grow_horizontal = 2
-grow_vertical = 0
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Go Back to Intro"
 flat = true
 
-[node name="Back" type="Button" parent="."]
+[node name="Back" type="Button" parent="." unique_id=1069842071]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -445,11 +446,12 @@ offset_top = -59.0
 offset_right = 177.0
 offset_bottom = -28.0
 grow_vertical = 0
-theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
-theme_override_fonts/font = ExtResource("2_dfe3t")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_6f4k2")
+theme_override_font_sizes/font_size = 22
 text = "Back"
 flat = true
 alignment = 0
@@ -465,6 +467,5 @@ alignment = 0
 [connection signal="value_changed" from="Audio/Ambience" to="Audio" method="_on_ambience_value_changed"]
 [connection signal="pressed" from="Game/Speedrun" to="Game" method="_on_speedrun_pressed"]
 [connection signal="pressed" from="Game/Leaderbaord" to="Game" method="_on_leaderbaord_pressed"]
-[connection signal="pressed" from="Game/Horsecraft" to="Game" method="_on_horsecraft_pressed"]
 [connection signal="pressed" from="Game/Intro" to="Game" method="_on_intro_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

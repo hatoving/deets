@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://3v0s42t3wape" path="res://Scripts/Credits.gd" id="1_k2yj5"]
 [ext_resource type="Shader" uid="uid://6tovx0gcayfv" path="res://Shaders/Scroll.gdshader" id="1_obosj"]
-[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="1_ynf4x"]
 [ext_resource type="Texture2D" uid="uid://clnojsm478ou7" path="res://Sprites/BackgroundNoHorse.png" id="3_lpub1"]
 [ext_resource type="Texture2D" uid="uid://dy11y08ywgsbj" path="res://Sprites/Background.png" id="4_640q4"]
+[ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="5_lpub1"]
 [ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="5_xic2l"]
+[ext_resource type="FontFile" uid="uid://8c1hx00iue5y" path="res://Fonts/PublicPixel.ttf" id="6_640q4"]
+[ext_resource type="FontFile" uid="uid://dmsb2c13mo1lf" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-bold.ttf" id="7_640q4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5qoai"]
 shader = ExtResource("1_obosj")
@@ -80,11 +82,13 @@ offset_right = -24.0
 offset_bottom = -107.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("1_ynf4x")
-theme_override_font_sizes/normal_font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("5_lpub1")
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "[center]
-[wave][shake][color=maroon]deets[/color][/shake][/wave] by
+[wave][shake][color=maroon]DEETS[/color][/shake][/wave] by
 [color=pink][url=https://www.youtube.com/@hatoving]hatoving[/url][/color]
 
 ~~~~~~
@@ -143,7 +147,6 @@ Horse sprite used in-game by:
 
 Fonts used:
 [wave]
-Monocraft by IdreesInc
 [font=\"res://Fonts/Munson_Roman.otf\"]Munson[/font] by Paul Miller
 [font_size=13][font=res://Fonts/Determination Mono.ttf]Determination Mono[/font][/font_size] by Haley Wakamatsu
 [/wave]
@@ -199,8 +202,10 @@ offset_left = 25.0
 offset_top = 15.0
 offset_right = 68.0
 offset_bottom = 79.5
-theme_override_fonts/font = ExtResource("1_ynf4x")
-theme_override_font_sizes/font_size = 64
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_640q4")
+theme_override_font_sizes/font_size = 48
 text = "↓"
 
 [node name="Back" type="Button" parent="." unique_id=1917441744]
@@ -216,11 +221,13 @@ offset_right = 181.0
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("1_ynf4x")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("7_640q4")
+theme_override_font_sizes/font_size = 22
 text = "Back to Menu"
 flat = true
 

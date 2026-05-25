@@ -17,18 +17,10 @@ func _process(_delta: float) -> void:
 		$Intro.show()
 	else:
 		$Intro.hide()
-	if SaveData.gameSave.whereAt > 1:
-		$Horsecraft.show()
-	else:
-		$Horsecraft.hide()
 
 func _on_speedrun_pressed() -> void:
 	get_parent().clickSFX.play()
 	SaveData.setSetting("gameplay", "timer", !SaveData.getSetting("gameplay", "timer"))
-
-func _on_horsecraft_pressed() -> void:
-	Global.get_node("MainMenu").stop()
-	get_tree().change_scene_to_file("res://Scenes/Minecraft.tscn")
 
 func _on_intro_pressed() -> void:
 	Global.get_node("MainMenu").stop()

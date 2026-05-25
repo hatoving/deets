@@ -4,10 +4,8 @@
 [ext_resource type="Script" uid="uid://cqo46rechwyed" path="res://Scripts/MainMenu.gd" id="1_iwfq2"]
 [ext_resource type="Texture2D" uid="uid://clnojsm478ou7" path="res://Sprites/BackgroundNoHorse.png" id="2_riqfo"]
 [ext_resource type="Texture2D" uid="uid://cd1paiyx306jc" path="res://Sprites/Logo.png" id="3_h7a2f"]
-[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="3_iwfq2"]
 [ext_resource type="Texture2D" uid="uid://dy11y08ywgsbj" path="res://Sprites/Background.png" id="4_7v4os"]
 [ext_resource type="Script" uid="uid://dkxa6ojulscp3" path="res://Scripts/CustomMenu.gd" id="4_afec1"]
-[ext_resource type="Texture2D" uid="uid://c27cfwctp85rs" path="res://Sprites/Edition.pnv.png" id="5_fimr5"]
 [ext_resource type="Texture2D" uid="uid://c47kb70i38u3c" path="res://Sprites/HorseFood.png" id="6_31qfy"]
 [ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Scenes/Options.tscn" id="6_cqjrg"]
 [ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="6_e2xy7"]
@@ -15,7 +13,9 @@
 [ext_resource type="Script" uid="uid://dro3q88caq6ww" path="res://Scripts/LoadingScreenMinecraft.gd" id="7_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://is6tls7ieq56" path="res://Sprites/Gun.png" id="7_qie43"]
 [ext_resource type="AudioStream" uid="uid://svedmuuskapx" path="res://Audio/pop.ogg" id="8_u7cqb"]
+[ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="12_yxkem"]
 [ext_resource type="Script" uid="uid://dtnxj5jtcyb0x" path="res://Scripts/NewgroundsMenu.gd" id="13_1thib"]
+[ext_resource type="FontFile" uid="uid://dmsb2c13mo1lf" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-bold.ttf" id="13_7v4os"]
 [ext_resource type="Texture2D" uid="uid://b5jgpskqvimlo" path="res://Sprites/NG.png" id="13_m04lp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7v4os"]
@@ -111,15 +111,10 @@ offset_top = 35.0
 offset_right = 222.0
 offset_bottom = 53.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 0
-theme_override_constants/paragraph_spacing = 0
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Custom Game"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -158,8 +153,10 @@ offset_left = -3.0
 offset_top = -27.0
 offset_right = 177.0
 offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Maze Width (80)"
 vertical_alignment = 1
 
@@ -189,8 +186,10 @@ offset_left = -3.0
 offset_top = -27.0
 offset_right = 189.0
 offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Maze Height (50)"
 vertical_alignment = 1
 
@@ -220,8 +219,10 @@ offset_left = -3.0
 offset_top = -27.0
 offset_right = 321.0
 offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Diamond Sp. Ratio (0.006)"
 vertical_alignment = 1
 
@@ -250,8 +251,10 @@ offset_left = -3.0
 offset_top = -27.0
 offset_right = 225.0
 offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Pedestal Amount (4)"
 vertical_alignment = 1
 
@@ -281,8 +284,10 @@ offset_left = -3.0
 offset_top = -27.0
 offset_right = 237.0
 offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Player Spd. Mult. ()"
 vertical_alignment = 1
 
@@ -312,8 +317,10 @@ offset_left = -3.0
 offset_top = -27.0
 offset_right = 225.0
 offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Horse Spd. Mult. ()"
 vertical_alignment = 1
 
@@ -341,8 +348,13 @@ offset_right = 5.98001
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 flat = true
 selected = 0
 allow_reselect = true
@@ -365,8 +377,10 @@ offset_left = 6.0
 offset_top = -21.0
 offset_right = 170.0
 offset_bottom = 2.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Item 1 Slot"
 vertical_alignment = 1
 
@@ -380,8 +394,8 @@ offset_left = -1.52588e-05
 offset_right = 4.00002
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "0"
 max_length = 2
 virtual_keyboard_type = 2
@@ -410,8 +424,13 @@ offset_right = 5.98001
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 flat = true
 selected = 0
 allow_reselect = true
@@ -434,8 +453,10 @@ offset_left = 6.0
 offset_top = -21.0
 offset_right = 170.0
 offset_bottom = 2.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Item 2 Slot"
 vertical_alignment = 1
 
@@ -449,8 +470,8 @@ offset_left = -1.52588e-05
 offset_right = 4.00002
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "0"
 max_length = 2
 virtual_keyboard_type = 2
@@ -469,11 +490,12 @@ offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(75, 0)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Disable \"Red Fog\" Mode : No"
 flat = true
 
@@ -513,8 +535,10 @@ offset_left = -3.0
 offset_top = -27.0
 offset_right = 177.0
 offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Horse Spawn Dur. (12s)"
 vertical_alignment = 1
 
@@ -543,8 +567,10 @@ offset_left = -3.0
 offset_top = -27.0
 offset_right = 177.0
 offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Horse Amount (1)"
 vertical_alignment = 1
 
@@ -561,8 +587,8 @@ offset_right = 148.24
 offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 placeholder_text = "Number"
 virtual_keyboard_type = 2
 
@@ -572,9 +598,11 @@ offset_left = -3.0
 offset_top = -43.5
 offset_right = 213.0
 offset_bottom = -4.5
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-text = "Diamonds Collected
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
+text = "Steedium Collected
 at Start"
 vertical_alignment = 1
 
@@ -591,8 +619,8 @@ offset_right = 146.24
 offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 placeholder_text = "Number"
 virtual_keyboard_type = 2
 
@@ -602,9 +630,11 @@ offset_left = -1.0
 offset_top = -42.0
 offset_right = 251.0
 offset_bottom = -3.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
-text = "Diamonds Bonus
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
+text = "Steedium Bonus
 Amount at Start"
 vertical_alignment = 1
 
@@ -634,8 +664,10 @@ offset_left = -3.0
 offset_top = -27.0
 offset_right = 237.0
 offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Item Price Mult. (1.0)"
 vertical_alignment = 1
 
@@ -653,11 +685,12 @@ offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(75, 0)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Spawn Horse at all : Yes"
 flat = true
 
@@ -677,8 +710,10 @@ pivot_offset = Vector2(75, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = "Back"
 flat = true
 
@@ -698,8 +733,10 @@ pivot_offset = Vector2(75, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = "-> Go!! <-"
 flat = true
 
@@ -719,8 +756,10 @@ pivot_offset = Vector2(75, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = "Reset to Default"
 flat = true
 
@@ -736,8 +775,10 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = "<<"
 flat = true
 
@@ -753,8 +794,10 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = ">>"
 flat = true
 
@@ -774,22 +817,6 @@ scale = Vector2(0.55, 0.55)
 pivot_offset = Vector2(240.5, 62.5)
 texture = ExtResource("3_h7a2f")
 stretch_mode = 4
-
-[node name="Edition" type="TextureRect" parent="Menu/Logo" unique_id=125218796]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -240.0
-offset_top = -12.2728
-offset_right = 240.0
-offset_bottom = 32.7272
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("5_fimr5")
 
 [node name="Label" type="Label" parent="Menu/Logo" unique_id=1955428018]
 layout_mode = 1
@@ -814,7 +841,7 @@ theme_override_constants/paragraph_spacing = 0
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 2
-theme_override_fonts/font = ExtResource("3_iwfq2")
+theme_override_fonts/font = ExtResource("13_7v4os")
 theme_override_font_sizes/font_size = 18
 text = "purchase our new
 horse DLC"
@@ -836,8 +863,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = "Start Game"
 flat = true
 
@@ -856,8 +885,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = "Start Custom Game"
 flat = true
 
@@ -874,8 +905,15 @@ offset_right = 121.0
 offset_bottom = 29.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 9
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("13_7v4os")
+theme_override_font_sizes/font_size = 10
 text = "Note: Most trophies will be disabled."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -895,8 +933,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = "Options"
 flat = true
 
@@ -915,8 +955,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = "Credits"
 flat = true
 
@@ -935,8 +977,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 24
 text = "Quit"
 flat = true
 
@@ -948,8 +992,10 @@ offset_bottom = 41.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 20
 text = "Newgrounds"
 flat = true
 alignment = 2
@@ -973,8 +1019,8 @@ theme_override_constants/paragraph_spacing = 0
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "version
 made by hatoving
 
@@ -999,8 +1045,8 @@ theme_override_constants/paragraph_spacing = 0
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Best Time: "
 vertical_alignment = 1
 
@@ -1020,8 +1066,8 @@ theme_override_constants/paragraph_spacing = 0
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 20
 text = "HOSE NAME:
 "
 vertical_alignment = 1
@@ -1055,8 +1101,8 @@ theme_override_constants/paragraph_spacing = 0
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 20
 text = "Connect to Newgrounds to
 access medals and
 leaderboards!"
@@ -1076,8 +1122,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 0
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
-theme_override_fonts/normal_font = ExtResource("3_iwfq2")
-theme_override_font_sizes/normal_font_size = 18
+theme_override_fonts/normal_font = ExtResource("13_7v4os")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Awaiting input from player..."
 fit_content = true
@@ -1114,8 +1160,8 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Close"
 flat = true
 
@@ -1134,8 +1180,8 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 20
 text = "Click here to log-in
 to your account."
 flat = true
@@ -1156,7 +1202,7 @@ visible = false
 mainMenu = NodePath("../Menu")
 clickSFX = NodePath("../Click")
 
-[node name="Loading" type="Control" parent="." unique_id=1311837282 node_paths=PackedStringArray("bg", "pop")]
+[node name="Loading" type="Control" parent="." unique_id=1311837282 node_paths=PackedStringArray("pop")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1165,7 +1211,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_e2xy7")
-bg = NodePath("")
 pop = NodePath("../Pop")
 
 [node name="Label2" type="Label" parent="Loading" unique_id=1527565181]
@@ -1181,15 +1226,10 @@ offset_right = 222.0
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 0
-theme_override_constants/paragraph_spacing = 0
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_iwfq2")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("12_yxkem")
+theme_override_font_sizes/font_size = 22
 text = "Loading world"
 horizontal_alignment = 1
 vertical_alignment = 1
