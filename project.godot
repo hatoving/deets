@@ -21,7 +21,7 @@ run/main_scene="uid://ckeiueqdv8s22"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="DEETS"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="uid://bbnyqxwqertom"
+config/icon="uid://bmfpxxwubcql"
 
 [audio]
 
