@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bbnyqxwqertom" path="res://Sprites/Steedium.png" id="5_yl847"]
 [ext_resource type="Texture2D" uid="uid://cw444jus8r4r6" path="res://Sprites/Inventory/hotbar_1.png" id="6_0pijh"]
 [ext_resource type="Texture2D" uid="uid://dorvf4k7hfici" path="res://Sprites/Hammer.png" id="6_pbn0o"]
+[ext_resource type="Shader" uid="uid://da0c37afaogwm" path="res://Shaders/SteediumUI.gdshader" id="8_yl847"]
 [ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Scenes/Options.tscn" id="9_vdf0c"]
 [ext_resource type="Texture2D" uid="uid://c552qij2v45do" path="res://Sprites/Achievements/UnlockStyle/Xbox/base.png" id="10_f86ji"]
 [ext_resource type="Texture2D" uid="uid://diokyotbvmhgi" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon_bg.png" id="11_x5224"]
@@ -16,6 +17,16 @@
 [ext_resource type="Texture2D" uid="uid://cro5w2iqg4lvt" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon2.png" id="13_27fww"]
 [ext_resource type="Texture2D" uid="uid://wgdxqav2xfn3" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon1.png" id="14_h7sld"]
 [ext_resource type="AudioStream" uid="uid://djc67ry27fng0" path="res://Audio/xbox.ogg" id="15_j5bh2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yl847"]
+shader = ExtResource("8_yl847")
+shader_parameter/influence = 0.23999999463552
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aqyct"]
+shader = ExtResource("8_yl847")
+shader_parameter/influence = 0.23999999463552
+shader_parameter/offset = 0.0
 
 [sub_resource type="Animation" id="Animation_ard7p"]
 length = 0.001
@@ -374,6 +385,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Steedium" type="TextureRect" parent="GameUI/Control" unique_id=676429035]
+material = SubResource("ShaderMaterial_yl847")
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -615,6 +627,7 @@ text = "[center][color=green][font_size=18]Press
 fit_content = true
 
 [node name="Steedium" type="TextureRect" parent="ShopUI/Control/Item1" unique_id=2010770548]
+material = SubResource("ShaderMaterial_aqyct")
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -723,6 +736,7 @@ text = "[center][color=red][font_size=18]Press
 fit_content = true
 
 [node name="Steedium" type="TextureRect" parent="ShopUI/Control/Item2" unique_id=1312559867]
+material = SubResource("ShaderMaterial_aqyct")
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

@@ -527,7 +527,7 @@ theme_override_font_sizes/font_size = 18
 text = "Horse Amount (1)"
 vertical_alignment = 1
 
-[node name="DiamondsCollected" type="LineEdit" parent="Custom/Pag2" unique_id=695388956]
+[node name="SteediumCollected" type="LineEdit" parent="Custom/Pag2" unique_id=695388956]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -545,7 +545,7 @@ theme_override_font_sizes/font_size = 18
 placeholder_text = "Number"
 virtual_keyboard_type = 2
 
-[node name="Label" type="Label" parent="Custom/Pag2/DiamondsCollected" unique_id=37101794]
+[node name="Label" type="Label" parent="Custom/Pag2/SteediumCollected" unique_id=37101794]
 layout_mode = 1
 offset_left = -3.0
 offset_top = -43.5
@@ -557,7 +557,7 @@ text = "Diamonds Collected
 at Start"
 vertical_alignment = 1
 
-[node name="DiamondsBonus" type="LineEdit" parent="Custom/Pag2" unique_id=1944481610]
+[node name="SteediumBonus" type="LineEdit" parent="Custom/Pag2" unique_id=1944481610]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -575,7 +575,7 @@ theme_override_font_sizes/font_size = 18
 placeholder_text = "Number"
 virtual_keyboard_type = 2
 
-[node name="Label" type="Label" parent="Custom/Pag2/DiamondsBonus" unique_id=493488651]
+[node name="Label" type="Label" parent="Custom/Pag2/SteediumBonus" unique_id=493488651]
 layout_mode = 1
 offset_left = -1.0
 offset_top = -42.0
@@ -795,8 +795,8 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("3_iwfq2")
 theme_override_font_sizes/font_size = 18
-text = "yahiamice loves
-this game"
+text = "purchase our new
+horse DLC"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -920,14 +920,10 @@ text = "Quit"
 flat = true
 
 [node name="Newgrounds" type="Button" parent="Menu" unique_id=559669930]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -625.0
+offset_left = 15.0
 offset_top = 15.0
-offset_right = -494.0
+offset_right = 146.0
 offset_bottom = 41.0
-grow_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
@@ -1218,8 +1214,8 @@ scrollable = false
 [connection signal="pressed" from="Custom/Pag1/Spooky" to="Custom" method="_on_spooky_pressed"]
 [connection signal="value_changed" from="Custom/Pag2/HorseSpawn" to="Custom" method="_on_horse_spawn_value_changed"]
 [connection signal="value_changed" from="Custom/Pag2/HorseAmount" to="Custom" method="_on_horse_amount_value_changed"]
-[connection signal="text_changed" from="Custom/Pag2/DiamondsCollected" to="Custom" method="_on_diamonds_collected_text_changed"]
-[connection signal="text_changed" from="Custom/Pag2/DiamondsBonus" to="Custom" method="_on_diamonds_bonus_text_changed"]
+[connection signal="text_changed" from="Custom/Pag2/SteediumCollected" to="Custom" method="_on_diamonds_collected_text_changed"]
+[connection signal="text_changed" from="Custom/Pag2/SteediumBonus" to="Custom" method="_on_diamonds_bonus_text_changed"]
 [connection signal="value_changed" from="Custom/Pag2/ItemMult" to="Custom" method="_on_item_mult_value_changed"]
 [connection signal="pressed" from="Custom/Pag2/SpawnHorse" to="Custom" method="_on_spawn_horse_pressed"]
 [connection signal="pressed" from="Custom/Back" to="Custom" method="_on_back_pressed"]
