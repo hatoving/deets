@@ -37,6 +37,30 @@ var goStraightToUnpauseFromHTP = false
 var finalTime = 70
 var customMode = false
 
+const RANDOM_TEXT = [
+	"type horse\nbackwards",
+	"deets nuts",
+	"yahiamice loves\nthis game",
+	"horse",
+	"time to horse\naround",
+	"we endorse godot",
+	"gun? gun!",
+	"el horso",
+	"neigh",
+	"the next step in\nhorse gaming",
+	"l to the m\nto the a to the o",
+	"why the fuck are\nyou playing this",
+	"yes, horse hell\nIS real",
+	"the horse is\ncastrated",
+	"flint and steed!",
+	"now with 200% less\nboss fights!",
+	"friday night\nfoalin'",
+	"purchase our new\nhorse DLC",
+	"go play\nymfp",
+	"117 different\nendings",
+	"a light shines!"
+]
+
 @onready var lastMenu = $PauseUI/Main
 
 @onready var hotbarSelectedTex = preload("res://Sprites/Inventory/hotbar_1.png")

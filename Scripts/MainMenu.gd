@@ -4,33 +4,6 @@ const SECRET = ["E", "S", "R", "O", "H"]
 
 var tween: Tween
 var stuck = false
-var randomText = [
-	"type horse\nbackwards",
-	"deets nuts",
-	"yahiamice loves\nthis game",
-	"horse",
-	"time to horse\naround",
-	"we endorse godot",
-	"gun? gun!",
-	"el horso",
-	"neigh",
-	"the next step in\nhorse gaming",
-	"this isn't roblox",
-	"l to the m\nto the a to the o",
-	"why the fuck are\nyou playing this",
-	"subscribe to\nblueben8!",
-	"yes, horse hell\nIS real",
-	"the horse is\ncastrated",
-	"flint and steed",
-	"now with 200% less\nboss fights!",
-	"just open minecraft man",
-	"friday night\nfoalin'",
-	"garten of banban\nhorse DLC",
-	"go play\ndramatized",
-	"117 different\nendings",
-	"inn-to\nthe what?",
-	"a light shines!"
-]
 var deleteTimer = 6.0
 var secProgress = []
 var currentVersion = ProjectSettings.get_setting("application/config/version")
@@ -51,7 +24,7 @@ func _ready() -> void:
 	Global.uiFade = false
 	Global.get_node("Misc/Control/Fade").color.a = 1.0
 	
-	$Menu/Logo/Label.text = randomText[randi_range(0, randomText.size() - 1)]
+	$Menu/Logo/Label.text = Global.RANDOM_TEXT[randi_range(0, Global.RANDOM_TEXT.size() - 1)]
 	start_bounce()
 	
 	if !Global.get_node("MainMenu").playing:
