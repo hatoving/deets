@@ -42,9 +42,6 @@ func _ready() -> void:
 	Global.uiFade = false
 	Global.get_node("Misc/Control/Fade").color.a = 1.0
 	
-	$Menu/Logo/Label.text = RANDOM_TEXT[randi_range(0, RANDOM_TEXT.size() - 1)]
-	start_bounce()
-	
 	if !Global.get_node("MainMenu").playing:
 		Global.get_node("MainMenu").play()
 		
@@ -68,15 +65,6 @@ func deleteFile(fileName: String):
 			print("Failed to open user directory")
 	else:
 		print("File does not exist:", fileName)
-
-func start_bounce():
-	$Menu/Logo/Label.scale = Vector2(1.56, 1.56)
-	tween = create_tween()
-
-	tween.tween_property($Menu/Logo/Label, "scale", Vector2(1.745, 1.745), 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	tween.tween_property($Menu/Logo/Label, "scale", Vector2(1.56, 1.56), 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-
-	tween.tween_callback(start_bounce)
 	
 func _process(delta: float) -> void:
 	$Menu/Label3.text = "Best time : " + ((Global.formatTime(SaveData.gameSave.bestTime, false) if SaveData.gameSave.bestTime != 0.0 else "none, yet")) + "\nLatest custom time : " + ((Global.formatTime(SaveData.gameSave.latestCustomTime, false) if SaveData.gameSave.latestCustomTime != 0.0 else "none, yet"))

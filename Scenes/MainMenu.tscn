@@ -3,7 +3,6 @@
 [ext_resource type="Shader" uid="uid://6tovx0gcayfv" path="res://Shaders/Scroll.gdshader" id="1_h7a2f"]
 [ext_resource type="Script" uid="uid://cqo46rechwyed" path="res://Scripts/MainMenu.gd" id="1_iwfq2"]
 [ext_resource type="Texture2D" uid="uid://clnojsm478ou7" path="res://Sprites/BackgroundNoHorse.png" id="2_riqfo"]
-[ext_resource type="Texture2D" uid="uid://cd1paiyx306jc" path="res://Sprites/Logo.png" id="3_h7a2f"]
 [ext_resource type="Texture2D" uid="uid://dy11y08ywgsbj" path="res://Sprites/Background.png" id="4_7v4os"]
 [ext_resource type="Script" uid="uid://dkxa6ojulscp3" path="res://Scripts/CustomMenu.gd" id="4_afec1"]
 [ext_resource type="Texture2D" uid="uid://c47kb70i38u3c" path="res://Sprites/HorseFood.png" id="6_31qfy"]
@@ -13,10 +12,16 @@
 [ext_resource type="Script" uid="uid://dro3q88caq6ww" path="res://Scripts/LoadingScreenMinecraft.gd" id="7_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://is6tls7ieq56" path="res://Sprites/Gun.png" id="7_qie43"]
 [ext_resource type="AudioStream" uid="uid://svedmuuskapx" path="res://Audio/pop.ogg" id="8_u7cqb"]
+[ext_resource type="Texture2D" uid="uid://cepl7y051an1x" path="res://Sprites/Logo/LogoUnfill.png" id="10_riqfo"]
+[ext_resource type="Texture2D" uid="uid://b20f3xsx4hkia" path="res://Sprites/Logo/LogoD.png" id="12_7v4os"]
 [ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="12_yxkem"]
 [ext_resource type="Script" uid="uid://dtnxj5jtcyb0x" path="res://Scripts/NewgroundsMenu.gd" id="13_1thib"]
 [ext_resource type="FontFile" uid="uid://dmsb2c13mo1lf" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-bold.ttf" id="13_7v4os"]
 [ext_resource type="Texture2D" uid="uid://b5jgpskqvimlo" path="res://Sprites/NG.png" id="13_m04lp"]
+[ext_resource type="Texture2D" uid="uid://21m14rosoqa5" path="res://Sprites/Logo/LogoDE.png" id="13_pjscj"]
+[ext_resource type="Texture2D" uid="uid://c43hrq75iwlhs" path="res://Sprites/Logo/LogoDEE.png" id="14_pjscj"]
+[ext_resource type="Texture2D" uid="uid://cb6agxxlmqs6r" path="res://Sprites/Logo/LogoDEET.png" id="15_65hh5"]
+[ext_resource type="Texture2D" uid="uid://baeiihk1lus87" path="res://Sprites/Logo/LogoDEETS.png" id="16_6byu3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7v4os"]
 shader = ExtResource("1_h7a2f")
@@ -33,7 +38,7 @@ color = Color(0.311588, 0.311588, 0.311588, 1)
 thickness = 9
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_61cf8"]
-color = Color(0, 0.831373, 0, 1)
+color = Color(0.83, 0.415, 0, 1)
 thickness = 9
 
 [sub_resource type="ImageTexture" id="ImageTexture_fimr5"]
@@ -804,49 +809,101 @@ flat = true
 [node name="Menu" type="CanvasLayer" parent="." unique_id=801310162]
 layer = 80
 
-[node name="Logo" type="TextureRect" parent="Menu" unique_id=1159935834]
+[node name="Unfill" type="TextureRect" parent="Menu" unique_id=1159935834]
+self_modulate = Color(0.34901962, 0.1254902, 0.015686275, 1)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -239.5
-offset_top = 72.0
+offset_top = 72.000015
 offset_right = 239.5
 offset_bottom = 197.0
 grow_horizontal = 2
-scale = Vector2(0.55, 0.55)
-pivot_offset = Vector2(240.5, 62.5)
-texture = ExtResource("3_h7a2f")
-stretch_mode = 4
+scale = Vector2(0.175, 0.175)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("10_riqfo")
+expand_mode = 1
+stretch_mode = 3
 
-[node name="Label" type="Label" parent="Menu/Logo" unique_id=1955428018]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -170.0
-offset_top = -29.0
-offset_right = 124.0
-offset_bottom = -11.0
-grow_horizontal = 0
-grow_vertical = 0
-rotation = -0.261799
-scale = Vector2(1.56, 1.56)
-pivot_offset = Vector2(147, 0)
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 0
-theme_override_constants/paragraph_spacing = 0
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 2
-theme_override_fonts/font = ExtResource("13_7v4os")
-theme_override_font_sizes/font_size = 18
-text = "purchase our new
-horse DLC"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="D" type="TextureRect" parent="Menu" unique_id=998522308]
+self_modulate = Color(1, 0.5764706, 0.050980393, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 72.000015
+offset_right = 239.5
+offset_bottom = 197.0
+grow_horizontal = 2
+scale = Vector2(0.175, 0.175)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("12_7v4os")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="E" type="TextureRect" parent="Menu" unique_id=2138562947]
+self_modulate = Color(1, 0.5764706, 0.050980393, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 72.000015
+offset_right = 239.5
+offset_bottom = 197.0
+grow_horizontal = 2
+scale = Vector2(0.175, 0.175)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("13_pjscj")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="E2" type="TextureRect" parent="Menu" unique_id=528217216]
+self_modulate = Color(1, 0.5764706, 0.050980393, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 72.000015
+offset_right = 239.5
+offset_bottom = 197.0
+grow_horizontal = 2
+scale = Vector2(0.175, 0.175)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("14_pjscj")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="T" type="TextureRect" parent="Menu" unique_id=465866641]
+self_modulate = Color(1, 0.5764706, 0.050980393, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 72.000015
+offset_right = 239.5
+offset_bottom = 197.0
+grow_horizontal = 2
+scale = Vector2(0.175, 0.175)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("15_65hh5")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="S" type="TextureRect" parent="Menu" unique_id=1012306701]
+self_modulate = Color(1, 0.5764706, 0.050980393, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 72.000015
+offset_right = 239.5
+offset_bottom = 197.0
+grow_horizontal = 2
+scale = Vector2(0.175, 0.175)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("16_6byu3")
+expand_mode = 1
+stretch_mode = 3
 
 [node name="Journey" type="Button" parent="Menu" unique_id=469085465]
 anchors_preset = 8
@@ -864,7 +921,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("12_yxkem")
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
@@ -886,7 +943,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("12_yxkem")
 theme_override_font_sizes/font_size = 24
 text = "Start Custom Game"
@@ -911,6 +968,7 @@ theme_override_constants/line_spacing = 0
 theme_override_constants/paragraph_spacing = 0
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("13_7v4os")
 theme_override_font_sizes/font_size = 10
@@ -934,7 +992,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("12_yxkem")
 theme_override_font_sizes/font_size = 24
 text = "Options"
@@ -956,7 +1014,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("12_yxkem")
 theme_override_font_sizes/font_size = 24
 text = "Credits"
@@ -978,7 +1036,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("12_yxkem")
 theme_override_font_sizes/font_size = 24
 text = "Quit"
@@ -993,7 +1051,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
 theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("12_yxkem")
 theme_override_font_sizes/font_size = 20
 text = "Newgrounds"
@@ -1230,7 +1288,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("12_yxkem")
 theme_override_font_sizes/font_size = 22
-text = "Loading world"
+text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
