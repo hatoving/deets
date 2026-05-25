@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://53orkuh65en6"]
+
+[ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="1_6dce4"]
+[ext_resource type="ArrayMesh" uid="uid://cw22b44jkldh4" path="res://Models/Door/doorwayFront.obj" id="1_k8418"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2solu"]
+render_priority = 0
+shader = ExtResource("1_6dce4")
+shader_parameter/outline_color = Color(1, 1, 1, 0)
+shader_parameter/outline_width = 1.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6dce4"]
+points = PackedVector3Array(-0.333749, 0.5048, 0.107979, -0.472435, 0.0366349, 6.93889e-18, -0.479325, 0.0224105, 0.0891, -0.0120097, 0.0224105, 0.0891, -0.0188996, 0.972966, 0, -0.472435, 0.972966, -6.93889e-18, -0.0120097, 0.98719, 0.0891, -0.0188996, 0.0366349, 0, -0.479325, 0.98719, 0.0891, -0.333749, 0.472781, -0.0202119, -0.429877, 0.5048, -0.0202119, -0.429877, 0.5048, 0.107979, -0.333749, 0.472781, 0.107979, -0.333749, 0.5048, -0.0202119)
+
+[node name="DoorwayFront" type="StaticBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233, 0, 0)
+material_overlay = SubResource("ShaderMaterial_2solu")
+mesh = ExtResource("1_k8418")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_6dce4")

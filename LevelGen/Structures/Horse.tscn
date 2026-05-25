@@ -1,0 +1,184 @@
+[gd_scene load_steps=20 format=3 uid="uid://bc4lk6vvyvwd7"]
+
+[ext_resource type="Script" uid="uid://wi2068yqla8l" path="res://Code/Horse.gd" id="1_gffeo"]
+[ext_resource type="Texture2D" uid="uid://be0iblo106o5n" path="res://Sprites/Horse/horse_sheet.png" id="2_agco3"]
+[ext_resource type="AudioStream" uid="uid://blny8gefgcqvh" path="res://Audio/Horse/intrigue_new.ogg" id="3_txvvm"]
+[ext_resource type="Texture2D" uid="uid://dyg3a704r33re" path="res://Sprites/Horse/dead.png" id="3_uph3x"]
+[ext_resource type="AudioStream" uid="uid://burnkjq5qdt6r" path="res://Audio/Jumpscare.ogg" id="4_3nlbc"]
+[ext_resource type="AudioStream" uid="uid://duutyme22p34e" path="res://Audio/Horse/gallop.ogg" id="4_lmfhu"]
+[ext_resource type="AudioStream" uid="uid://cdrv76be06btq" path="res://Audio/Horse/IntrigueAngry.mp3" id="5_anewe"]
+[ext_resource type="AudioStream" uid="uid://djcb52qumke3a" path="res://Audio/Horse/spotted.ogg" id="5_bmst0"]
+[ext_resource type="AudioStream" uid="uid://p1cq44yrkl1c" path="res://Audio/Horse/Mad.ogg" id="5_x3sep"]
+[ext_resource type="AudioStream" uid="uid://cl6rp7v6vk5h0" path="res://Audio/Horse/chase.ogg" id="6_pew3w"]
+[ext_resource type="AudioStream" uid="uid://c5fmuc815g7q6" path="res://Audio/Horse/ItemDestroy.mp3" id="6_txvvm"]
+[ext_resource type="AudioStream" uid="uid://cyyeygskoeipr" path="res://Audio/Horse/tired.ogg" id="7_agco3"]
+[ext_resource type="AudioStream" uid="uid://dcbbraa1fp8no" path="res://Audio/Horse/HorseFood.mp3" id="7_lmfhu"]
+[ext_resource type="AudioStream" uid="uid://ct4egh66v7tjw" path="res://Audio/Horse/Yum.ogg" id="8_bmst0"]
+[ext_resource type="AudioStream" uid="uid://cx4750ejs7kbi" path="res://Audio/Horse/Munch.ogg" id="8_pew3w"]
+[ext_resource type="AudioStream" uid="uid://fbd5ee23anpv" path="res://Audio/Horse/Random_0.mp3" id="11_g4lq5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lmfhu"]
+size = Vector3(0.3, 2, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_txvvm"]
+size = Vector3(0.8, 2, 0.8)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xf5x7"]
+height = 1.0
+radius = 9.5
+
+[node name="Horse" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 2
+safe_margin = 0.01
+script = ExtResource("1_gffeo")
+
+[node name="Ray" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, 6)
+collision_mask = 262144
+hit_from_inside = true
+debug_shape_custom_color = Color(0.843137, 0.52549, 0.65098, 0)
+
+[node name="Ray2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, 6)
+collision_mask = 524288
+hit_from_inside = true
+debug_shape_custom_color = Color(0.843137, 0.52549, 0.65098, 0)
+debug_shape_thickness = 5
+
+[node name="Col" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_lmfhu")
+debug_color = Color(0.746094, 0.398545, 0.618322, 0.42)
+
+[node name="Death" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Col" type="CollisionShape3D" parent="Death"]
+shape = SubResource("BoxShape3D_txvvm")
+debug_color = Color(0.971736, 0, 0.445914, 0.42)
+
+[node name="Agent" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+keep_y_velocity = false
+debug_enabled = true
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+billboard = 2
+texture_filter = 2
+texture = ExtResource("2_agco3")
+hframes = 8
+
+[node name="DeadSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+billboard = 2
+texture_filter = 2
+texture = ExtResource("3_uph3x")
+
+[node name="SmallSFX" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+priority = 100
+
+[node name="Col" type="CollisionShape3D" parent="SmallSFX"]
+shape = SubResource("CylinderShape3D_xf5x7")
+debug_color = Color(0.924556, 4.73607e-05, 0.679582, 0.42)
+
+[node name="Intrigue" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("3_txvvm")
+volume_db = -10.0
+bus = &"SFX_Filtered"
+
+[node name="IntrigueMad" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("5_anewe")
+volume_db = -10.0
+bus = &"SFX_Filtered"
+
+[node name="Mad" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("5_x3sep")
+max_db = -3.0
+bus = &"SFX_Filtered"
+
+[node name="Jumpscare" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("4_3nlbc")
+bus = &"SFX_Filtered"
+
+[node name="Gallop" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_lmfhu")
+volume_db = -2.0
+panning_strength = 0.75
+bus = &"SFX_Filtered"
+
+[node name="Spotted" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("5_bmst0")
+volume_db = -10.0
+bus = &"SFX_Filtered"
+
+[node name="PedestalDialogue" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("6_txvvm")
+volume_db = -15.0
+bus = &"SFX_Filtered"
+
+[node name="HorseFood" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("7_lmfhu")
+volume_db = -25.0
+bus = &"SFX_Filtered"
+
+[node name="Munch" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("8_pew3w")
+volume_db = -10.0
+bus = &"SFX_Filtered"
+
+[node name="Yum" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("8_bmst0")
+volume_db = -22.0
+bus = &"SFX_Filtered"
+
+[node name="Chase" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("6_pew3w")
+volume_db = -10.0
+bus = &"SFX_Filtered"
+
+[node name="DeadDialogue" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("6_pew3w")
+volume_db = -15.0
+bus = &"SFX_Filtered"
+
+[node name="Random" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_g4lq5")
+volume_db = -18.0
+bus = &"SFX_Filtered"
+
+[node name="Tired" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("7_agco3")
+volume_db = -20.0
+bus = &"SFX_Filtered"
+
+[node name="LookAt" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
+
+[connection signal="body_entered" from="Death" to="." method="_onDeathBody3DEntered"]
+[connection signal="area_entered" from="SmallSFX" to="." method="_onSmallSFXEntered"]
+[connection signal="area_exited" from="SmallSFX" to="." method="_onSmallSFXExited"]
+[connection signal="finished" from="Jumpscare" to="." method="_on_jumpscare_finished"]

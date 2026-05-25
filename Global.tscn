@@ -1,0 +1,1252 @@
+[gd_scene load_steps=24 format=3 uid="uid://c62jfox75hss4"]
+
+[ext_resource type="Script" uid="uid://bi5jsvga2767g" path="res://Code/Global.gd" id="1_75gqh"]
+[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="2_ard7p"]
+[ext_resource type="AudioStream" uid="uid://cii7iu7prh802" path="res://Audio/Music/Aftermath.mp3" id="2_vdf0c"]
+[ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="3_1rf5l"]
+[ext_resource type="AudioStream" uid="uid://bo8wjlgflvy5" path="res://Audio/cinematicBoom.ogg" id="3_ard7p"]
+[ext_resource type="Texture2D" uid="uid://g4rnkr8akka7" path="res://Sprites/Diamonds.png" id="3_b1ap6"]
+[ext_resource type="Texture2D" uid="uid://dyf6n2m0j2rbc" path="res://Sprites/Crosshair.png" id="5_b1ap6"]
+[ext_resource type="Texture2D" uid="uid://cw444jus8r4r6" path="res://Sprites/Inventory/hotbar_1.png" id="6_0pijh"]
+[ext_resource type="Texture2D" uid="uid://dorvf4k7hfici" path="res://Sprites/Hammer.png" id="6_pbn0o"]
+[ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Options.tscn" id="9_vdf0c"]
+[ext_resource type="Texture2D" uid="uid://c552qij2v45do" path="res://Sprites/Achievements/UnlockStyle/Xbox/base.png" id="10_f86ji"]
+[ext_resource type="Texture2D" uid="uid://diokyotbvmhgi" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon_bg.png" id="11_x5224"]
+[ext_resource type="Texture2D" uid="uid://bsbqko746uxke" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon_rings.png" id="12_jjvpv"]
+[ext_resource type="Texture2D" uid="uid://cro5w2iqg4lvt" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon2.png" id="13_27fww"]
+[ext_resource type="Texture2D" uid="uid://wgdxqav2xfn3" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon1.png" id="14_h7sld"]
+[ext_resource type="AudioStream" uid="uid://djc67ry27fng0" path="res://Audio/xbox.ogg" id="15_j5bh2"]
+
+[sub_resource type="Animation" id="Animation_ard7p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_75gqh"]
+resource_name = "event"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.4, 3.6, 3.91),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b1ap6"]
+_data = {
+&"RESET": SubResource("Animation_ard7p"),
+&"event": SubResource("Animation_75gqh")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_f86ji"]
+
+[sub_resource type="Animation" id="Animation_n3y73"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 32)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icon:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Icon:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_27fww")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Rings:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.35, 1.35)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SFX:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_n88pi"]
+resource_name = "ach"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.23517e-08, 0.3, 6.03539, 6.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0172818, 0.2, 0.3, 6.03333, 6.16596),
+"transitions": PackedFloat32Array(2.14355, 2.14355, 2.07053, 2.07053, 2.07053),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.635, 1.635), Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BG:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.133333, 0.333333, 6.03539, 6.2133),
+"transitions": PackedFloat32Array(2.14355, 2.14355, 2.14355, 2.14355),
+"update": 0,
+"values": [Vector2(1.265, 1.265), Vector2(1, 1), Vector2(1, 1), Vector2(1.265, 1.265)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rings:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.333333, 5.0637, 5.76667, 6.2993),
+"transitions": PackedFloat32Array(2.14355, 2.14355, 2.07053, 2.07053, 1.03526, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.145, 1.145), Vector2(1, 1), Vector2(1, 1), Vector2(1.35, 1.35), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.433333, 6.00802, 6.31965),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 32), Vector2(194.28, 32), Vector2(173.41, 32), Vector2(173.41, 32), Vector2(1, 32)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Icon:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4, 0.975819, 1.00435, 1.13768, 1.76667, 1.8, 1.93333, 2.6048, 2.63333, 2.76667, 3.4, 3.43333, 3.56667, 4.23814, 4.26667, 4.4, 5.02898, 5.06232, 5.19565, 5.77147, 5.8, 5.93333, 6.39495, 6.42828, 6.56161),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Icon:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4, 1.00435, 1.79565, 2.63333, 3.42898, 4.26667, 5.05797, 5.8, 6.42393),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_27fww"), ExtResource("14_h7sld"), ExtResource("13_27fww"), ExtResource("14_h7sld"), ExtResource("13_27fww"), ExtResource("14_h7sld"), ExtResource("13_27fww"), ExtResource("14_h7sld"), ExtResource("13_27fww")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SFX:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_63ice"]
+_data = {
+&"RESET": SubResource("Animation_n3y73"),
+&"ach": SubResource("Animation_n88pi")
+}
+
+[node name="Global" type="Node"]
+script = ExtResource("1_75gqh")
+
+[node name="MainMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vdf0c")
+volume_db = 3.0
+bus = &"Music"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1rf5l")
+volume_db = 3.0
+bus = &"SFX"
+
+[node name="GameUI" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Control" type="Control" parent="GameUI"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Debug" type="RichTextLabel" parent="GameUI/Control"]
+visible = false
+layout_mode = 1
+offset_left = 14.0
+offset_top = 119.0
+offset_right = 183.0
+offset_bottom = 281.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+text = "00:00:00"
+fit_content = true
+
+[node name="DiamondAdd" type="RichTextLabel" parent="GameUI/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -25.0
+offset_right = 28.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(30, 6)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemDesc0" type="RichTextLabel" parent="GameUI/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -56.0
+offset_right = -34.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(60, 12)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "Nothing"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemDesc1" type="RichTextLabel" parent="GameUI/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -56.0
+offset_right = 84.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(60, 12)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "Nothing"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Diamonds" type="TextureRect" parent="GameUI/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -98.0
+offset_right = 21.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(24, 26)
+mouse_filter = 2
+texture = ExtResource("3_b1ap6")
+stretch_mode = 4
+
+[node name="Text" type="RichTextLabel" parent="GameUI/Control/Diamonds"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -3.0
+offset_right = 55.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(54, 4.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+text = "0"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hotbar0" type="TextureRect" parent="GameUI/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -44.0
+offset_right = -44.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("6_0pijh")
+
+[node name="Tex" type="TextureRect" parent="GameUI/Control/Hotbar0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(25, 25)
+mouse_filter = 2
+texture = ExtResource("6_pbn0o")
+stretch_mode = 5
+
+[node name="Hotbar1" type="TextureRect" parent="GameUI/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = -44.0
+offset_right = 73.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("6_0pijh")
+
+[node name="Tex" type="TextureRect" parent="GameUI/Control/Hotbar1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(25, 25)
+mouse_filter = 2
+texture = ExtResource("6_pbn0o")
+stretch_mode = 5
+
+[node name="ItemStack0" type="RichTextLabel" parent="GameUI/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -19.0
+offset_right = -15.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(30, 6)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[color=gray]0"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemStack1" type="RichTextLabel" parent="GameUI/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = -19.0
+offset_right = 102.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(30, 6)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[color=gray]0"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="ShopUI"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Item1" type="ColorRect" parent="ShopUI/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = -157.0
+offset_right = 47.315
+offset_bottom = -26.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.34902)
+
+[node name="Label" type="RichTextLabel" parent="ShopUI/Control/Item1"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -52.0
+offset_right = 240.0
+offset_bottom = 52.0
+grow_vertical = 2
+pivot_offset = Vector2(0, 51.783)
+mouse_filter = 2
+theme_override_constants/line_separation = -1
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[font_size=27][wave amp=20.0 freq=2.0][color=yellow]Diamond Bonus-er[/color][/wave][font_size=18]
+
+Adds 5 to the bonus counter!"
+fit_content = true
+
+[node name="Info" type="RichTextLabel" parent="ShopUI/Control/Item1"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -183.195
+offset_top = -27.0
+offset_right = -101.195
+offset_bottom = 27.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(41, 27)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[center][color=green][font_size=18]Press
+[font_size=36][shake]1
+[font_size=18]"
+fit_content = true
+
+[node name="Diamonds" type="TextureRect" parent="ShopUI/Control/Item1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -91.195
+offset_top = -26.0
+offset_right = -43.195
+offset_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(24, 26)
+mouse_filter = 2
+texture = ExtResource("3_b1ap6")
+stretch_mode = 5
+
+[node name="DiamondsText" type="RichTextLabel" parent="ShopUI/Control/Item1/Diamonds"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.5
+offset_top = -16.0
+offset_right = 16.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[shake]5"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item2" type="ColorRect" parent="ShopUI/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = 26.0
+offset_right = 47.315
+offset_bottom = 157.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.34902)
+
+[node name="Label" type="RichTextLabel" parent="ShopUI/Control/Item2"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -51.7825
+offset_right = 240.0
+offset_bottom = 51.7825
+grow_vertical = 2
+pivot_offset = Vector2(0, 51.783)
+mouse_filter = 2
+theme_override_constants/line_separation = -1
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[font_size=27][wave amp=20.0 freq=2.0][color=yellow]Hammer[/color][/wave][font_size=18]
+
+You can break almost anything with this!"
+fit_content = true
+
+[node name="Info" type="RichTextLabel" parent="ShopUI/Control/Item2"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -183.195
+offset_top = -27.0
+offset_right = -101.195
+offset_bottom = 27.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(41, 27)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[center][color=red][font_size=18]Press
+[font_size=36][shake]2
+[font_size=18]"
+fit_content = true
+
+[node name="Diamonds" type="TextureRect" parent="ShopUI/Control/Item2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -91.195
+offset_top = -26.0
+offset_right = -43.195
+offset_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(24, 26)
+mouse_filter = 2
+texture = ExtResource("3_b1ap6")
+stretch_mode = 5
+
+[node name="DiamondsText" type="RichTextLabel" parent="ShopUI/Control/Item2/Diamonds"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.5
+offset_top = -16.0
+offset_right = 16.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[shake]20"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintText" type="RichTextLabel" parent="ShopUI/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -582.0
+offset_top = -22.0
+offset_right = -355.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(113.5, 6)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "Choose wisely — you can only pick one. The Haykeeper will restock some items some time after your purchase."
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintText2" type="RichTextLabel" parent="ShopUI/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.0
+offset_top = -48.0
+offset_right = -85.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(113.5, 22.5)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[color=yellow][font_size=18]PRESS F TO EXIT"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OutOfOrder" type="Control" parent="ShopUI"]
+visible = false
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Info" type="ColorRect" parent="ShopUI/OutOfOrder"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = -157.0
+offset_right = 47.0
+offset_bottom = 157.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.34902)
+
+[node name="Label" type="RichTextLabel" parent="ShopUI/OutOfOrder/Info"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -52.0
+offset_right = 153.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 51.783)
+mouse_filter = 2
+theme_override_constants/line_separation = -1
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[center][font_size=27][shake][color=yellow]We're currently out of order.[/color][/shake][font_size=18]
+
+Come back in X seconds for a restock."
+fit_content = true
+
+[node name="HintText2" type="RichTextLabel" parent="ShopUI/OutOfOrder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.0
+offset_top = -48.0
+offset_right = -85.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(113.5, 22.5)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[color=yellow][font_size=18]PRESS F TO EXIT"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Misc" type="CanvasLayer" parent="."]
+layer = 87
+
+[node name="Control" type="Control" parent="Misc"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Timer" type="RichTextLabel" parent="Misc/Control"]
+visible = false
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 198.0
+offset_bottom = 31.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.54902)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.54902)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+text = "00:00:00"
+fit_content = true
+
+[node name="EventText" type="RichTextLabel" parent="Misc/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -292.0
+offset_top = 34.0
+offset_right = 1.0
+offset_bottom = 61.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "Great job! Now get to the very edge of the map. Make sure you have enough diamonds... and then escape."
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Misc/Control/EventText"]
+libraries = {
+&"": SubResource("AnimationLibrary_b1ap6")
+}
+
+[node name="Boom" type="AudioStreamPlayer" parent="Misc/Control/EventText"]
+stream = ExtResource("3_ard7p")
+
+[node name="HintText" type="RichTextLabel" parent="Misc/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -141.5
+offset_top = -124.0
+offset_right = 141.5
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(141.5, 6)
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -39
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Crosshair" type="TextureRect" parent="Misc/Control"]
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_b1ap6")
+stretch_mode = 5
+
+[node name="Fade" type="ColorRect" parent="Misc/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Achievement" type="CanvasLayer" parent="Misc"]
+layer = 128
+
+[node name="XboxAch" type="TextureRect" parent="Misc/Achievement"]
+modulate = Color(1, 1, 1, 0)
+clip_children = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_top = 356.0
+offset_right = -87.0
+offset_bottom = 388.0
+grow_horizontal = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(88, 16)
+mouse_filter = 2
+texture = ExtResource("10_f86ji")
+expand_mode = 1
+
+[node name="BG" type="TextureRect" parent="Misc/Achievement/XboxAch"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -11.0
+offset_right = 29.0
+offset_bottom = 12.0
+grow_vertical = 2
+pivot_offset = Vector2(11.5, 11.5)
+mouse_filter = 2
+texture = ExtResource("11_x5224")
+
+[node name="Rings" type="TextureRect" parent="Misc/Achievement/XboxAch"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -9.0
+offset_right = 27.0
+offset_bottom = 10.0
+grow_vertical = 2
+scale = Vector2(1.35, 1.35)
+pivot_offset = Vector2(9.5, 9.5)
+mouse_filter = 2
+texture = ExtResource("12_jjvpv")
+
+[node name="Icon" type="TextureRect" parent="Misc/Achievement/XboxAch"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -5.0
+offset_right = 22.0
+offset_bottom = 6.0
+grow_vertical = 2
+pivot_offset = Vector2(4.5, 5.5)
+mouse_filter = 2
+texture = ExtResource("13_27fww")
+
+[node name="Label" type="Label" parent="Misc/Achievement/XboxAch"]
+layout_mode = 0
+offset_left = 33.6667
+offset_top = 2.33333
+offset_right = 158.667
+offset_bottom = 29.3333
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = SubResource("SystemFont_f86ji")
+theme_override_font_sizes/font_size = 10
+text = "Achivement unlocked!
+20G - supra binyot"
+vertical_alignment = 1
+
+[node name="Anim" type="AnimationPlayer" parent="Misc/Achievement/XboxAch"]
+libraries = {
+&"": SubResource("AnimationLibrary_63ice")
+}
+
+[node name="SFX" type="AudioStreamPlayer" parent="Misc/Achievement/XboxAch"]
+stream = ExtResource("15_j5bh2")
+bus = &"SFX"
+
+[node name="PauseUI" type="CanvasLayer" parent="."]
+layer = 98
+
+[node name="BG" type="ColorRect" parent="PauseUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Main" type="CanvasLayer" parent="PauseUI"]
+layer = 99
+visible = false
+
+[node name="Resume" type="Button" parent="PauseUI/Main"]
+offset_left = 52.0
+offset_top = 234.0
+offset_right = 202.0
+offset_bottom = 265.0
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_ard7p")
+theme_override_font_sizes/font_size = 18
+text = "Resume"
+flat = true
+alignment = 0
+
+[node name="HowToPlay" type="Button" parent="PauseUI/Main"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -193.0
+offset_top = 43.0
+offset_right = -43.0
+offset_bottom = 74.0
+grow_horizontal = 0
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_ard7p")
+theme_override_font_sizes/font_size = 18
+text = "How To Play"
+flat = true
+alignment = 2
+
+[node name="Options" type="Button" parent="PauseUI/Main"]
+offset_left = 52.0
+offset_top = 270.0
+offset_right = 202.0
+offset_bottom = 301.0
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_ard7p")
+theme_override_font_sizes/font_size = 18
+text = "Options
+"
+flat = true
+alignment = 0
+
+[node name="Exit" type="Button" parent="PauseUI/Main"]
+offset_left = 52.0
+offset_top = 306.0
+offset_right = 202.0
+offset_bottom = 337.0
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_ard7p")
+theme_override_font_sizes/font_size = 18
+text = "Exit"
+flat = true
+alignment = 0
+
+[node name="Options" parent="PauseUI" node_paths=PackedStringArray("mainMenu", "clickSFX") instance=ExtResource("9_vdf0c")]
+visible = false
+mainMenu = NodePath("../Main")
+clickSFX = NodePath("../../Click")
+
+[node name="HowToPlay" type="Control" parent="PauseUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PauseUI/HowToPlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.0
+offset_top = -171.0
+offset_right = 239.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_ard7p")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]~ [wave][shake]How To Play[/shake][/wave] ~
+
+Playing the game is [color=yellow]simple[/color]. Collect as many [color=cyan]diamonds[/color] needed to escape, and destroy the four Valuable Horse Pedestals. There's a sign at the very edge of the maze that acts as a guide on how much you have left to do.
+
+It won't be THAT easy though.
+You will have company.
+
+There's a store in the middle of the maze that can help you to speed up the process, but the items get pricier everytime you buy something from [color=orange]The Haykeeper[/color].
+
+Good luck!"
+fit_content = true
+
+[node name="Back" type="Button" parent="PauseUI/HowToPlay"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -54.0
+offset_right = 75.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(75, 0)
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_ard7p")
+theme_override_font_sizes/font_size = 18
+text = "-> Done <-"
+flat = true
+
+[connection signal="mouse_entered" from="ShopUI/Control/Item1" to="." method="_shopUI_OnItem1MouseEntered"]
+[connection signal="mouse_entered" from="ShopUI/Control/Item2" to="." method="_shopUI_OnItem1MouseEntered"]
+[connection signal="mouse_entered" from="ShopUI/OutOfOrder/Info" to="." method="_shopUI_OnItem1MouseEntered"]
+[connection signal="pressed" from="PauseUI/Main/Resume" to="." method="_onPauseMain_ResumePressed"]
+[connection signal="pressed" from="PauseUI/Main/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="PauseUI/Main/Options" to="." method="_onPauseMain_OptionsPressed"]
+[connection signal="pressed" from="PauseUI/Main/Exit" to="." method="_on_exit_pressed"]
+[connection signal="onExit" from="PauseUI/Options" to="." method="_on_options_on_exit"]
+[connection signal="pressed" from="PauseUI/HowToPlay/Back" to="." method="_on_backHTP_pressed"]

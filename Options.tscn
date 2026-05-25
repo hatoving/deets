@@ -1,0 +1,470 @@
+[gd_scene load_steps=6 format=3 uid="uid://dacext5dba2fr"]
+
+[ext_resource type="Script" uid="uid://dgsn7f6s04t3i" path="res://Code/Options.gd" id="1_bwr58"]
+[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="2_dfe3t"]
+[ext_resource type="Script" uid="uid://c2lkwc1n8wsns" path="res://Code/VideoSettings.gd" id="3_t1d33"]
+[ext_resource type="Script" uid="uid://c64emh8gv3rhc" path="res://Code/AudioSettings.gd" id="4_5pjjr"]
+[ext_resource type="Script" uid="uid://cbc4c5viujas" path="res://Code/GameSettings.gd" id="5_rakeu"]
+
+[node name="Options" type="CanvasLayer"]
+layer = 99
+script = ExtResource("1_bwr58")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 64.0
+offset_right = 48.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Gameplay"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -173.145
+offset_top = 61.0
+offset_right = -126.855
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "<<"
+flat = true
+
+[node name="Right" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 126.855
+offset_top = 61.0
+offset_right = 173.145
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = ">>"
+flat = true
+
+[node name="Video" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_t1d33")
+
+[node name="Fullscreen" type="Button" parent="Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -124.0
+offset_right = 181.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Fullscreen : False"
+flat = true
+
+[node name="Resolution" type="Button" parent="Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -87.0
+offset_right = 181.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Screen Resolution : 640x480"
+flat = true
+
+[node name="V-Sync" type="Button" parent="Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -50.0
+offset_right = 181.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "V-Sync : True"
+flat = true
+
+[node name="Audio" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_5pjjr")
+
+[node name="Master" type="HSlider" parent="Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -100.0
+offset_right = 104.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -80.0
+max_value = 0.0
+
+[node name="Label" type="Label" parent="Audio/Master"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Master (100%)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="HSlider" parent="Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -35.0
+offset_right = 104.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -72.0
+max_value = 0.0
+
+[node name="Label" type="Label" parent="Audio/Music"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Music (100%)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="HSlider" parent="Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 33.0
+offset_right = 104.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -72.0
+max_value = 0.0
+
+[node name="Label" type="Label" parent="Audio/SFX"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "SFX (100%)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ambience" type="HSlider" parent="Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 101.0
+offset_right = 104.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -72.0
+max_value = 0.0
+
+[node name="Label" type="Label" parent="Audio/Ambience"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Ambience (100%)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_rakeu")
+
+[node name="Sensitivity" type="HSlider" parent="Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -100.0
+offset_right = 104.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 0.05
+step = 0.001
+value = 0.01
+
+[node name="Label" type="Label" parent="Game/Sensitivity"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Camera Sensitvity (0.01)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FOV" type="HSlider" parent="Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -39.0
+offset_right = 104.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 60.0
+max_value = 120.0
+value = 90.0
+
+[node name="Label" type="Label" parent="Game/FOV"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Field of View (90.0)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speedrun" type="Button" parent="Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -11.0
+offset_right = 181.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Speedrun Timer : False"
+flat = true
+
+[node name="Leaderbaord" type="Button" parent="Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = 31.0
+offset_right = 181.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Submit your time to the leaderboards
+when you beat the game in it's default
+settings, regardless if it is your best time
+or not."
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Submit Time to Leaderboard : True"
+flat = true
+
+[node name="Horsecraft" type="Button" parent="Game"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -141.0
+offset_right = 181.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Go Back to Horsecraft"
+flat = true
+
+[node name="Intro" type="Button" parent="Game"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -105.0
+offset_right = 181.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Go Back to Intro"
+flat = true
+
+[node name="Back" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -59.0
+offset_right = 177.0
+offset_bottom = -28.0
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("2_dfe3t")
+theme_override_font_sizes/font_size = 18
+text = "Back"
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Video/Fullscreen" to="Video" method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Video/Resolution" to="Video" method="_on_resolution_pressed"]
+[connection signal="pressed" from="Video/V-Sync" to="Video" method="_on_v_sync_pressed"]
+[connection signal="value_changed" from="Audio/Master" to="Audio" method="_on_master_value_changed"]
+[connection signal="value_changed" from="Audio/Music" to="Audio" method="_on_music_value_changed"]
+[connection signal="value_changed" from="Audio/SFX" to="Audio" method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="Audio/Ambience" to="Audio" method="_on_ambience_value_changed"]
+[connection signal="pressed" from="Game/Speedrun" to="Game" method="_on_speedrun_pressed"]
+[connection signal="pressed" from="Game/Leaderbaord" to="Game" method="_on_leaderbaord_pressed"]
+[connection signal="pressed" from="Game/Horsecraft" to="Game" method="_on_horsecraft_pressed"]
+[connection signal="pressed" from="Game/Intro" to="Game" method="_on_intro_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

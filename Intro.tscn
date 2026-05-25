@@ -1,0 +1,895 @@
+[gd_scene load_steps=37 format=3 uid="uid://bmbm4r70r65a1"]
+
+[ext_resource type="Script" uid="uid://c5kjqv2rsrqb7" path="res://Code/intro.gd" id="1_1rpvy"]
+[ext_resource type="PackedScene" uid="uid://b6ctqbmr3yv57" path="res://LevelGen/Structures/MossWall.tscn" id="2_33sem"]
+[ext_resource type="PackedScene" uid="uid://dueu1smc1vjou" path="res://LevelGen/Structures/BrickFloor.tscn" id="3_46ak0"]
+[ext_resource type="Texture2D" uid="uid://bu7i1vlr21m0o" path="res://Models/Border/moss.png" id="3_iysgs"]
+[ext_resource type="ArrayMesh" uid="uid://52japcqohy" path="res://Models/Border/border.obj" id="4_1rpvy"]
+[ext_resource type="AudioStream" uid="uid://d3kt3tuqyqpaa" path="res://Audio/Amb/wind.ogg" id="4_4ad6s"]
+[ext_resource type="Texture2D" uid="uid://dtx3ep31fqtua" path="res://Sprites/Horse.png" id="4_33olo"]
+[ext_resource type="PackedScene" uid="uid://53orkuh65en6" path="res://Models/Door/DoorwayFront.tscn" id="4_465o5"]
+[ext_resource type="PackedScene" uid="uid://cds85unabj3cn" path="res://LevelGen/Player.tscn" id="4_iysgs"]
+[ext_resource type="PackedScene" uid="uid://c63b5awj52f4h" path="res://Models/Chair/ExecutiveChair1.tscn" id="5_4ad6s"]
+[ext_resource type="Script" uid="uid://jjs41ypgty8g" path="res://Code/HorseIntro.gd" id="5_465o5"]
+[ext_resource type="PackedScene" uid="uid://c5vnshh7i27ra" path="res://Models/Desk/LShapedDesk1.tscn" id="5_7136s"]
+[ext_resource type="Script" uid="uid://8144jg74vud6" path="res://Code/DoorHorseIntro.gd" id="5_sfgsg"]
+[ext_resource type="Texture2D" uid="uid://cra1kott6b2i8" path="res://Sprites/Plant.png" id="6_7136s"]
+[ext_resource type="Script" uid="uid://df4754xvyo7jm" path="res://Code/InteractableStaticBody3D.gd" id="6_dbfec"]
+[ext_resource type="Script" uid="uid://cda6c414u36ja" path="res://Code/DoorExitIntro.gd" id="6_f4n53"]
+[ext_resource type="AudioStream" uid="uid://cqtn58ujw5ib7" path="res://Audio/ReverseCymbal.mp3" id="6_lv6ny"]
+[ext_resource type="AudioStream" uid="uid://dxlpic76lpw51" path="res://Audio/HorseIntro/Correct.ogg" id="6_swg0i"]
+[ext_resource type="ArrayMesh" uid="uid://bev17fqrcxpqq" path="res://Models/Board/Board.obj" id="7_dfov6"]
+[ext_resource type="AudioStream" uid="uid://dcoglb0wupioh" path="res://Audio/HorseIntro/Wrong.ogg" id="7_hqww8"]
+[ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="7_ixiwt"]
+[ext_resource type="Texture2D" uid="uid://c74exlkoyglbs" path="res://Models/Board/texture.png" id="7_swg0i"]
+[ext_resource type="AudioStream" uid="uid://ceajalb5y1vhf" path="res://Audio/Haykeeper/NoNo.ogg" id="8_hqww8"]
+[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="9_swg0i"]
+[ext_resource type="AudioStream" uid="uid://cmfrlhk5tosv5" path="res://Audio/door_closed.ogg" id="17_7shw0"]
+[ext_resource type="PackedScene" uid="uid://cl5cw1hu3lypi" path="res://Key.tscn" id="25_wcvy4"]
+[ext_resource type="FontFile" uid="uid://c3h177hi5b8r3" path="res://Fonts/Munson_Roman.otf" id="26_gq5a0"]
+
+[sub_resource type="Environment" id="Environment_myinc"]
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.6781
+fog_height = 16.15
+fog_height_density = -5.1967
+volumetric_fog_density = 0.637
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqww8"]
+shading_mode = 0
+albedo_texture = ExtResource("7_swg0i")
+texture_filter = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dfov6"]
+render_priority = 0
+shader = ExtResource("7_ixiwt")
+shader_parameter/outline_color = Color(1, 1, 1, 0)
+shader_parameter/outline_width = 1.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hqww8"]
+points = PackedVector3Array(-0.0226198, 0.007128, -0.0203927, 0.0232183, 0.49602, 0.201083, -0.0226198, 0.49602, 0.201083, 0.0232183, 0.49602, -0.20382, 0.0232183, 0.007128, 0.0253452, -0.0226198, 0.49602, -0.20382, 0.0232183, 0.236283, -0.20382, -0.0226198, 0.236283, 0.201083, -0.0226198, 0.236283, -0.20382, 0.0232183, 0.236283, 0.201083, -0.0226198, 0.007128, 0.0253452, 0.0232183, 0.007128, -0.0203927)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ixiwt"]
+render_priority = 0
+shader = ExtResource("7_ixiwt")
+shader_parameter/outline_color = Color(1, 1, 1, 0)
+shader_parameter/outline_width = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swg0i"]
+render_priority = 0
+shader = ExtResource("7_ixiwt")
+shader_parameter/outline_color = Color(1, 1, 1, 0)
+shader_parameter/outline_width = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4n53"]
+size = Vector3(1, 9.54, 5.435)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6omm5"]
+albedo_texture = ExtResource("3_iysgs")
+texture_filter = 2
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hh3nj"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 5, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 5, 0.5, 0.5, 5, -0.5, 0.5, 5, 0.5)
+
+[node name="Intro" type="Node"]
+script = ExtResource("1_1rpvy")
+
+[node name="Wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4ad6s")
+volume_db = -80.0
+bus = &"Ambience"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_myinc")
+
+[node name="Player" parent="." instance=ExtResource("4_iysgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4.5)
+startingRotation = Vector2(0.129, -1.62)
+jumpAtStart = false
+
+[node name="Horse" type="Sprite3D" parent="." node_paths=PackedStringArray("theEntireFuckingFloor", "player")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 14.7, 4, 4.3)
+billboard = 2
+texture_filter = 2
+texture = ExtResource("4_33olo")
+script = ExtResource("5_465o5")
+theEntireFuckingFloor = NodePath("../LevelGeometry/Floor")
+player = NodePath("../Player")
+orig_y = 17
+
+[node name="Dialogue" type="AudioStreamPlayer3D" parent="Horse"]
+bus = &"SFX_Filtered"
+
+[node name="Cymbal" type="AudioStreamPlayer" parent="Horse"]
+stream = ExtResource("6_lv6ny")
+bus = &"SFX"
+
+[node name="Correct" type="AudioStreamPlayer3D" parent="Horse"]
+stream = ExtResource("6_swg0i")
+bus = &"SFX_Filtered"
+
+[node name="Wrong" type="AudioStreamPlayer3D" parent="Horse"]
+stream = ExtResource("7_hqww8")
+volume_db = -10.0
+bus = &"SFX_Filtered"
+
+[node name="Floor" type="AudioStreamPlayer3D" parent="Horse"]
+stream = ExtResource("8_hqww8")
+volume_db = -5.0
+bus = &"SFX_Filtered"
+
+[node name="Answers" type="Node3D" parent="."]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9, 0, 4.5)
+visible = false
+
+[node name="Answer1" type="StaticBody3D" parent="Answers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+script = ExtResource("6_dbfec")
+hint = "press [color=yellow]Left Mouse Button[/color] to select"
+metadata/_custom_type_script = "uid://df4754xvyo7jm"
+
+[node name="Mesh" type="MeshInstance3D" parent="Answers/Answer1"]
+transform = Transform3D(1.875, 0, 0, 0, 1.875, 0, 0, 0, 1.875, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_hqww8")
+material_overlay = SubResource("ShaderMaterial_dfov6")
+mesh = ExtResource("7_dfov6")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Intro/Horse")
+
+[node name="Label2" type="Label3D" parent="Answers/Answer1/Mesh"]
+transform = Transform3D(9.43724e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, 9.43724e-09, -0.02, 0.376333, -0.000999928)
+texture_filter = 2
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "13"
+font = ExtResource("9_swg0i")
+font_size = 47
+width = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Answers/Answer1"]
+transform = Transform3D(1.875, 0, 0, 0, 1.875, 0, 0, 0, 1.875, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_hqww8")
+
+[node name="Answer2" type="StaticBody3D" parent="Answers"]
+script = ExtResource("6_dbfec")
+hint = "press [color=yellow]Left Mouse Button[/color] to select"
+metadata/_custom_type_script = "uid://df4754xvyo7jm"
+
+[node name="Mesh" type="MeshInstance3D" parent="Answers/Answer2"]
+transform = Transform3D(1.875, 0, 0, 0, 1.875, 0, 0, 0, 1.875, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_hqww8")
+material_overlay = SubResource("ShaderMaterial_ixiwt")
+mesh = ExtResource("7_dfov6")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Intro/Horse")
+
+[node name="Label2" type="Label3D" parent="Answers/Answer2/Mesh"]
+transform = Transform3D(9.43724e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, 9.43724e-09, -0.02, 0.376333, -0.000999928)
+texture_filter = 2
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "14"
+font = ExtResource("9_swg0i")
+font_size = 47
+width = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Answers/Answer2"]
+transform = Transform3D(1.875, 0, 0, 0, 1.875, 0, 0, 0, 1.875, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_hqww8")
+
+[node name="Answer3" type="StaticBody3D" parent="Answers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+script = ExtResource("6_dbfec")
+hint = "press [color=yellow]Left Mouse Button[/color] to select"
+metadata/_custom_type_script = "uid://df4754xvyo7jm"
+
+[node name="Mesh" type="MeshInstance3D" parent="Answers/Answer3"]
+transform = Transform3D(1.875, 0, 0, 0, 1.875, 0, 0, 0, 1.875, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_hqww8")
+material_overlay = SubResource("ShaderMaterial_swg0i")
+mesh = ExtResource("7_dfov6")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Intro/Horse")
+
+[node name="Label2" type="Label3D" parent="Answers/Answer3/Mesh"]
+transform = Transform3D(9.43724e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, 9.43724e-09, -0.02, 0.376333, -0.000999928)
+texture_filter = 2
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "5"
+font = ExtResource("9_swg0i")
+font_size = 47
+width = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Answers/Answer3"]
+transform = Transform3D(1.875, 0, 0, 0, 1.875, 0, 0, 0, 1.875, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_hqww8")
+
+[node name="HorseTalkBegin" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 4.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorseTalkBegin"]
+shape = SubResource("BoxShape3D_f4n53")
+debug_color = Color(0.812416, 0.320258, 0.656702, 0.42)
+
+[node name="LevelGeometry" type="Node3D" parent="."]
+
+[node name="DoorwayFront" parent="LevelGeometry" node_paths=PackedStringArray("introManager") instance=ExtResource("4_465o5")]
+transform = Transform3D(-9.35424e-08, 0, 2.029, 0, 1.892, 0, -2.14, 0, -8.86904e-08, 7.81, 0, 4.48)
+script = ExtResource("5_sfgsg")
+introManager = NodePath("../..")
+hint = "press [color=yellow]Left Mouse Button[/color] to leave"
+
+[node name="DoorwayFront3" parent="LevelGeometry" instance=ExtResource("4_465o5")]
+process_mode = 4
+transform = Transform3D(-9.35424e-08, 0, 2.029, 0, 1.892, 0, -2.14, 0, -8.86904e-08, 7.81, 0, 4.48)
+visible = false
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="LevelGeometry/DoorwayFront3"]
+transform = Transform3D(0.46729, 0, 7.10543e-15, 0, 0.528541, 0, 0, 0, 0.492854, -0.18, 0.476, 0)
+stream = ExtResource("17_7shw0")
+bus = &"SFX_Filtered"
+
+[node name="DoorwayFront2" parent="LevelGeometry" instance=ExtResource("4_465o5")]
+transform = Transform3D(-9.35424e-08, 0, 2.029, 0, 1.892, 0, -2.14, 0, -8.86904e-08, 0, 0, 4.5)
+script = ExtResource("6_f4n53")
+hint = "press [color=yellow]Left Mouse Button[/color] to leave"
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="LevelGeometry/DoorwayFront2"]
+transform = Transform3D(0.46729, 0, 7.10543e-15, 0, 0.528541, 0, 0, 0, 0.492854, -0.18, 0.476, 0)
+stream = ExtResource("17_7shw0")
+bus = &"SFX_Filtered"
+
+[node name="Timer" type="Timer" parent="LevelGeometry/DoorwayFront2"]
+one_shot = true
+
+[node name="ExecutiveChair1" parent="LevelGeometry" instance=ExtResource("5_4ad6s")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.06651, 0.3, 2.1982)
+
+[node name="ExecutiveChair2" parent="LevelGeometry" instance=ExtResource("5_4ad6s")]
+transform = Transform3D(0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, 5.19647, 0.4, 6.51363)
+
+[node name="LShapedDesk1" parent="LevelGeometry" instance=ExtResource("5_7136s")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 5.5, 0.5, 7)
+
+[node name="LShapedDesk2" parent="LevelGeometry" instance=ExtResource("5_7136s")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 2.83349, 0.4, 1.60179)
+
+[node name="Plant" type="Sprite3D" parent="LevelGeometry"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.7, 0.9, 8.3)
+billboard = 2
+texture_filter = 2
+texture = ExtResource("6_7136s")
+
+[node name="Plant2" type="Sprite3D" parent="LevelGeometry"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 7.1, 0.9, 8.3)
+billboard = 2
+texture_filter = 2
+texture = ExtResource("6_7136s")
+
+[node name="Plant3" type="Sprite3D" parent="LevelGeometry"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 7.1, 0.9, 0.9)
+billboard = 2
+texture_filter = 2
+texture = ExtResource("6_7136s")
+
+[node name="Plant4" type="Sprite3D" parent="LevelGeometry"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.9, 0.9, 0.9)
+billboard = 2
+texture_filter = 2
+texture = ExtResource("6_7136s")
+
+[node name="Plant5" type="Sprite3D" parent="LevelGeometry"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.9, 0.9, 0.9)
+billboard = 2
+texture_filter = 2
+texture = ExtResource("6_7136s")
+
+[node name="Walls" type="Node3D" parent="LevelGeometry"]
+
+[node name="Border" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Border2" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="Border3" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Border4" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="Border5" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Border6" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1)
+
+[node name="Border7" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="Border8" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
+
+[node name="Border9" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -1)
+
+[node name="Border10" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1)
+
+[node name="Border16" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+
+[node name="Border30" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 1)
+
+[node name="Border40" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 1)
+
+[node name="Border41" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 1)
+
+[node name="Border42" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 1)
+
+[node name="Border43" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 1)
+
+[node name="Border44" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 1)
+
+[node name="Border45" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 1)
+
+[node name="Border46" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 1)
+
+[node name="Border47" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+
+[node name="Border48" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 7)
+
+[node name="Border49" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 7)
+
+[node name="Border50" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 7)
+
+[node name="Border51" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 7)
+
+[node name="Border52" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 7)
+
+[node name="Border53" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 7)
+
+[node name="Border54" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 7)
+
+[node name="Border55" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 7)
+
+[node name="Border56" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 6)
+
+[node name="Border57" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 5)
+
+[node name="Border58" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 4)
+
+[node name="Border59" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 3)
+
+[node name="Border60" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 2)
+
+[node name="Border21" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="Border22" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="Border23" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 9)
+
+[node name="Border24" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 9)
+
+[node name="Border25" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 9)
+
+[node name="Border26" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 9)
+
+[node name="Border27" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="Border28" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 9)
+
+[node name="Border11" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
+
+[node name="Border12" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Border13" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
+
+[node name="Border14" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
+
+[node name="Border15" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3)
+
+[node name="Border61" type="StaticBody3D" parent="LevelGeometry/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.9, 4)
+collision_layer = 786433
+
+[node name="Mesh" type="MeshInstance3D" parent="LevelGeometry/Walls/Border61"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+material_override = SubResource("StandardMaterial3D_6omm5")
+mesh = ExtResource("4_1rpvy")
+
+[node name="Col" type="CollisionShape3D" parent="LevelGeometry/Walls/Border61"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+shape = SubResource("ConvexPolygonShape3D_hh3nj")
+
+[node name="Border62" type="StaticBody3D" parent="LevelGeometry/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.9, 4)
+collision_layer = 786433
+
+[node name="Mesh" type="MeshInstance3D" parent="LevelGeometry/Walls/Border62"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+material_override = SubResource("StandardMaterial3D_6omm5")
+mesh = ExtResource("4_1rpvy")
+
+[node name="Col" type="CollisionShape3D" parent="LevelGeometry/Walls/Border62"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+shape = SubResource("ConvexPolygonShape3D_hh3nj")
+
+[node name="Border17" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5)
+
+[node name="Border18" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
+
+[node name="Border19" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7)
+
+[node name="Border20" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="Border31" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="Border32" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="Border33" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="Border35" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
+
+[node name="Border36" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 6)
+
+[node name="Border37" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 7)
+
+[node name="Border38" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 8)
+
+[node name="Border39" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 9)
+
+[node name="Border29" parent="LevelGeometry/Walls" instance=ExtResource("2_33sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 9)
+
+[node name="Floor" type="Node3D" parent="LevelGeometry"]
+
+[node name="Floor2" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+
+[node name="Floor3" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Floor4" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Floor5" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Floor6" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Floor7" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="Floor8" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Floor9" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="Floor10" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Floor11" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Floor12" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="Floor13" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+
+[node name="Floor14" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+
+[node name="Floor15" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+
+[node name="Floor16" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+
+[node name="Floor17" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+
+[node name="Floor18" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Floor19" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="Floor20" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Floor21" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="Floor22" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="Floor23" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 2)
+
+[node name="Floor24" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+
+[node name="Floor25" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2)
+
+[node name="Floor26" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Floor27" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="Floor28" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="Floor29" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="Floor30" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="Floor31" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+
+[node name="Floor32" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="Floor33" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+
+[node name="Floor34" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Floor115" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4)
+
+[node name="Floor116" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="Floor117" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="Floor118" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
+
+[node name="Floor35" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="Floor36" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="Floor37" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+
+[node name="Floor38" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="Floor39" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
+
+[node name="Floor40" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="Floor41" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4)
+
+[node name="Floor74" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="Floor75" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4)
+
+[node name="Floor76" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+
+[node name="Floor77" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
+
+[node name="Floor78" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
+
+[node name="Floor79" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
+
+[node name="Floor80" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4)
+
+[node name="Floor81" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5)
+
+[node name="Floor82" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6)
+
+[node name="Floor83" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 3)
+
+[node name="Floor84" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2)
+
+[node name="Floor85" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 4)
+
+[node name="Floor86" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 5)
+
+[node name="Floor87" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 6)
+
+[node name="Floor88" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 3)
+
+[node name="Floor89" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 2)
+
+[node name="Floor90" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="Floor91" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 5)
+
+[node name="Floor92" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 6)
+
+[node name="Floor93" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 3)
+
+[node name="Floor94" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2)
+
+[node name="Floor95" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 4)
+
+[node name="Floor96" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 5)
+
+[node name="Floor97" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 6)
+
+[node name="Floor98" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 3)
+
+[node name="Floor99" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 2)
+
+[node name="Floor100" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 4)
+
+[node name="Floor101" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 5)
+
+[node name="Floor102" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 6)
+
+[node name="Floor103" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 3)
+
+[node name="Floor104" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 2)
+
+[node name="Floor105" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 4)
+
+[node name="Floor106" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 5)
+
+[node name="Floor107" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 6)
+
+[node name="Floor108" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 3)
+
+[node name="Floor109" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 2)
+
+[node name="Floor110" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4)
+
+[node name="Floor111" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 5)
+
+[node name="Floor112" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 6)
+
+[node name="Floor113" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 3)
+
+[node name="Floor114" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 2)
+
+[node name="Floor42" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Floor43" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="Floor44" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+
+[node name="Floor45" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+
+[node name="Floor46" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+
+[node name="Floor47" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="Floor48" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="Floor49" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+
+[node name="Floor50" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Floor51" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="Floor52" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="Floor53" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6)
+
+[node name="Floor54" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="Floor55" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6)
+
+[node name="Floor56" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="Floor57" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+
+[node name="Floor58" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="Floor59" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7)
+
+[node name="Floor60" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+
+[node name="Floor61" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
+
+[node name="Floor62" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+
+[node name="Floor63" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7)
+
+[node name="Floor64" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 7)
+
+[node name="Floor65" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
+
+[node name="Floor66" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="Floor67" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 8)
+
+[node name="Floor68" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+
+[node name="Floor69" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 8)
+
+[node name="Floor70" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="Floor71" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 8)
+
+[node name="Floor72" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+
+[node name="Floor73" parent="LevelGeometry/Floor" instance=ExtResource("3_46ak0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 8)
+
+[node name="Key" parent="LevelGeometry" node_paths=PackedStringArray("intro") instance=ExtResource("25_wcvy4")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.3, 0.026, 1.3)
+intro = NodePath("../..")
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BG" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Text" type="RichTextLabel" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -44.0
+offset_right = 189.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("26_gq5a0")
+bbcode_enabled = true
+text = "[center]You have gone back to your old workplace.
+You have some deets to finish.
+There is no other choice.
+You have to do this."
+fit_content = true
+
+[connection signal="onInteract" from="Answers/Answer1" to="Horse" method="_on_answer_1_on_interact"]
+[connection signal="onInteract" from="Answers/Answer2" to="Horse" method="_on_answer_2_on_interact"]
+[connection signal="onInteract" from="Answers/Answer3" to="Horse" method="_on_answer_3_on_interact"]
+[connection signal="body_entered" from="HorseTalkBegin" to="." method="_on_horse_talk_begin_body_entered"]
+[connection signal="timeout" from="LevelGeometry/DoorwayFront2/Timer" to="LevelGeometry/DoorwayFront2" method="_on_timer_timeout"]

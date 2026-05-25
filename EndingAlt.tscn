@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctc8ihblolj6n"]
+
+[ext_resource type="Script" uid="uid://m8chyhpdlp0" path="res://Code/EndingAlt.gd" id="1_mqjkx"]
+[ext_resource type="AudioStream" uid="uid://dghpqn0ykdodc" path="res://Audio/Music/Toby Fox - His Theme.ogg" id="2_0dlp2"]
+[ext_resource type="AudioStream" uid="uid://cwopsks5axvv1" path="res://Audio/Undertale.ogg" id="3_t3piy"]
+[ext_resource type="Texture2D" uid="uid://c7g3u3vm4w46j" path="res://Sprites/EndingStory/0.png" id="5_c1l3a"]
+[ext_resource type="FontFile" uid="uid://n2wdukr0u5a4" path="res://Fonts/Determination Mono.ttf" id="6_17gcq"]
+[ext_resource type="Texture2D" uid="uid://dva6xbvi05s0m" path="res://Sprites/EndingStory/logo.png" id="7_ynpm8"]
+
+[node name="EndingAlt" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mqjkx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0dlp2")
+volume_db = -2.0
+autoplay = true
+bus = &"Music"
+
+[node name="Undertale" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t3piy")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="StoryPanel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 50.0
+offset_right = 120.0
+offset_bottom = 170.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(120, 0)
+texture = ExtResource("5_c1l3a")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = 81.0
+offset_right = 217.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("6_17gcq")
+theme_override_font_sizes/normal_font_size = 26
+text = "as the player fell down,
+escaping from the hors..."
+fit_content = true
+
+[node name="Logo" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -27.5
+offset_right = 122.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(122, 27.5)
+texture = ExtResource("7_ynpm8")
+stretch_mode = 5
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxq2gkmdnx225"]
+
+[ext_resource type="Texture2D" uid="uid://cf2k26hq8excx" path="res://Models/Border/brick_shadow.png" id="1_hh3nj"]
+[ext_resource type="ArrayMesh" uid="uid://52japcqohy" path="res://Models/Border/border.obj" id="2_4nbgi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2fg1"]
+albedo_texture = ExtResource("1_hh3nj")
+texture_filter = 2
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hh3nj"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 5, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 5, 0.5, 0.5, 5, -0.5, 0.5, 5, 0.5)
+
+[node name="Border" type="StaticBody3D"]
+collision_layer = 786433
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+material_override = SubResource("StandardMaterial3D_u2fg1")
+mesh = ExtResource("2_4nbgi")
+
+[node name="Col" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+shape = SubResource("ConvexPolygonShape3D_hh3nj")

@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://tjeo8k1lxhn1"]
+
+[ext_resource type="Script" uid="uid://bfxs4buawtbk4" path="res://Code/LevelGenerator.gd" id="1_myinc"]
+[ext_resource type="Script" uid="uid://ctk7gcug3oo8s" path="res://Code/GameLoop.gd" id="1_njov2"]
+[ext_resource type="Script" uid="uid://cu7a7dsesu3i" path="res://Code/ScriptedEvents.gd" id="2_2au82"]
+[ext_resource type="AudioStream" uid="uid://bmp5i5aayx2qi" path="res://Audio/Amb/AmbGeneral.ogg" id="2_8tn2x"]
+[ext_resource type="AudioStream" uid="uid://fua8eomty075" path="res://Audio/Amb/Spooky.ogg" id="3_aq4fw"]
+[ext_resource type="AudioStream" uid="uid://d3kt3tuqyqpaa" path="res://Audio/Amb/wind.ogg" id="4_ivycn"]
+[ext_resource type="AudioStream" uid="uid://dggrrkpwq1gqu" path="res://Audio/Amb/how hungry.mp3" id="4_mxnmf"]
+
+[sub_resource type="Environment" id="Environment_myinc"]
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.262
+fog_height = 4.51
+fog_height_density = -2.8331
+volumetric_fog_density = 0.637
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_myinc"]
+geometry_parsed_geometry_type = 1
+cell_size = 0.03
+cell_height = 0.03
+border_size = 1.0
+agent_radius = 0.4
+
+[node name="Level" type="Node"]
+script = ExtResource("1_njov2")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8tn2x")
+volume_db = 5.0
+autoplay = true
+bus = &"Ambience"
+
+[node name="AmbienceSpooky" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aq4fw")
+volume_db = -80.0
+autoplay = true
+bus = &"Ambience"
+
+[node name="AmbienceEvenSpookier" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mxnmf")
+bus = &"Ambience"
+
+[node name="Wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ivycn")
+volume_db = -80.0
+autoplay = true
+bus = &"Ambience"
+
+[node name="ScriptedEvents" type="Node" parent="."]
+script = ExtResource("2_2au82")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_myinc")
+
+[node name="LevelGen" type="Node" parent="." node_paths=PackedStringArray("levelGenNode")]
+script = ExtResource("1_myinc")
+mazeWidth = 80
+mazeHeight = 50
+levelGenNode = NodePath("../LevelGeometry")
+
+[node name="LevelGeometry" type="Node3D" parent="."]
+
+[node name="NavReg" type="NavigationRegion3D" parent="LevelGeometry"]
+navigation_mesh = SubResource("NavigationMesh_myinc")
+
+[node name="Everything" type="Node3D" parent="LevelGeometry/NavReg"]
+
+[node name="Valuable" type="Node3D" parent="LevelGeometry/NavReg"]
+
+[node name="Walls" type="Node3D" parent="LevelGeometry"]
+
+[node name="Diamonds" type="Node3D" parent="LevelGeometry"]
+
+[node name="HorseItems" type="Node3D" parent="LevelGeometry"]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="finished" from="AmbienceEvenSpookier" to="." method="_on_ambience_even_spookier_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

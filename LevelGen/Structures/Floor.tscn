@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5i6p6lqbi6ag"]
+
+[ext_resource type="Texture2D" uid="uid://bpj7r6vmmqu0u" path="res://Models/Floor/floor.png" id="1_kn65d"]
+[ext_resource type="ArrayMesh" uid="uid://papngxg0y1l5" path="res://Models/Floor/floor.obj" id="2_3g7h6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43xeu"]
+albedo_texture = ExtResource("1_kn65d")
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kn65d"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[node name="Floor" type="StaticBody3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1, 0.5)
+material_override = SubResource("StandardMaterial3D_43xeu")
+mesh = ExtResource("2_3g7h6")
+
+[node name="Col" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.012, 0, 0, 0, 1, 0.5, -0.506, 0.5)
+shape = SubResource("ConcavePolygonShape3D_kn65d")

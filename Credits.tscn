@@ -1,0 +1,207 @@
+[gd_scene load_steps=7 format=3 uid="uid://pmhlay158ll5"]
+
+[ext_resource type="Texture2D" uid="uid://cfvnlfof4ys6c" path="res://Sprites/HorseBackground.png" id="1_4qwwl"]
+[ext_resource type="Script" uid="uid://3v0s42t3wape" path="res://Code/Credits.gd" id="1_k2yj5"]
+[ext_resource type="Shader" uid="uid://b7gxrmj6ufsw7" path="res://Shaders/Scroll.gdshader" id="1_obosj"]
+[ext_resource type="FontFile" uid="uid://bqlyro3658xan" path="res://Fonts/Monocraft.ttf" id="1_ynf4x"]
+[ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="5_xic2l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2yj5"]
+shader = ExtResource("1_obosj")
+shader_parameter/speed = 0.35
+
+[node name="Credits" type="Control"]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k2yj5")
+
+[node name="BG" type="TextureRect" parent="."]
+modulate = Color(0.340541, 0.340541, 0.340541, 1)
+material = SubResource("ShaderMaterial_k2yj5")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -766.0
+offset_top = -539.0
+offset_right = 766.0
+offset_bottom = 539.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_4qwwl")
+stretch_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 30.0
+offset_right = -24.0
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_ynf4x")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]
+[wave][shake][color=maroon]deets[/color][/shake][/wave] by
+[color=pink][url=https://www.youtube.com/@hatoving]hatoving[/url][/color]
+
+~~~~~~
+
+Mostly everything done by
+[wave][shake][font_size=37][color=pink][url=https://www.youtube.com/@hatoving]hatoving[/url][/color][/font_size][/shake][/wave]
+
+
+Programming by
+[wave][shake][font_size=37][color=pink][url=https://www.youtube.com/@hatoving]hatoving[/url][/color], [color=orange][url=https://juici.dev]Juicimated[/url][/color][/font_size][/shake][/wave]
+
+
+Ambient tracks and music by
+[wave][shake][font_size=37][color=yellow][url=https://bsky.app/profile/ca-r.bsky.social]ca850[/url][/color][/font_size][/shake][/wave]
+[wave][color=gray]Canon in Horse[/color][/wave]
+
+
+Voice of \"mystical honse\" and \"Horse\"
+[wave][shake][font_size=37][color=cyan][url=https://www.youtube.com/@Bennoh01]BlueBen8[/url][/color], [color=yellow][url=https://bsky.app/profile/ca-r.bsky.social]ca850[/url][/color][/font_size][/shake][/wave]
+
+Voice of \"The Haykeeper\" and \"Horse\"
+[wave][shake][font_size=37][color=pink][url=https://www.youtube.com/@hatoving]hatoving[/url][/color][/font_size][/shake][/wave]
+
+
+Models used:
+
+[wave]L Shaped Desk by Zsky [CC-BY] via [color=orange]Poly Pizza[/color]
+Executive Chair by Zsky [CC-BY] via [color=orange]Poly Pizza[/color]
+Doorway Front by [color=green]Kenney[/color]
+Key by \"Poly by Google\" [CC-BY] via [color=orange]Poly Pizza[/color][/wave]
+
+
+
+Some textures, and sounds used/inspired from/by:
+[wave]
+[color=lawn_green]Minecraft[/color] by [color=maroon]Mojang/Microsoft[/color]
+[color=green_yellow]Xbox 360[/color] by [color=maroon]Microsoft[/color]
+[color=KHAKI]The Elder Scrolls IV: Oblivion[/color] by Bethesda Softworks
+[color=RED]UNDERTALE[/color] by Toby Fox[/wave]
+
+
+
+Music used that isn't mine:
+[wave]
+\"[/wave]C418 ~ Moog City 2[wave]\"[/wave] from [wave][color=lawn_green]Minecraft[/color]
+\"[/wave]Toby Fox ~ His Theme[wave]\" [/wave]from [wave][color=ORANGE_RED]UNDERTALE[/color][/wave]
+[wave]\"[/wave]Kevin Macleod ~ Aftermath[wave]\"[/wave]
+[wave]\"[/wave]Kevin Macleod ~ Killing Time[wave]\"[/wave]
+
+
+
+Horse sprite used in-game by:
+[wave]tabijaky[/wave]
+
+
+
+Fonts used:
+[wave]
+Monocraft by IdreesInc
+[font=\"res://Fonts/Munson_Roman.otf\"]Munson[/font] by Paul Miller
+[font_size=13][font=res://Fonts/Determination Mono.ttf]Determination Mono[/font][/font_size] by Haley Wakamatsu
+[/wave]
+
+
+Various sound effects from:
+
+[wave][color=maroon]FreeSound.org[/color][/wave]
+
+
+
+Logos made with:
+[wave]
+[color=sky_blue]Blockbench by Jannisx11[/color][/wave]
+
+
+Programs used:
+
+[color=deep_sky_blue]Godot Engine by The Godot Foundation
+[color=blue]Audacity by The Audacity Team
+[color=green]REAPER by Cockos
+[color=white]Aseprite by Igara Studio S.A
+[color=sky_blue]Blockbench by Jannisx11[/color]
+
+
+Plugins for Godot used:
+
+GameJolt API by murikistudio
+Newgrounds API by jefvel
+
+
+Various stock photos where used from:
+
+Unisplash
+
+
+Big thanks to the playtesters:
+
+[wave][shake][font_size=18][color=cyan][url=https://www.youtube.com/@Bennoh01]BlueBen8[/url][/color][/font_size][/shake][/wave]
+[wave][shake][font_size=18][color=yellow][url=https://bsky.app/profile/ca-r.bsky.social]ca850[/url][/color][/font_size][/shake][/wave]
+[wave][shake][font_size=18][color=orange][url=https://juici.dev]Juicimated[/url][/color][/font_size][/shake][/wave]
+
+
+If I missed some assets, or if I've accidentally used yours without permission, then please contact me! I want to credit everything that I use as much as I can, and the last thing I want to do is not crediting anyone properly.
+
+[font_size=27]Thank you for playing!
+
+"
+
+[node name="Arrow" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 68.0
+offset_bottom = 79.5
+theme_override_fonts/font = ExtResource("1_ynf4x")
+theme_override_font_sizes/font_size = 64
+text = "↓"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -67.0
+offset_right = 181.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.819214, 0.338469, 0.0143341, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.254902, 0.00784314, 1)
+theme_override_fonts/font = ExtResource("1_ynf4x")
+theme_override_font_sizes/font_size = 18
+text = "Back to Menu"
+flat = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xic2l")
+volume_db = 3.0
+bus = &"SFX"
+
+[connection signal="meta_clicked" from="Text" to="." method="_on_text_meta_clicked"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

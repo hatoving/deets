@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxseejbfqxb8w"
+path="res://.godot/imported/Canon in HORSE.mp3-1f6e96f8655a84813a4e63e94740239c.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Canon in HORSE.mp3"
+dest_files=["res://.godot/imported/Canon in HORSE.mp3-1f6e96f8655a84813a4e63e94740239c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

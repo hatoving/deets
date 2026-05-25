@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://4ho0e3xsptwb"]
+
+[ext_resource type="Texture2D" uid="uid://g4rnkr8akka7" path="res://Sprites/Diamonds.png" id="1_0lb3a"]
+[ext_resource type="Script" uid="uid://xhfivt2s3evb" path="res://Code/Diamond.gd" id="1_eq0u7"]
+[ext_resource type="Script" uid="uid://do45le0unwioy" path="res://Code/CollectableArea3D.gd" id="3_s0br6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eq0u7"]
+radius = 0.2
+
+[node name="Diamond" type="Node3D"]
+script = ExtResource("1_eq0u7")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_0lb3a")
+
+[node name="Area" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("3_s0br6")
+
+[node name="Col" type="CollisionShape3D" parent="Area"]
+shape = SubResource("SphereShape3D_eq0u7")
+
+[connection signal="aboutToBeCollected" from="Area" to="." method="_onAboutToBeCollected"]
