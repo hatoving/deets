@@ -108,20 +108,17 @@ func _on_journey_pressed() -> void:
 	if !stuck:
 		$Click.play()
 		$Menu.visible = false
-		$Loading.visible = true
 		SaveData.gameSettings = SaveData.defaultGameSettings.duplicate(true)
 		Global.get_node("MainMenu").stop()
 		Global.customMode = false
-		$Loading.begin()
-		
+		get_tree().change_scene_to_file("res://Scenes/Level.tscn")
 		
 func _startCustom():
 	$Click.play()
 	$Menu.visible = false
-	$Loading.visible = true
 	Global.get_node("MainMenu").stop()
 	Global.customMode = true
-	$Loading.begin()
+	get_tree().change_scene_to_file("res://Scenes/Level.tscn")
 
 func _on_credits_pressed() -> void:
 	if !stuck:

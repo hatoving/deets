@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c43hrq75iwlhs"
-path="res://.godot/imported/LogoDEE.png-02848bdfbda0193c4f789711bcad7c91.ctex"
+uid="uid://e08kqxq7cpkj"
+path="res://.godot/imported/Logo.png-be882ef42bbbae19e13cc0d6d1cd91a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Logo/LogoDEE.png"
-dest_files=["res://.godot/imported/LogoDEE.png-02848bdfbda0193c4f789711bcad7c91.ctex"]
+source_file="res://Sprites/Logo/Logo.png"
+dest_files=["res://.godot/imported/Logo.png-be882ef42bbbae19e13cc0d6d1cd91a0.ctex"]
 
 [params]
 

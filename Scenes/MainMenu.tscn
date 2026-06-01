@@ -9,19 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Scenes/Options.tscn" id="6_cqjrg"]
 [ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="6_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://dorvf4k7hfici" path="res://Sprites/Hammer.png" id="7_61cf8"]
-[ext_resource type="Script" uid="uid://dro3q88caq6ww" path="res://Scripts/LoadingScreenMinecraft.gd" id="7_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://is6tls7ieq56" path="res://Sprites/Gun.png" id="7_qie43"]
 [ext_resource type="AudioStream" uid="uid://svedmuuskapx" path="res://Audio/pop.ogg" id="8_u7cqb"]
-[ext_resource type="Texture2D" uid="uid://cepl7y051an1x" path="res://Sprites/Logo/LogoUnfill.png" id="10_riqfo"]
-[ext_resource type="Texture2D" uid="uid://b20f3xsx4hkia" path="res://Sprites/Logo/LogoD.png" id="12_7v4os"]
+[ext_resource type="Texture2D" uid="uid://e08kqxq7cpkj" path="res://Sprites/Logo/Logo.png" id="10_2x1g0"]
 [ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="12_yxkem"]
 [ext_resource type="Script" uid="uid://dtnxj5jtcyb0x" path="res://Scripts/NewgroundsMenu.gd" id="13_1thib"]
 [ext_resource type="FontFile" uid="uid://dmsb2c13mo1lf" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-bold.ttf" id="13_7v4os"]
 [ext_resource type="Texture2D" uid="uid://b5jgpskqvimlo" path="res://Sprites/NG.png" id="13_m04lp"]
-[ext_resource type="Texture2D" uid="uid://21m14rosoqa5" path="res://Sprites/Logo/LogoDE.png" id="13_pjscj"]
-[ext_resource type="Texture2D" uid="uid://c43hrq75iwlhs" path="res://Sprites/Logo/LogoDEE.png" id="14_pjscj"]
-[ext_resource type="Texture2D" uid="uid://cb6agxxlmqs6r" path="res://Sprites/Logo/LogoDEET.png" id="15_65hh5"]
-[ext_resource type="Texture2D" uid="uid://baeiihk1lus87" path="res://Sprites/Logo/LogoDEETS.png" id="16_6byu3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7v4os"]
 shader = ExtResource("1_h7a2f")
@@ -40,14 +34,6 @@ thickness = 9
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_61cf8"]
 color = Color(0.83, 0.415, 0, 1)
 thickness = 9
-
-[sub_resource type="ImageTexture" id="ImageTexture_fimr5"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_u7cqb"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_afec1"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_31qfy"]
 
 [node name="MainMenu" type="Control" unique_id=944476508]
 texture_filter = 3
@@ -809,8 +795,7 @@ flat = true
 [node name="Menu" type="CanvasLayer" parent="." unique_id=801310162]
 layer = 80
 
-[node name="Unfill" type="TextureRect" parent="Menu" unique_id=1159935834]
-self_modulate = Color(0.34901962, 0.1254902, 0.015686275, 1)
+[node name="Logo" type="TextureRect" parent="Menu" unique_id=1159935834]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -821,87 +806,7 @@ offset_bottom = 197.0
 grow_horizontal = 2
 scale = Vector2(0.175, 0.175)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("10_riqfo")
-expand_mode = 1
-stretch_mode = 3
-
-[node name="D" type="TextureRect" parent="Menu" unique_id=998522308]
-self_modulate = Color(1, 0.5764706, 0.050980393, 1)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -239.5
-offset_top = 72.000015
-offset_right = 239.5
-offset_bottom = 197.0
-grow_horizontal = 2
-scale = Vector2(0.175, 0.175)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("12_7v4os")
-expand_mode = 1
-stretch_mode = 3
-
-[node name="E" type="TextureRect" parent="Menu" unique_id=2138562947]
-self_modulate = Color(1, 0.5764706, 0.050980393, 1)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -239.5
-offset_top = 72.000015
-offset_right = 239.5
-offset_bottom = 197.0
-grow_horizontal = 2
-scale = Vector2(0.175, 0.175)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("13_pjscj")
-expand_mode = 1
-stretch_mode = 3
-
-[node name="E2" type="TextureRect" parent="Menu" unique_id=528217216]
-self_modulate = Color(1, 0.5764706, 0.050980393, 1)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -239.5
-offset_top = 72.000015
-offset_right = 239.5
-offset_bottom = 197.0
-grow_horizontal = 2
-scale = Vector2(0.175, 0.175)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_pjscj")
-expand_mode = 1
-stretch_mode = 3
-
-[node name="T" type="TextureRect" parent="Menu" unique_id=465866641]
-self_modulate = Color(1, 0.5764706, 0.050980393, 1)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -239.5
-offset_top = 72.000015
-offset_right = 239.5
-offset_bottom = 197.0
-grow_horizontal = 2
-scale = Vector2(0.175, 0.175)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("15_65hh5")
-expand_mode = 1
-stretch_mode = 3
-
-[node name="S" type="TextureRect" parent="Menu" unique_id=1012306701]
-self_modulate = Color(1, 0.5764706, 0.050980393, 1)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -239.5
-offset_top = 72.000015
-offset_right = 239.5
-offset_bottom = 197.0
-grow_horizontal = 2
-scale = Vector2(0.175, 0.175)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("16_6byu3")
+texture = ExtResource("10_2x1g0")
 expand_mode = 1
 stretch_mode = 3
 
@@ -1260,64 +1165,6 @@ visible = false
 mainMenu = NodePath("../Menu")
 clickSFX = NodePath("../Click")
 
-[node name="Loading" type="Control" parent="." unique_id=1311837282 node_paths=PackedStringArray("pop")]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("7_e2xy7")
-pop = NodePath("../Pop")
-
-[node name="Label2" type="Label" parent="Loading" unique_id=1527565181]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -222.0
-offset_top = -53.0
-offset_right = 222.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("12_yxkem")
-theme_override_font_sizes/font_size = 22
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Timer2" type="Timer" parent="Loading" unique_id=1652666216]
-one_shot = true
-
-[node name="HSlider" type="HSlider" parent="Loading" unique_id=1882832742]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = -8.0
-offset_right = 136.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_icons/grabber = SubResource("ImageTexture_fimr5")
-theme_override_icons/grabber_highlight = SubResource("ImageTexture_u7cqb")
-theme_override_icons/grabber_disabled = SubResource("ImageTexture_afec1")
-theme_override_icons/tick = SubResource("ImageTexture_31qfy")
-theme_override_styles/slider = SubResource("StyleBoxLine_qie43")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_61cf8")
-step = 0.1
-editable = false
-scrollable = false
-
 [node name="Timer" type="Timer" parent="." unique_id=2082929183]
 
 [connection signal="value_changed" from="Custom/Pag1/Width" to="Custom" method="_on_width_value_changed"]
@@ -1350,5 +1197,4 @@ scrollable = false
 [connection signal="pressed" from="Menu/Newgrounds" to="." method="_on_newgrounds_pressed"]
 [connection signal="pressed" from="Newgrounds/Close" to="Newgrounds" method="_on_close_pressed"]
 [connection signal="pressed" from="Newgrounds/Log" to="Newgrounds" method="_on_log_pressed"]
-[connection signal="timeout" from="Loading/Timer2" to="Loading" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
