@@ -270,9 +270,9 @@ func _process(delta: float) -> void:
 		horseSpawnTimer -= delta
 		if horseSpawnTimer <= 0:
 			if SaveData.getGameSetting("horse", "amount") > 1:
-				Global.gameUI_RevealEvent("A [color=orange]horse[/color] has entered.")
+				Global.gameUI_RevealEvent("A [color=brown]horse[/color] has entered.")
 			else:
-				Global.gameUI_RevealEvent("The [color=orange]horse[/color] is here.")
+				Global.gameUI_RevealEvent("The [color=brown]horse[/color] is here.")
 			horseAmount -= 1
 			launchHorse($LevelGen)
 			if horseAmount <= 0:

@@ -254,7 +254,7 @@ func _onGun():
 			var collider = %GunRay.get_collider()
 			var yes = true
 			if collider is Horse and collider.currentState != collider.STATE.DEAD:
-				Global.gameUI_RevealEvent("The [color=orange]horse[/color] is dead for " + ("20" if !Global.currentGameLoop.endGame else "10") + " seconds. Rejoice!", 6.0)
+				Global.gameUI_RevealEvent("The [color=brown]horse[/color] is dead for " + ("20" if !Global.currentGameLoop.endGame else "10") + " seconds. Rejoice!", 6.0)
 				SaveData._unlockAch("gun")
 				collider._die()
 				yes = false
