@@ -41,9 +41,9 @@ func triggerDestroy():
 
 func _process(delta: float) -> void:
 	if (Global.currentGameLoop.itemsInInventory[Global.currentGameLoop.currentlySelectedItem]).item == "hammer":
-		hint = "press [color=yellow]Left Mouse Button[/color] to smash"
+		hint = "Press [color=yellow]Left Mouse Button[/color] to smash \nthe Horse Pedestal"
 	else:
-		hint = "I need something [color=yellow]hard[/color] to smash this..."
+		hint = "I need something [color=yellow]hard[/color] to \nsmash this Horse Pedestal..."
 		
 	if !done:
 		screamTimer -= delta
