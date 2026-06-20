@@ -7,6 +7,8 @@ const FRICTION = 3.0
 const JUMP_VELOCITY = 4.5
 
 @export var goNumb = false
+@export var startingRotation: Vector2
+@export var jumpAtStart = true
 
 var lerpCameraPosToCustom = false
 var lerpHeadXToCustom = false
@@ -14,54 +16,45 @@ var lerpHeadYToCustom = false
 var lerpPosToCustom = false
 var lerpFOVToCustom = false
 var lerpCameraCustomPos = Vector3()
-var lookAtLerpHeadY : float = 0.0
-var lookAtLerpHeadX : float = 0.0
-var lerpPosCustom =  Vector3()
-
+var lookAtLerpHeadY: float = 0.0
+var lookAtLerpHeadX: float = 0.0
+var lerpPosCustom = Vector3()
 var lookSensitviity := 0.01
 var lookSmoothness := 20.0
-
 var targetRotY := 0.0
 var targetRotX := 0.0
 var targetFOV = 90.0
-
 var currentSpeed = SPEED
 var crouching = false
 var peeking = false
 var interactingWithSomethingElse = false
 var hidingUI = false
-
-@export var startingRotation : Vector2
-@export var jumpAtStart = true
-
 var shake = false
 var shakeOrigPos = Vector3.ONE
-
-var direction : Vector3 = Vector3.ZERO
-
+var direction: Vector3 = Vector3.ZERO
 var footstepWaitDuration = 0.35
 var footstepTimer = 0.1
 var has_moved = false
-
-var lastRayBody : InteractableStaticBody3D
-var currentRayBody : InteractableStaticBody3D
-
+var lastRayBody: InteractableStaticBody3D
+var currentRayBody: InteractableStaticBody3D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
 
 func _ready() -> void:
 	targetRotX = $Head.rotation.y
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+
 	targetRotX = startingRotation.x
 	targetRotY = startingRotation.y
-	
-	if jumpAtStart:	
+
+	if jumpAtStart:
 		velocity.y = 14
 		$Appear.pitch_scale = randf_range(0.9, 1.1)
 		$Appear.play()
-	
+
 	Global.currentPlayer = self
-		
+
+
 func _process(delta: float) -> void:
 	if lerpCameraPosToCustom:
 		%Cam.global_position = lerp(%Cam.global_position, lerpCameraCustomPos, 5.0 * delta)
@@ -70,21 +63,21 @@ func _process(delta: float) -> void:
 			%Cam.position = lerp(%Cam.position, Vector3.ZERO, 5.0 * delta)
 		else:
 			%Cam.position = lerp(%Cam.position, Vector3(0.0, -.75, 0.0), 14.0 * delta)
-		
+
 	lookSensitviity = SaveData.getSetting("gameplay", "cam_sensitivity")
-			
-	if !lerpHeadYToCustom:	
+
+	if !lerpHeadYToCustom:
 		$Head.rotation.y = lerp_angle($Head.rotation.y, targetRotY, lookSmoothness * delta)
 		%Cam.rotation.x = lerp_angle(%Cam.rotation.x, targetRotX, lookSmoothness * delta)
-		
+
 	if lerpFOVToCustom:
 		%Cam.fov = lerp($%Cam.fov, targetFOV, 0.1 * delta)
 	else:
 		%Cam.fov = SaveData.getSetting("gameplay", "fov")
-		
+
 	if Global.pauseGame or (Global.currentGameLoop and Global.currentGameLoop.pauseCoreGameStuff and Global.currentGameLoop.start):
 		return
-		
+
 	if !goNumb:
 		%Ray.enabled = true
 		if %Ray.is_colliding():
@@ -99,7 +92,7 @@ func _process(delta: float) -> void:
 				interactingWithSomethingElse = false
 				lastRayBody.setHighlight(false)
 			currentRayBody = null
-			
+
 		if currentRayBody != null and currentRayBody.isInteractable:
 			print(currentRayBody.name)
 			currentRayBody.setHighlight(true)
@@ -108,31 +101,31 @@ func _process(delta: float) -> void:
 				interactingWithSomethingElse = false
 				currentRayBody.setHighlight(false)
 				currentRayBody.onInteract.emit()
-			
+
 		crouching = Input.is_action_pressed("deets_crouch") and is_on_floor()
-		
+
 		if crouching:
 			currentSpeed = CROUCH_SPEEED
 			footstepWaitDuration = 1.5
 		else:
 			currentSpeed = SPEED
 			footstepWaitDuration = 0.35
-			
+
 		if Input.is_action_just_released("deets_crouch"):
 			footstepTimer = 0.0
-		
+
 		if Input.is_action_just_pressed("deets_peek"):
 			if not peeking:
 				peeking = true
 				targetRotY += deg_to_rad(180)
 				$Head.rotation.y = targetRotY
-		
+
 		if Input.is_action_just_released("deets_peek"):
 			if peeking:
 				peeking = false
 				targetRotY -= deg_to_rad(180)
 				$Head.rotation.y = targetRotY
-		
+
 		if direction and is_on_floor():
 			has_moved = true
 			footstepTimer -= delta
@@ -157,11 +150,11 @@ func _process(delta: float) -> void:
 		if shake:
 			if shakeOrigPos == Vector3.ONE:
 				shakeOrigPos = %Cam.global_position
-				
+
 			%Cam.global_position = Vector3(shakeOrigPos.x + randf_range(-0.05, 0.05), 0.0, shakeOrigPos.y + randf_range(-0.05, 0.05))
-			
+
 		%Ray.enabled = false
-	
+
 	if hidingUI:
 		Global.gameUI.hide()
 		Global.shopUI.hide()
@@ -174,10 +167,11 @@ func _process(delta: float) -> void:
 			Global.shopUI.hide()
 		Global.miscUI.show()
 
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		
+
 	if lerpHeadXToCustom:
 		%Cam.rotation.x = lerp_angle(%Cam.rotation.x, lookAtLerpHeadX, 5.0 * delta)
 	if lerpHeadYToCustom:
@@ -187,10 +181,10 @@ func _physics_process(delta: float) -> void:
 		$Head.rotation.z = lerp($Head.rotation.z, 0.0, 5 * delta)
 	if lerpPosToCustom:
 		global_position = global_position.lerp(lerpPosCustom, 5.0 * delta)
-		
+
 	if Global.pauseGame or (Global.currentGameLoop and Global.currentGameLoop.pauseCoreGameStuff and Global.currentGameLoop.start):
 		return
-	
+
 	if !goNumb:
 		if not is_on_floor():
 			velocity += get_gravity() * delta
@@ -209,7 +203,8 @@ func _physics_process(delta: float) -> void:
 			velocity.z = lerp(velocity.z, 0.0, ACCELERATION * delta)
 
 		move_and_slide()
-	
+
+
 func _input(event: InputEvent) -> void:
 	if Global.pauseGame:
 		return
@@ -219,25 +214,29 @@ func _input(event: InputEvent) -> void:
 			targetRotY -= event.relative.x * lookSensitviity
 			targetRotX -= event.relative.y * lookSensitviity
 			targetRotX = clamp(targetRotX, deg_to_rad(-90), deg_to_rad(90))
-	
+
 	if event.is_action_pressed("deets_ui"):
 		hidingUI = true
 	if event.is_action_released("deets_ui"):
 		hidingUI = false
-	
+
+
 func _playPop():
 	$Pop.pitch_scale = randf_range(0.8, 1.2)
 	$Pop.play()
-	
+
+
 func _playPopLowPitched():
 	$Pop.pitch_scale = randf_range(0.6, 0.8)
 	$Pop.play()
-	
+
+
 func _onCollected(what, howMuch):
 	#print("collected " + str(howMuch) + " " + str(what))
 	if what == CollectableArea3D.COLLECTABLE_TYPE.STEEDIUM:
 		_playPop()
 		Global.currentGameLoop._giveSteedium(howMuch)
+
 
 func _onCollectRangeEntered(area: Area3D) -> void:
 	#print("collect")
@@ -245,11 +244,12 @@ func _onCollectRangeEntered(area: Area3D) -> void:
 		area.collected.connect(_onCollected)
 		area.aboutToBeCollected.emit()
 
+
 func _onGun():
 	if !interactingWithSomethingElse and !goNumb:
 		$Gun.pitch_scale = randf_range(0.9, 1.1)
 		$Gun.play()
-			
+
 		if %GunRay.is_colliding():
 			var collider = %GunRay.get_collider()
 			var yes = true

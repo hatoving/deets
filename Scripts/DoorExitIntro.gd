@@ -1,7 +1,13 @@
 extends InteractableStaticBody3D
 
+
 func _ready() -> void:
 	onInteract.connect(_onInteract)
+
+
+func _process(_delta: float) -> void:
+	pass
+
 
 func _onInteract():
 	$Sound.play()
@@ -10,9 +16,6 @@ func _onInteract():
 	Global.get_node("Misc/Control/Fade").color.a = 0.0
 	Global.allowToPause = false
 	$Timer.start(3.0)
-
-func _process(_delta: float) -> void:
-	pass
 
 
 func _on_timer_timeout() -> void:

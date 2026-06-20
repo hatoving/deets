@@ -1,5 +1,6 @@
 extends StaticBody3D
 
+
 func _process(_delta):
 	if Global.currentShop:
 		var target_position = Global.currentShop.global_transform.origin

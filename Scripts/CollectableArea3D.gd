@@ -1,10 +1,11 @@
-extends Area3D
 class_name CollectableArea3D
-
-enum COLLECTABLE_TYPE {
-	STEEDIUM
-}
-@export var collectableType : COLLECTABLE_TYPE
+extends Area3D
 
 signal aboutToBeCollected
-signal collected(what : COLLECTABLE_TYPE, howMuch : int)
+signal collected(what: COLLECTABLE_TYPE, howMuch: int)
+
+enum COLLECTABLE_TYPE {
+	STEEDIUM,
+}
+
+@export var collectableType: COLLECTABLE_TYPE

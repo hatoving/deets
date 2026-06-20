@@ -1,12 +1,11 @@
 extends Sprite3D
 
-var time = 0
-var y_offset = 0
-
-@export var theEntireFuckingFloor : Node3D
-@export var player : CharacterBody3D
+@export var theEntireFuckingFloor: Node3D
+@export var player: CharacterBody3D
 @export var orig_y = 0
 
+var time = 0
+var y_offset = 0
 var dialogue = [
 	preload("res://Audio/HorseIntro/00.ogg"),
 	preload("res://Audio/HorseIntro/1.ogg"),
@@ -14,35 +13,19 @@ var dialogue = [
 	preload("res://Audio/HorseIntro/2.ogg"),
 	preload("res://Audio/HorseIntro/2a.ogg"),
 	preload("res://Audio/HorseIntro/3.ogg"),
-	preload("res://Audio/HorseIntro/4.ogg")
+	preload("res://Audio/HorseIntro/4.ogg"),
 ]
-
 var index = -1
 var indexDuration = 0.0
 var cutsceneTimer = 0.0
 var indexUpdate = true
 var doCutscene = false
 var pauseCutscene = false
-
 var whichOneRight = 0
 var gotItRight = false
 var questionIndex = 0
 var wrong = 0
 
-func begin():
-	doCutscene = true
-	
-func enableAnswers():
-	get_parent().get_node("Answers").set_deferred("process_mode", PROCESS_MODE_INHERIT)
-	get_parent().get_node("Answers").show()
-	
-func disableAnswers():
-	get_parent().get_node("Answers").set_deferred("process_mode", PROCESS_MODE_DISABLED)
-	get_parent().get_node("Answers").hide()
-	
-func setAnswers(answers : PackedStringArray):
-	for i in range(3):
-		get_parent().get_node("Answers/Answer" + str(i + 1) + "/Mesh/Label2").text = answers[i]
 
 func _process(delta: float) -> void:
 	if Global.pauseGame:
@@ -50,11 +33,11 @@ func _process(delta: float) -> void:
 		return
 	else:
 		$Dialogue.stream_paused = false
-	
+
 	time += delta
 	y_offset = cos(time)
 	position.y = (orig_y + y_offset) / 8
-	
+
 	if doCutscene and !pauseCutscene:
 		if indexUpdate:
 			match index:
@@ -136,27 +119,47 @@ func _process(delta: float) -> void:
 					indexDuration = 6.18
 				11:
 					Global.allowToPause = false
-					
+
 					$Floor.play()
 					$Cymbal.play()
-					
+
 					player.get_node("Falling").play()
 					theEntireFuckingFloor.queue_free()
-					
+
 					Global.get_node("Misc/Control/Fade").color.a = 0.0
 					Global.uiFade = true
-					
+
 					indexDuration = 0.0
 					indexUpdate = false
 				12:
 					get_tree().change_scene_to_file("res://Scenes/Level.tscn")
 					pass
-				
+
 		cutsceneTimer -= delta
 		if cutsceneTimer <= 0.0:
 			index += 1
 			indexUpdate = true
 			cutsceneTimer = indexDuration
+
+
+func begin():
+	doCutscene = true
+
+
+func enableAnswers():
+	get_parent().get_node("Answers").set_deferred("process_mode", PROCESS_MODE_INHERIT)
+	get_parent().get_node("Answers").show()
+
+
+func disableAnswers():
+	get_parent().get_node("Answers").set_deferred("process_mode", PROCESS_MODE_DISABLED)
+	get_parent().get_node("Answers").hide()
+
+
+func setAnswers(answers: PackedStringArray):
+	for i in range(3):
+		get_parent().get_node("Answers/Answer" + str(i + 1) + "/Mesh/Label2").text = answers[i]
+
 
 func moveOn(num):
 	if num != whichOneRight:
@@ -174,11 +177,14 @@ func moveOn(num):
 	if wrong >= 3:
 		SaveData._unlockAch("allHintsWrong")
 
+
 func _on_answer_1_on_interact() -> void:
 	moveOn(0)
 
+
 func _on_answer_2_on_interact() -> void:
 	moveOn(1)
+
 
 func _on_answer_3_on_interact() -> void:
 	moveOn(2)

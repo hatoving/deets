@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmbm4r70r65a1"]
 
-[ext_resource type="Script" uid="uid://c5kjqv2rsrqb7" path="res://Scripts/intro.gd" id="1_1rpvy"]
+[ext_resource type="Script" uid="uid://c5kjqv2rsrqb7" path="res://Scripts/Intro.gd" id="1_1rpvy"]
 [ext_resource type="PackedScene" uid="uid://b6ctqbmr3yv57" path="res://Scenes/LevelGen/Structures/MossWall.tscn" id="2_33sem"]
 [ext_resource type="PackedScene" uid="uid://dueu1smc1vjou" path="res://Scenes/LevelGen/Structures/BrickFloor.tscn" id="3_46ak0"]
 [ext_resource type="Texture2D" uid="uid://bu7i1vlr21m0o" path="res://Models/Border/moss.png" id="3_iysgs"]

@@ -1,11 +1,16 @@
 extends CanvasLayer
 
+signal onExit
+
+@export var mainMenu: CanvasLayer
+@export var clickSFX: AudioStreamPlayer
+
 var index = 0
 
-@export var mainMenu : CanvasLayer
-@export var clickSFX : AudioStreamPlayer
 
-signal onExit
+func _ready() -> void:
+	switchMenus()
+
 
 func switchMenus():
 	match index:
@@ -24,9 +29,7 @@ func switchMenus():
 			$Video.visible = false
 			$Audio.visible = false
 			$Game.visible = true
-			
-func _ready() -> void:
-	switchMenus()
+
 
 func _on_back_pressed() -> void:
 	onExit.emit()
@@ -35,11 +38,13 @@ func _on_back_pressed() -> void:
 	self.visible = false
 	SaveData._saveSettings()
 
+
 func _on_left_pressed() -> void:
 	clickSFX.play()
 	index -= 1
 	index = clamp(index, 0, 2)
 	switchMenus()
+
 
 func _on_right_pressed() -> void:
 	clickSFX.play()

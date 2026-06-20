@@ -9,24 +9,26 @@ var beginDo = true
 var cutsceneTimer = 2.0
 var skip = false
 
+
 func _ready() -> void:
 	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+
 	Global.showCrosshair = false
-	
+
 	Global.get_node("Misc/Control/Fade").color.a = 1.0
 	Global.uiFade = false
 	Global.allowToPause = false
-	
+
 	$Player.goNumb = true
 	$Player.lerpHeadYToCustom = true
 	$Player.lookAtLerpHeadY = -1.55
 	#$Control/AnimationPlayer.play("intro")
-	
+
 	$Wind.play()
-	
+
 	SaveData.gameSave.whereAt = 0
 	SaveData._saveGame()
+
 
 func _process(delta: float) -> void:
 	if Global.pauseGame:
@@ -77,14 +79,15 @@ func _process(delta: float) -> void:
 				beginIndex += 1
 				updateIndex = true
 
+
 func _on_horse_talk_begin_body_entered(body: Node3D) -> void:
 	if body.name.contains("Player"):
 		$LevelGeometry/DoorwayFront3.set_deferred("process_mode", Node.PROCESS_MODE_INHERIT)
 		$LevelGeometry/DoorwayFront3.show()
-		
+
 		$LevelGeometry/DoorwayFront3/Sound.pitch_scale = randf_range(0.8, 1.2)
 		$LevelGeometry/DoorwayFront3/Sound.play()
-		
+
 		$Horse.begin()
-		
+
 		$HorseTalkBegin/CollisionShape3D.set_deferred("disabled", true)

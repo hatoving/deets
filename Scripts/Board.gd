@@ -2,48 +2,38 @@ extends InteractableStaticBody3D
 
 var doCutscene = false
 var done = false
-
 var index = -1
 var didIndex = false
 var nextIndexDuration = 0.0
-
 var cutsceneTimer = 0.0
-
 var explosionScene = preload("res://Scenes/LevelGen/Explosion.tscn")
 var explosionTimer = 0.0
+
 
 func _ready() -> void:
 	onInteract.connect(_onInteract)
 
-func _onInteract():
-	if int(Global.currentGameLoop.pedestalAmount - Global.currentGameLoop.pedestalsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
-		Global.currentGameLoop.pauseCoreGameStuff = true
-		Global.currentGameLoop.get_node("Ambience").stop()
-		Global.currentGameLoop.get_node("AmbienceSpooky").stop()
-		doCutscene = true
-		isInteractable = false
-	
+
 func _process(delta: float) -> void:
 	if !doCutscene:
 		if int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
 			$Mesh/Label1.text = "Done!"
 		else:
 			$Mesh/Label1.text = "x" + str(int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected))
-		
+
 		if int(SaveData.getGameSetting("items", "valuable_amount") - Global.currentGameLoop.pedestalsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
 			$Mesh/Label2.text = "Congratulations.\nNow interact with\nme and get your\nprize."
 		elif int(SaveData.getGameSetting("items", "valuable_amount") - Global.currentGameLoop.pedestalsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) > 0:
 			$Mesh/Label2.text = "You have destroyed\nthe items, but\n you still need steedium."
 		else:
 			$Mesh/Label2.text = "There are still " + str(int(Global.currentGameLoop.pedestalAmount - Global.currentGameLoop.pedestalsDestroyed)) + "\nPedestals.\nDestroy them all\nto proceed."
-		
-		
+
 	if int(Global.currentGameLoop.pedestalAmount - Global.currentGameLoop.pedestalsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
 		hint = "press [color=yellow]Left Mouse Button[color=yellow] to proceed"
-		
+
 		if Global.pauseGame:
 			return
-		
+
 		if doCutscene:
 			if !didIndex:
 				match index:
@@ -140,7 +130,7 @@ func _process(delta: float) -> void:
 						Global.currentStartFence.toggleClose()
 						didIndex = true
 						doCutscene = false
-			
+
 			cutsceneTimer -= delta
 			if cutsceneTimer <= 0.0:
 				cutsceneTimer = nextIndexDuration
@@ -148,6 +138,15 @@ func _process(delta: float) -> void:
 				index += 1
 	else:
 		hint = "I don't have enough to proceed."
-	
+
 	var currentWidth = overlayMat.get_shader_parameter("outline_width")
 	overlayMat.set_shader_parameter("outline_width", lerp(currentWidth, targetOutlineWidth, 0.3))
+
+
+func _onInteract():
+	if int(Global.currentGameLoop.pedestalAmount - Global.currentGameLoop.pedestalsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
+		Global.currentGameLoop.pauseCoreGameStuff = true
+		Global.currentGameLoop.get_node("Ambience").stop()
+		Global.currentGameLoop.get_node("AmbienceSpooky").stop()
+		doCutscene = true
+		isInteractable = false

@@ -1,2 +1,2 @@
-extends Node
 class_name ScriptedEvents
+extends Node

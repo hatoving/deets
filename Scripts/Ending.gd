@@ -1,50 +1,48 @@
 extends CanvasLayer
 
 var fade = false
-
 var panels = {
 	0: {
 		text = "as the player fell down,\nescaping from the hors...",
-		panel = preload("res://Sprites/EndingStory/0.png")
+		panel = preload("res://Sprites/EndingStory/0.png"),
 	},
 	1: {
 		text = "they eventually had met\nwith the mystical honse\nonce again.",
-		panel = preload("res://Sprites/EndingStory/0.png")
+		panel = preload("res://Sprites/EndingStory/0.png"),
 	},
 	2: {
 		text = "\"wow uh, congratulations\ni honestly thought you wouldn't make it out alive\"",
-		panel = preload("res://Sprites/EndingStory/1.png")
+		panel = preload("res://Sprites/EndingStory/1.png"),
 	},
 	3: {
 		text = "\"you failed my riddles like a dumbass, but...\"",
-		panel = preload("res://Sprites/EndingStory/1.png")
+		panel = preload("res://Sprites/EndingStory/1.png"),
 	},
 	4: {
 		text = "\"as promised, here is your one dolla.\"",
-		panel = preload("res://Sprites/EndingStory/2.png")
+		panel = preload("res://Sprites/EndingStory/2.png"),
 	},
 	5: {
 		text = "the player stares in awe on it's new prize.",
-		panel = preload("res://Sprites/EndingStory/2.png")
+		panel = preload("res://Sprites/EndingStory/2.png"),
 	},
 	6: {
 		text = "\"dude. this ain't even a real dollar. you clearly faked that shit.\"",
-		panel = preload("res://Sprites/EndingStory/3.png")
+		panel = preload("res://Sprites/EndingStory/3.png"),
 	},
 	7: {
 		text = "\"woops\"",
-		panel = preload("res://Sprites/EndingStory/1.png")
+		panel = preload("res://Sprites/EndingStory/1.png"),
 	},
 	8: {
 		text = "that's a real story.\nain't that crazy bro??",
-		panel = preload("res://Sprites/EndingStory/4.png")
+		panel = preload("res://Sprites/EndingStory/4.png"),
 	},
 	9: {
 		text = "sir this is a mcdonald's",
 		panel = preload("res://Sprites/EndingStory/5.png"),
-	}
+	},
 }
-
 var index = -1
 var storyPanel = 0
 var updateIndex = true
@@ -55,15 +53,16 @@ var submittedGJ = false
 var submittedNG = false
 var submit = false
 
+
 func _ready() -> void:
 	$RichTextLabel.visible_ratio = 0
 	$Fade.color.a = 2.0
-	
+
 	Global.uiFade = false
 	Global.get_node("Misc/Control/Fade").color.a = 0.0
 	Global.showCrosshair = false
 	Global.allowToPause = false
-	
+
 	if !Global.customMode:
 		if SaveData.gameSave.bestTime == 0:
 			SaveData.gameSave.bestTime = Global.finalTime
@@ -74,38 +73,38 @@ func _ready() -> void:
 				submit = true
 	else:
 		SaveData.gameSave.latestCustomTime = Global.finalTime
-	
+
 	SaveData.gameSave.beatGame = true
 	SaveData.gameSave.whereAt = 2
 	SaveData._saveGame()
-	
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
-	
+
+
 func _process(delta: float) -> void:
 	if fade:
 		$Fade.color.a += delta * 4
 	else:
 		$Fade.color.a -= delta * 4
 	$Fade.color.a = clamp($Fade.color.a, 0.0, 1.0)
-	
+
 	$StoryPanel.texture = panels[storyPanel].panel
 	$RichTextLabel.text = panels[storyPanel].text
-	
+
 	$RichTextLabel.visible_ratio += delta
-	
+
 	if SaveData.getSetting("gameplay", "leaderboard") and submit:
 		if NG.signed_in and !submittedNG:
 			submittedNG = true
 			NG.scoreboard_submit_time(NewgroundsIds.ScoreboardId.DefaultGame, Global.finalTime)
-	
+
 	if Input.is_action_just_pressed("deets_skip") and !skip and index < 18:
 		index = 18
 		cutsceneTimer = 0
 		nextDuration = 2.72
 		updateIndex = false
 		skip = true
-	
+
 	if updateIndex:
 		match index:
 			-1:
@@ -211,7 +210,7 @@ func _process(delta: float) -> void:
 				updateIndex = false
 			21:
 				if Global.customMode:
-					SaveData._unlockAch("customBeat")	
+					SaveData._unlockAch("customBeat")
 					$RichTextLabel2.text = "[center]Congratulations!\n\nYou've beat Custom Mode\nand earned the mystical\n honse's respect.\n\nLife is not meaningless\nafter all..."
 				else:
 					$RichTextLabel2.text = "[center]Congratulations!\n\nYou've beat the game\nand have unlocked\nCustom Mode!\n\nPat yourself on\nyour horseback."
@@ -221,7 +220,7 @@ func _process(delta: float) -> void:
 				updateIndex = false
 			22:
 				get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
-	
+
 	cutsceneTimer -= delta
 	if cutsceneTimer <= 0.0:
 		cutsceneTimer = nextDuration
