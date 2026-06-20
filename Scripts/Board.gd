@@ -16,7 +16,7 @@ func _ready() -> void:
 	onInteract.connect(_onInteract)
 
 func _onInteract():
-	if int(Global.currentGameLoop.valuableHorseItemAmount - Global.currentGameLoop.valuableHorseItemsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
+	if int(Global.currentGameLoop.pedestalAmount - Global.currentGameLoop.pedestalsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
 		Global.currentGameLoop.pauseCoreGameStuff = true
 		Global.currentGameLoop.get_node("Ambience").stop()
 		Global.currentGameLoop.get_node("AmbienceSpooky").stop()
@@ -30,15 +30,15 @@ func _process(delta: float) -> void:
 		else:
 			$Mesh/Label1.text = "x" + str(int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected))
 		
-		if int(SaveData.getGameSetting("items", "valuable_amount") - Global.currentGameLoop.valuableHorseItemsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
+		if int(SaveData.getGameSetting("items", "valuable_amount") - Global.currentGameLoop.pedestalsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
 			$Mesh/Label2.text = "Congratulations.\nNow interact with\nme and get your\nprize."
-		elif int(SaveData.getGameSetting("items", "valuable_amount") - Global.currentGameLoop.valuableHorseItemsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) > 0:
+		elif int(SaveData.getGameSetting("items", "valuable_amount") - Global.currentGameLoop.pedestalsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) > 0:
 			$Mesh/Label2.text = "You have destroyed\nthe items, but\n you still need steedium."
 		else:
-			$Mesh/Label2.text = "There are still " + str(int(Global.currentGameLoop.valuableHorseItemAmount - Global.currentGameLoop.valuableHorseItemsDestroyed)) + "\nValuable Horse Items.\nDestroy them all\nto proceed."
+			$Mesh/Label2.text = "There are still " + str(int(Global.currentGameLoop.pedestalAmount - Global.currentGameLoop.pedestalsDestroyed)) + "\nPedestals.\nDestroy them all\nto proceed."
 		
 		
-	if int(Global.currentGameLoop.valuableHorseItemAmount - Global.currentGameLoop.valuableHorseItemsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
+	if int(Global.currentGameLoop.pedestalAmount - Global.currentGameLoop.pedestalsDestroyed) <= 0 and int(Global.currentGameLoop.steediumNeededToEscape - Global.currentGameLoop.steediumCollected) <= 0:
 		hint = "press [color=yellow]Left Mouse Button[color=yellow] to proceed"
 		
 		if Global.pauseGame:

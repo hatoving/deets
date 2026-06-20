@@ -1,82 +1,82 @@
 [gd_scene format=3 uid="uid://c3xkidypja043"]
 
-[ext_resource type="Texture2D" uid="uid://c15s7gp3mqm6n" path="res://Textures/concrete_ground.png" id="1_4hmb7"]
-[ext_resource type="Script" uid="uid://cqayeesy3rwr8" path="res://Scripts/ValuableHorseItems.gd" id="1_kb20i"]
-[ext_resource type="Texture2D" uid="uid://8ipef6mif31a" path="res://Models/ValuableHorseItem/valuableHorseItem.png" id="2_mbkwc"]
-[ext_resource type="ArrayMesh" uid="uid://d22ux22wcqaku" path="res://Models/ValuableHorseItem/valuableHorseItem.obj" id="3_4ai7l"]
-[ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="4_d2lyj"]
-[ext_resource type="Texture2D" uid="uid://nbrjnwp7ckmh" path="res://Sprites/HorseWhistle.png" id="5_d2lyj"]
-[ext_resource type="Texture2D" uid="uid://dap7igbcngsk1" path="res://Sprites/HorseItemGrave.png" id="6_o7hiq"]
-[ext_resource type="AudioStream" uid="uid://bcufpltuw1gyy" path="res://Audio/Amb/Valuable.ogg" id="8_g881f"]
-[ext_resource type="AudioStream" uid="uid://dmt5pkio4iwmc" path="res://Audio/ValuableHorseItem.wav" id="9_bbc1v"]
+[ext_resource type="Script" uid="uid://cqayeesy3rwr8" path="res://Scripts/Pedestal.gd" id="1_a4acq"]
+[ext_resource type="Texture2D" uid="uid://c15s7gp3mqm6n" path="res://Textures/concrete_ground.png" id="2_qa4e5"]
+[ext_resource type="Texture2D" uid="uid://8ipef6mif31a" path="res://Models/Pedestal/pedestal.png" id="3_a4acq"]
+[ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="4_y8u6w"]
+[ext_resource type="ArrayMesh" uid="uid://d22ux22wcqaku" path="res://Models/Pedestal/pedestal.obj" id="5_a4acq"]
+[ext_resource type="Texture2D" uid="uid://dap7igbcngsk1" path="res://Sprites/HorseItemGrave.png" id="6_47o7j"]
+[ext_resource type="Texture2D" uid="uid://nbrjnwp7ckmh" path="res://Sprites/HorseWhistle.png" id="7_wmbla"]
+[ext_resource type="AudioStream" uid="uid://bcufpltuw1gyy" path="res://Audio/Amb/Valuable.ogg" id="8_v2v5q"]
+[ext_resource type="AudioStream" uid="uid://dmt5pkio4iwmc" path="res://Audio/Pedestal.wav" id="9_a4acq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gf8vj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbq3j"]
-albedo_texture = ExtResource("1_4hmb7")
+albedo_texture = ExtResource("2_qa4e5")
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kb20i"]
 shading_mode = 0
-albedo_texture = ExtResource("2_mbkwc")
+albedo_texture = ExtResource("3_a4acq")
 texture_filter = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2lyj"]
 render_priority = 0
-shader = ExtResource("4_d2lyj")
+shader = ExtResource("4_y8u6w")
 shader_parameter/outline_color = Color(1, 1, 1, 0)
 shader_parameter/outline_width = 0.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d2lyj"]
 points = PackedVector3Array(0.0546167, 0.366619, 0.0938, -0.0967762, 0.306523, -0.0967762, -0.0625, 0.00952906, -0.0625, 0.0996524, 0.306523, -0.0967762, 0.0625, 0.00137527, 0.0624812, -0.0967762, 0.306523, 0.0996524, -0.0625, 0.00952906, 0.059807, 0.059825, 0.00952902, -0.0625, -0.0938, 0.372161, -0.0938, 0.0996524, 0.306523, 0.0996524, 0.0938, 0.366619, -0.0909238, -0.0909238, 0.366584, 0.0938, 0.0938, 0.366619, 0.0938, 0.0571048, 0.375, 0.0160504, 0.062034, 0.372197, -0.0938)
 
-[node name="ValuableHorseItem" type="StaticBody3D"]
-script = ExtResource("1_kb20i")
+[node name="Pedestal" type="StaticBody3D" unique_id=1390841032]
+script = ExtResource("1_a4acq")
 hint = "I need something [color=yellow]hard[/color] to smash this..."
 outlineWidth = 15.0
 
-[node name="Floor" type="CSGMesh3D" parent="."]
+[node name="Floor" type="CSGMesh3D" parent="." unique_id=982599847]
 transform = Transform3D(1, 0, 0, 0, 1.012, 0, 0, 0, 1, 0.5, -0.506, 0.5)
 operation = 2
 use_collision = true
 mesh = SubResource("BoxMesh_gf8vj")
 material = SubResource("StandardMaterial3D_qbq3j")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1922021038]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.5, 0, 0.5)
 material_override = SubResource("StandardMaterial3D_kb20i")
 material_overlay = SubResource("ShaderMaterial_d2lyj")
-mesh = ExtResource("3_4ai7l")
+mesh = ExtResource("5_a4acq")
 
-[node name="Grave" type="Sprite3D" parent="."]
+[node name="Grave" type="Sprite3D" parent="." unique_id=1444086433]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.5, 0.45, 0.5)
 visible = false
 billboard = 2
 texture_filter = 0
-texture = ExtResource("6_o7hiq")
+texture = ExtResource("6_47o7j")
 
-[node name="Col" type="CollisionShape3D" parent="."]
+[node name="Col" type="CollisionShape3D" parent="." unique_id=1639562807]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_d2lyj")
 
-[node name="Sprite" type="Sprite3D" parent="."]
+[node name="Sprite" type="Sprite3D" parent="." unique_id=1429761725]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 1.5, 0.5)
 billboard = 1
 texture_filter = 0
-texture = ExtResource("5_d2lyj")
+texture = ExtResource("7_wmbla")
 
-[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+[node name="Audio" type="AudioStreamPlayer3D" parent="." unique_id=1189148429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, 0.5)
-stream = ExtResource("8_g881f")
+stream = ExtResource("8_v2v5q")
 volume_db = -15.0
 autoplay = true
 panning_strength = 3.0
 bus = &"SFX_Filtered"
 
-[node name="Scream" type="AudioStreamPlayer3D" parent="."]
+[node name="Scream" type="AudioStreamPlayer3D" parent="." unique_id=659604941]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, 0.5)
-stream = ExtResource("9_bbc1v")
+stream = ExtResource("9_a4acq")
 volume_db = -12.0
 autoplay = true
 panning_strength = 5.0

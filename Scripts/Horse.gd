@@ -335,7 +335,7 @@ func _process(delta: float) -> void:
 				heardSources.remove_at(0)
 				if heardImportant:
 					$Random.stop()
-					if Global.currentGameLoop.valuableHorseItemsDestroyed >= Global.currentGameLoop.valuableHorseItemAmount:
+					if Global.currentGameLoop.pedestalsDestroyed >= Global.currentGameLoop.pedestalAmount:
 						$PedestalDialogue.stream = pedestalDialogue[pedestalDialogue.size() - 1]
 					else:
 						$PedestalDialogue.stream = pedestalDialogue[randi_range(0, pedestalDialogue.size() - 2)]
@@ -503,7 +503,7 @@ func _onAudioPlayed(area : SoundSensitiveArea3D):
 	for a in overlappingAreas:
 		if a == area:
 			#print("HORSE HEARD SOMETHING")
-			if Global.currentGameLoop.valuableHorseItemsDestroyed > (Global.currentGameLoop.valuableHorseItemAmount - 2):
+			if Global.currentGameLoop.pedestalsDestroyed > (Global.currentGameLoop.pedestalAmount - 2):
 				$IntrigueMad.pitch_scale = randf_range(0.8, 1.2)
 				$IntrigueMad.play()
 			else:
@@ -524,7 +524,7 @@ func _intrigueGotoVec(pos : Vector3):
 		
 	heardSources.clear()
 		
-	if Global.currentGameLoop.valuableHorseItemsDestroyed > (Global.currentGameLoop.valuableHorseItemAmount - 2):
+	if Global.currentGameLoop.pedestalsDestroyed > (Global.currentGameLoop.pedestalAmount - 2):
 		$IntrigueMad.pitch_scale = randf_range(0.8, 1.2)
 		$IntrigueMad.play()
 	else:

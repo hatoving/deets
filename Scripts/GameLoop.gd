@@ -21,9 +21,9 @@ var isPlayerInShop = false
 
 var steediumNeededToEscape = -1
 
-var valuableHorseItemsDestroyed = 0
-var valuableHorseItemAmount = 4
-var valuableHorseItemSteediumMult = 0.55
+var pedestalsDestroyed = 0
+var pedestalAmount = 4
+var pedestalSteediumMult = 0.55
 
 var speedRunTimer = 0.0
 
@@ -152,7 +152,7 @@ func _ready() -> void:
 	
 	steediumRegenTimer = steediumRegenDuration
 	
-	valuableHorseItemAmount = SaveData.gameSettings["items.valuable_amount"]
+	pedestalAmount = SaveData.gameSettings["items.valuable_amount"]
 	itemsInInventory = SaveData.gameSettings["items.start"]
 	horseSpawnTimer = SaveData.getGameSetting("horse", "spawn_duration")
 	horseAmount = SaveData.getGameSetting("horse", "amount")
@@ -181,7 +181,7 @@ func _process(delta: float) -> void:
 	else:
 		Global.enableTimer = false
 	
-	if valuableHorseItemsDestroyed > (valuableHorseItemAmount - 2) and !spooky and !SaveData.getGameSetting("maze", "disable_spooky"):
+	if pedestalsDestroyed > (pedestalAmount - 2) and !spooky and !SaveData.getGameSetting("maze", "disable_spooky"):
 		ambienceDbTarget = -80.0
 		ambienceSpookyDbTarget = 0.0
 		fogColorTarget = Color.WEB_MAROON

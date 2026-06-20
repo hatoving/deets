@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://cilr42c1rd43c"]
+
+[ext_resource type="Script" uid="uid://be4xl3ba6nq8t" path="res://Scripts/Shop.gd" id="1_q4bv4"]
+[ext_resource type="ArrayMesh" uid="uid://52x0kpgf4mbj" path="res://Models/Shop/Shop.obj" id="2_gk1om"]
+[ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="3_sostp"]
+[ext_resource type="Texture2D" uid="uid://b0p2hvotq6f7m" path="res://Textures/Shop/ShopExterior.png" id="3_xw7mf"]
+[ext_resource type="Texture2D" uid="uid://d1vlfxiqot2o6" path="res://Textures/Shop/ShopSign.png" id="4_r2bpr"]
+[ext_resource type="AudioStream" uid="uid://38n4x6tchynu" path="res://Audio/Haykeeper/Buy.ogg" id="5_xw7mf"]
+[ext_resource type="AudioStream" uid="uid://ceajalb5y1vhf" path="res://Audio/Haykeeper/NoNo.ogg" id="6_r2bpr"]
+[ext_resource type="Texture2D" uid="uid://bp0qjdmxgi1nf" path="res://Sprites/Haykeeper/boombox.png" id="7_a8wyx"]
+[ext_resource type="Texture2D" uid="uid://dk3mjualxdrjo" path="res://Sprites/Haykeeper/idle.png" id="8_yxhq6"]
+[ext_resource type="AudioStream" uid="uid://drl2kqie10cpa" path="res://Audio/Haykeeper/greeting.ogg" id="9_4whsh"]
+[ext_resource type="AudioStream" uid="uid://cc5f1gd0oxhal" path="res://Audio/Haykeeper/noitem.ogg" id="10_6nbyd"]
+[ext_resource type="AudioStream" uid="uid://k0prb5v82vx2" path="res://Audio/Haykeeper/Full.ogg" id="11_6h6bt"]
+[ext_resource type="AudioStream" uid="uid://dndmdd4js82oh" path="res://Audio/Haykeeper/outofstock.ogg" id="12_yveh0"]
+[ext_resource type="AudioStream" uid="uid://dhuprjjihnrtr" path="res://Audio/Haykeeper/thankyou.ogg" id="13_e8cjv"]
+[ext_resource type="Script" uid="uid://cp274pbpav1wp" path="res://Scripts/SoundSensitiveArea3D.gd" id="14_1fv7p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gk1om"]
+render_priority = 0
+shader = ExtResource("3_sostp")
+shader_parameter/outline_color = Color(1, 1, 1, 0)
+shader_parameter/outline_width = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8wyx"]
+cull_mode = 2
+albedo_texture = ExtResource("3_xw7mf")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yxhq6"]
+albedo_texture = ExtResource("4_r2bpr")
+texture_filter = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3pa0"]
+size = Vector3(1.9345703, 2.0765686, 2.2045288)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_koebh"]
+radius = 2.5
+
+[node name="Shop" type="StaticBody3D" unique_id=1988404763]
+collision_layer = 786433
+script = ExtResource("1_q4bv4")
+hint = "press [color=yellow]Left Mouse Button[/color] to interact"
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=599728265]
+transform = Transform3D(-7.299802e-08, 0, 1.67, 0, 1.67, 0, -1.67, 0, -7.299802e-08, 0, 0, 0)
+material_overlay = SubResource("ShaderMaterial_gk1om")
+mesh = ExtResource("2_gk1om")
+surface_material_override/0 = SubResource("StandardMaterial3D_a8wyx")
+surface_material_override/1 = SubResource("StandardMaterial3D_yxhq6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1045192982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18676758, 1.0021515, -0.016448975)
+shape = SubResource("BoxShape3D_w3pa0")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1263548552]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=1862105665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+light_color = Color(0.99607843, 0.7137255, 0.43529412, 1)
+light_energy = 0.355
+shadow_enabled = true
+shadow_bias = 0.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=1515359203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1574863, 2.0988424, 0)
+light_color = Color(0.99607843, 0.7137255, 0.43529412, 1)
+light_energy = 0.215
+shadow_enabled = true
+shadow_bias = 0.0
+
+[node name="Cash" type="AudioStreamPlayer3D" parent="." unique_id=2101648725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.885, 0)
+stream = ExtResource("5_xw7mf")
+bus = &"SFX_Filtered"
+
+[node name="No" type="AudioStreamPlayer3D" parent="." unique_id=282382158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.885, 0)
+stream = ExtResource("6_r2bpr")
+volume_db = 2.0
+bus = &"SFX_Filtered"
+
+[node name="BoomBox" type="Sprite3D" parent="." unique_id=1824702452]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.977, 0.914, 0.6)
+billboard = 2
+texture_filter = 2
+texture = ExtResource("7_a8wyx")
+
+[node name="Music" type="AudioStreamPlayer3D" parent="BoomBox" unique_id=357947937]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+volume_db = -25.0
+autoplay = true
+panning_strength = 1.5
+bus = &"Music_Filtered"
+
+[node name="Sprite" type="Sprite3D" parent="." unique_id=1207258706]
+transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, -0.1, 0.885, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("8_yxhq6")
+
+[node name="Greeting" type="AudioStreamPlayer3D" parent="Sprite" unique_id=2108210464]
+stream = ExtResource("9_4whsh")
+volume_db = 2.0
+bus = &"SFX_Filtered"
+
+[node name="NoItem" type="AudioStreamPlayer3D" parent="Sprite" unique_id=19302682]
+stream = ExtResource("10_6nbyd")
+volume_db = 2.0
+bus = &"SFX_Filtered"
+
+[node name="InventoryFull" type="AudioStreamPlayer3D" parent="Sprite" unique_id=813081340]
+stream = ExtResource("11_6h6bt")
+volume_db = 2.0
+bus = &"SFX_Filtered"
+
+[node name="OuttaStock" type="AudioStreamPlayer3D" parent="Sprite" unique_id=638057313]
+stream = ExtResource("12_yveh0")
+volume_db = 2.0
+bus = &"SFX_Filtered"
+
+[node name="ThankYou" type="AudioStreamPlayer3D" parent="Sprite" unique_id=1699443968]
+stream = ExtResource("13_e8cjv")
+volume_db = 2.0
+bus = &"SFX_Filtered"
+
+[node name="Area" type="Area3D" parent="." unique_id=693857202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitoring = false
+script = ExtResource("14_1fv7p")
+
+[node name="Col" type="CollisionShape3D" parent="Area" unique_id=1092361024]
+shape = SubResource("SphereShape3D_koebh")
+debug_color = Color(0.882204, 0.295087, 0.422071, 0.42)
+
+[connection signal="finished" from="BoomBox/Music" to="." method="_on_music_finished"]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dmt5pkio4iwmc"
-path="res://.godot/imported/ValuableHorseItem.wav-c43c8a0c26a010004e1c3234749e5cff.sample"
+path="res://.godot/imported/Pedestal.wav-62a845d7ce61f6bfa32356d91975d25d.sample"
 
 [deps]
 
-source_file="res://Audio/ValuableHorseItem.wav"
-dest_files=["res://.godot/imported/ValuableHorseItem.wav-c43c8a0c26a010004e1c3234749e5cff.sample"]
+source_file="res://Audio/Pedestal.wav"
+dest_files=["res://.godot/imported/Pedestal.wav-62a845d7ce61f6bfa32356d91975d25d.sample"]
 
 [params]
 

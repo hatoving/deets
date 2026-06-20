@@ -14,11 +14,11 @@ var thing = preload("res://Scenes/LevelGen/Structures/thing.tscn")
 
 var borderModel = preload("res://Scenes/LevelGen/Structures/Border.tscn")
 var floorModel = preload("res://Scenes/LevelGen/Structures/Floor.tscn")
-var shopModel = preload("res://Scenes/LevelGen/Structures/PortableShop.tscn")
+var shopModel = preload("res://Scenes/LevelGen/Structures/Shop.tscn")
 var boardModel = preload("res://Scenes/LevelGen/Structures/Board.tscn")
 var shopPointerModel = preload("res://Scenes/LevelGen/Structures/ShopPointer.tscn")
 var fenceModel = preload("res://Scenes/LevelGen/Structures/Fence.tscn")
-var valuableHorseItemModel = preload("res://Scenes/LevelGen/Structures/ValuableHorseItem.tscn")
+var pedestalModel = preload("res://Scenes/LevelGen/Structures/Pedestal.tscn")
 
 var playerScene = preload("res://Scenes/LevelGen/Player.tscn")
 var steediumScene = preload("res://Scenes/LevelGen/Steedium.tscn")
@@ -278,13 +278,13 @@ func generateMaze():
 					continue
 				else:
 					setPointAt(Vector3(pos.x, 0.0, pos.y), POINT_TYPE.OCCUPIED_NO_MODEL)
-					var horseItem = valuableHorseItemModel.instantiate()
+					var pedestal = pedestalModel.instantiate()
 					print(pos)
-					horseItem.position = Vector3(pos.x, 0.0, pos.y)
-					horseItem.name = "ValuableHorseItem" + str(_valuableItemCount)
-					levelGenNode.get_node("NavReg/Valuable").add_child(horseItem)
+					pedestal.position = Vector3(pos.x, 0.0, pos.y)
+					pedestal.name = "Pedestal" + str(_valuableItemCount)
+					levelGenNode.get_node("NavReg/Valuable").add_child(pedestal)
 					
-					horseItem._changeHorseItem(_valuableItemCount)
+					pedestal._changeHorseItem(_valuableItemCount)
 					_valuableItemCount += 1
 					if _valuableItemCount == SaveData.getGameSetting("items", "valuable_amount"):
 						break

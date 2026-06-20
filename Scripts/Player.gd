@@ -258,8 +258,8 @@ func _onGun():
 				SaveData._unlockAch("gun")
 				collider._die()
 				yes = false
-			if collider.name.contains("ValuableHorseItem") and collider.isInteractable:
-				(collider as ValuableHorseItem).triggerDestroy()
+			if collider.name.contains("Pedestal") and collider.isInteractable:
+				(collider as Pedestal).triggerDestroy()
 				SaveData._unlockAch("gun2")
 				yes = false
 			if yes:

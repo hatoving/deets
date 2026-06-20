@@ -1,5 +1,5 @@
 extends InteractableStaticBody3D
-class_name ValuableHorseItem
+class_name Pedestal
 
 var time = 0
 var y_offset = 0.0
@@ -76,15 +76,15 @@ func _process(delta: float) -> void:
 			explosionTimer = randf_range(0.1, 0.35)
 		if $Mesh.position.y < -1.0:
 			if Global.currentLevelGen != null:
-				Global.currentGameLoop.steediumBonusAmount += (int(Global.currentGameLoop.steediumNeededToEscape / 4)) * Global.currentGameLoop.valuableHorseItemSteediumMult
-				Global.currentGameLoop.valuableHorseItemSteediumMult += 0.5
-				Global.currentGameLoop.valuableHorseItemsDestroyed += 1
+				Global.currentGameLoop.steediumBonusAmount += (int(Global.currentGameLoop.steediumNeededToEscape / 4)) * Global.currentGameLoop.pedestalSteediumMult
+				Global.currentGameLoop.pedestalSteediumMult += 0.5
+				Global.currentGameLoop.pedestalsDestroyed += 1
 				Global.currentGameLoop.raiseSpeedMultHorse.emit(0.05)
 				destroy = false
 				done = true
-				if Global.currentGameLoop.valuableHorseItemsDestroyed != Global.currentGameLoop.valuableHorseItemAmount:
-					Global.gameUI_RevealEvent("Only [shake][color=maroon]" + (str(Global.currentGameLoop.valuableHorseItemAmount - Global.currentGameLoop.valuableHorseItemsDestroyed)) + "[/color][/shake] to go.")
-				if Global.currentGameLoop.valuableHorseItemsDestroyed == Global.currentGameLoop.valuableHorseItemAmount:
+				if Global.currentGameLoop.pedestalsDestroyed != Global.currentGameLoop.pedestalAmount:
+					Global.gameUI_RevealEvent("Only [shake][color=maroon]" + (str(Global.currentGameLoop.pedestalAmount - Global.currentGameLoop.pedestalsDestroyed)) + "[/color][/shake] to go.")
+				if Global.currentGameLoop.pedestalsDestroyed == Global.currentGameLoop.pedestalAmount:
 					Global.gameUI_RevealEvent("Get to the very edge of the map. Make sure you have enough steedium... and then escape.", 8.0)
 				$Audio.stop()
 				$Col.set_deferred("disabled", true)

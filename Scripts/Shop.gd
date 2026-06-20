@@ -90,7 +90,7 @@ func _regenItems():
 			if key == 1:
 				steedium_bonus += 0.3
 			elif key == 2:
-				if Global.currentGameLoop.valuableHorseItemsDestroyed == 4:
+				if Global.currentGameLoop.pedestalsDestroyed == 4:
 					steedium_bonus += 0.3
 				else:
 					steedium_bonus -= 0.1
@@ -102,7 +102,7 @@ func _regenItems():
 					continue
 					
 				if availableItems[key].item.index == 2:
-					if Global.currentGameLoop.valuableHorseItemsDestroyed == 4:
+					if Global.currentGameLoop.pedestalsDestroyed == 4:
 						continue
 						
 				currentItems[opposite] = availableItems[key].item.duplicate(true)
@@ -253,5 +253,5 @@ func _on_music_finished() -> void:
 	if rand == 1:
 		$BoomBox/Music.stream = load("res://Audio/Music/Canon in HORSE.mp3")
 	else:
-		$BoomBox/Music.stream = load("res://Audio/Music/portableShop.mp3")
+		$BoomBox/Music.stream = load("res://Audio/Music/Shop.mp3")
 	$BoomBox/Music.play()
