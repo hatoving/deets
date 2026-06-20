@@ -47,6 +47,28 @@ var availableItems = {
 		},
 	},
 }
+const SIGN_TEXT = [
+	"type\nhorse\nback-\nwards\nin the\nmenu",
+	"deets\nnuts",
+	"horse",
+	"time to\nhorse\naround",
+	"we\nenhorse\ngodot",
+	"gun?\ngun!",
+	"el horso",
+	"neigh",
+	"the next\nstep in\nhorse\ngaming",
+	"L to the\nM to the\nA to the\nO to the",
+	"why\nthe fuck\nare you\nplaying\nthis",
+	"yes,\nhorse\nhell\nIS real",
+	"the\nhorse is\ncastrat\n-ed",
+	"flint\nand\nsteed!",
+	"now with\n200%\nless\nboss\nfights!",
+	"friday\nnight\nfoalin'",
+	"purchase\nour new\nhorse\ngame",
+	"wishlist\nyoure my\nfavorite\nperson",
+	"117\ndiff-\nerent\nendings",
+	"a light\nshines!",
+]
 
 @onready var idleTex = preload("res://Sprites/Haykeeper/idle.png")
 @onready var happyTex = preload("res://Sprites/Haykeeper/happy_0.png")
@@ -62,6 +84,7 @@ func _ready() -> void:
 	availableItems[2].item.origPrice = int(Global.currentGameLoop.steediumNeededToEscape / 4.0)
 	availableItems[2].item.price = availableItems[2].item.origPrice
 
+	$Mesh/Sign.mesh.text = SIGN_TEXT.pick_random()
 	Global.currentShop = self
 
 	_regenItems()

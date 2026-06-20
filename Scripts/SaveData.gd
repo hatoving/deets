@@ -158,7 +158,7 @@ func _ready() -> void:
 	DisplayServer.window_set_size(availableScreenSizes[getSetting("video", "resolution")])
 	var screen_size = DisplayServer.screen_get_size()
 	var window_size = DisplayServer.window_get_size()
-	var new_position = (screen_size - window_size) / 2
+	var new_position = (screen_size - window_size) / 2.0
 	DisplayServer.window_set_position(new_position)
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if getSetting("video", "vsync") else DisplayServer.VSYNC_DISABLED)
 

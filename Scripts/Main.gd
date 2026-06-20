@@ -9,10 +9,6 @@ func _ready():
 	change_scene_to_file(root_scene_path)
 
 
-func _process(delta):
-	pass
-
-
 func change_scene_to_file(scene_path):
 	if $GameView/Container/Viewport.get_child_count() > 0:
 		for i in range($GameView/Container/Viewport.get_child_count()):

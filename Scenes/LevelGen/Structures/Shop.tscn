@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d1vlfxiqot2o6" path="res://Textures/Shop/ShopSign.png" id="4_r2bpr"]
 [ext_resource type="AudioStream" uid="uid://38n4x6tchynu" path="res://Audio/Haykeeper/Buy.ogg" id="5_xw7mf"]
 [ext_resource type="AudioStream" uid="uid://ceajalb5y1vhf" path="res://Audio/Haykeeper/NoNo.ogg" id="6_r2bpr"]
+[ext_resource type="FontFile" uid="uid://gn63f8v8hvni" path="res://Fonts/JetBrainsMono-SemiBold.ttf" id="6_sostp"]
 [ext_resource type="Texture2D" uid="uid://bp0qjdmxgi1nf" path="res://Sprites/Haykeeper/boombox.png" id="7_a8wyx"]
 [ext_resource type="Texture2D" uid="uid://dk3mjualxdrjo" path="res://Sprites/Haykeeper/idle.png" id="8_yxhq6"]
 [ext_resource type="AudioStream" uid="uid://drl2kqie10cpa" path="res://Audio/Haykeeper/greeting.ogg" id="9_4whsh"]
@@ -31,6 +32,23 @@ texture_filter = 2
 albedo_texture = ExtResource("4_r2bpr")
 texture_filter = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quy37"]
+resource_local_to_scene = true
+albedo_color = Color(0.06666667, 0.078431375, 0.09411765, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_w3pa0"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_quy37")
+text = "this is
+a test
+go away
+please &
+thank
+you"
+font = ExtResource("6_sostp")
+font_size = 5
+autowrap_mode = 3
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_w3pa0"]
 size = Vector3(1.9345703, 2.0765686, 2.2045288)
 
@@ -48,6 +66,11 @@ material_overlay = SubResource("ShaderMaterial_gk1om")
 mesh = ExtResource("2_gk1om")
 surface_material_override/0 = SubResource("StandardMaterial3D_a8wyx")
 surface_material_override/1 = SubResource("StandardMaterial3D_yxhq6")
+
+[node name="Sign" type="MeshInstance3D" parent="Mesh" unique_id=909312373]
+transform = Transform3D(-0.94980747, 0.0704576, -0.0030479762, -0.005082636, 0.9707032, 0.0024022805, 0.3127939, 0.22971958, -0.009216229, 0.69, 0.376, -0.811)
+cast_shadow = 0
+mesh = SubResource("TextMesh_w3pa0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1045192982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18676758, 1.0021515, -0.016448975)
