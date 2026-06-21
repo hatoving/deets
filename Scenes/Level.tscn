@@ -9,11 +9,14 @@
 [ext_resource type="AudioStream" uid="uid://dggrrkpwq1gqu" path="res://Audio/Amb/how hungry.mp3" id="4_mxnmf"]
 
 [sub_resource type="Environment" id="Environment_myinc"]
+background_mode = 1
+background_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+tonemap_mode = 2
+tonemap_white = 2.0
 fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
-fog_density = 0.262
-fog_height = 4.51
-fog_height_density = -2.8331
+fog_density = 0.265
+fog_height_density = 0.2
 volumetric_fog_density = 0.637
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_myinc"]
