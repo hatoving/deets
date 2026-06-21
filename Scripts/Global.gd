@@ -18,6 +18,7 @@ var gameUI_eventAlphaTarget = 0.0
 var gameUI_reveal = false
 var uiFade = false
 var inShopUI = false
+var met_haykeeper = false
 var allowToPause = true
 var pauseGame = false
 var showCrosshair = true

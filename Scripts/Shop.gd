@@ -1,5 +1,6 @@
 extends InteractableStaticBody3D
 
+@export var haykeeper: Haykeeper
 var regenItems = false
 var boughtSomething = false
 var alreadyGreeted = false
@@ -70,11 +71,6 @@ const SIGN_TEXT = [
 	"a light\nshines!",
 ]
 
-@onready var idleTex = preload("res://Sprites/Haykeeper/idle.png")
-@onready var happyTex = preload("res://Sprites/Haykeeper/happy_0.png")
-@onready var sadTex = preload("res://Sprites/Haykeeper/sad.png")
-@onready var madTex = preload("res://Sprites/Haykeeper/mad.png")
-
 
 func _ready() -> void:
 	onInteract.connect(_onInteract)
@@ -92,7 +88,6 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	$Sprite.scale.y = lerp($Sprite.scale.y, 0.465, 5.0 * delta)
 	if Global.currentGameLoop.pauseCoreGameStuff:
 		$BoomBox/Music.stream_paused = true
 	else:
@@ -103,7 +98,7 @@ func _process(delta: float) -> void:
 	if regenItems:
 		itemRegenTimer -= delta
 		if itemRegenTimer <= 0.0:
-			$Sprite/OuttaStock.stop()
+			haykeeper.switch_state(Haykeeper.State.IDLE)
 			_regenItems()
 			Global.gameUI_RevealEvent("[color=orange]The Haykeeper[/color] has restocked it's store...")
 			boughtSomething = false
@@ -197,19 +192,16 @@ func _onInteract():
 	Global.shopUI_Toggle()
 
 	if !mad:
-		$Sprite.texture = idleTex
-		$Sprite.scale.y = 0.3
-
-	$Sprite/ThankYou.stop()
+		haykeeper.switch_state(Haykeeper.State.IDLE)
+	
 	if !regenItems and !alreadyGreeted:
-		$Sprite/Greeting.play()
 		$Area.audio_played.emit($Area)
 		alreadyGreeted = true
 	elif regenItems:
-		$Sprite.texture = sadTex
-		$Sprite.scale.y = 0.3
-		if !$Sprite/OuttaStock.playing:
-			$Sprite/OuttaStock.play()
+		#$Haykeeper.texture = sadTex
+		if !$Haykeeper/Dialogue.playing:
+			haykeeper.switch_state(Haykeeper.State.CLOSED)
+			haykeeper.closed()
 			$Area.audio_played.emit($Area)
 
 
@@ -229,15 +221,14 @@ func _buyItem(which):
 				print("item " + str(boughtItem["item"]) + " now costs: " + str(availableItems[boughtItem["index"] - 1]))
 			else:
 				$No.play()
-				if !$Sprite/InventoryFull.playing:
-					$Sprite/Greeting.stop()
-					$Sprite/InventoryFull.play()
+				if !$Haykeeper/Dialogue.playing:
+					haykeeper.switch_state(Haykeeper.State.MAD)
+					haykeeper.mad()
 				return
 
 	$Cash.play()
 
-	$Sprite.texture = happyTex
-	$Sprite.scale.y = 0.3
+	haykeeper.equity()
 	Global.currentGameLoop._loseSteedium(boughtItem["price"])
 
 	itemRegenDuration += randf_range(1, 2)
@@ -256,19 +247,17 @@ func _exitShop():
 	Global.shopUI_Toggle()
 	Global.currentGameLoop.isPlayerInShop = false
 
-	$Sprite/Greeting.stop()
-
 	if !regenItems:
 		if !boughtSomething:
 			mad = true
-			$Sprite.texture = madTex
-			$Sprite.scale.y = 0.3
+			haykeeper.switch_state(Haykeeper.State.MAD)
+			haykeeper.mad()
 			$Area.audio_played.emit($Area)
-			$Sprite/NoItem.play()
 	else:
 		if boughtSomething:
-			$Sprite/NoItem.stop()
-			$Sprite/ThankYou.play()
+			$Haykeeper/Dialogue.stop()
+			haykeeper.switch_state(Haykeeper.State.EQUITY)
+			haykeeper.equity()
 			$Area.audio_played.emit($Area)
 			boughtSomething = false
 
