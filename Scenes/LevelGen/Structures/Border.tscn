@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxq2gkmdnx225"]
+[gd_scene format=3 uid="uid://cxq2gkmdnx225"]
 
 [ext_resource type="Texture2D" uid="uid://cf2k26hq8excx" path="res://Models/Border/brick_shadow.png" id="1_hh3nj"]
 [ext_resource type="ArrayMesh" uid="uid://52japcqohy" path="res://Models/Border/border.obj" id="2_4nbgi"]
@@ -10,14 +10,14 @@ texture_filter = 2
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hh3nj"]
 points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 5, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 5, 0.5, 0.5, 5, -0.5, 0.5, 5, 0.5)
 
-[node name="Border" type="StaticBody3D"]
+[node name="Border" type="StaticBody3D" unique_id=1509596831]
 collision_layer = 786433
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=228723927]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 material_override = SubResource("StandardMaterial3D_u2fg1")
 mesh = ExtResource("2_4nbgi")
 
-[node name="Col" type="CollisionShape3D" parent="."]
+[node name="Col" type="CollisionShape3D" parent="." unique_id=1763684905]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_hh3nj")
