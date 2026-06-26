@@ -20,7 +20,6 @@ var borderModel = preload("res://Scenes/LevelGen/Structures/Border.tscn")
 var floorModel = preload("res://Scenes/LevelGen/Structures/Floor.tscn")
 var shopModel = preload("res://Scenes/LevelGen/Structures/Shop.tscn")
 var boardModel = preload("res://Scenes/LevelGen/Structures/Board.tscn")
-var shopPointerModel = preload("res://Scenes/LevelGen/Structures/ShopPointer.tscn")
 var fenceModel = preload("res://Scenes/LevelGen/Structures/Fence.tscn")
 var pedestalModel = preload("res://Scenes/LevelGen/Structures/Pedestal.tscn")
 var playerScene = preload("res://Scenes/LevelGen/Player.tscn")
@@ -305,20 +304,6 @@ func generateMaze():
 
 	placeSteedium()
 	levelGenNode.get_node("NavReg").bake_navigation_mesh()
-
-	var signPositions = [
-		Vector2(int(mazeWidth / 4), int(mazeHeight / 4)),
-		Vector2(mazeWidth - int(mazeWidth / 4), int(mazeHeight / 4)),
-		Vector2(mazeWidth - int(mazeWidth / 4), mazeHeight - int(mazeHeight / 4)),
-		Vector2(int(mazeWidth / 4), mazeHeight - int(mazeHeight / 4)),
-	]
-	print(signPositions)
-
-	for i in signPositions:
-		replacePointWith(i, POINT_TYPE.OCCUPIED_NO_MODEL)
-		var shopPointer = shopPointerModel.instantiate()
-		levelGenNode.add_child(shopPointer)
-		shopPointer.global_position = Vector3(i.x, 0.0, i.y)
 
 	var player = playerScene.instantiate() as Node3D
 	var pos = getPointMiddle(Vector2(0, 0))
