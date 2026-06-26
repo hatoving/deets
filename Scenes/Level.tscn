@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bfxs4buawtbk4" path="res://Scripts/LevelGenerator.gd" id="1_myinc"]
 [ext_resource type="Script" uid="uid://ctk7gcug3oo8s" path="res://Scripts/GameLoop.gd" id="1_njov2"]
-[ext_resource type="Script" uid="uid://cu7a7dsesu3i" path="res://Scripts/ScriptedEvents.gd" id="2_2au82"]
 [ext_resource type="AudioStream" uid="uid://bmp5i5aayx2qi" path="res://Audio/Amb/AmbGeneral.ogg" id="2_8tn2x"]
 [ext_resource type="AudioStream" uid="uid://fua8eomty075" path="res://Audio/Amb/Spooky.ogg" id="3_aq4fw"]
 [ext_resource type="AudioStream" uid="uid://d3kt3tuqyqpaa" path="res://Audio/Amb/wind.ogg" id="4_ivycn"]
@@ -50,9 +49,6 @@ stream = ExtResource("4_ivycn")
 volume_db = -80.0
 autoplay = true
 bus = &"Ambience"
-
-[node name="ScriptedEvents" type="Node" parent="." unique_id=678047244]
-script = ExtResource("2_2au82")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=488741882]
 environment = SubResource("Environment_myinc")
