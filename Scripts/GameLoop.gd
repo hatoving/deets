@@ -35,12 +35,12 @@ var fogColorTarget = Color.BLACK
 var pauseCoreGameStuff = true
 var items = {
 	"": {
-		"tex": null,
+		"tex": preload("res://Sprites/Nothing.png"),
 		"name": "Nothing",
 	},
 	"horseFood": {
 		"tex": preload("res://Sprites/HorseFood.png"),
-		"name": "Horse Food",
+		"name": "Buck'-O-Hay",
 	},
 	"hammer": {
 		"tex": preload("res://Sprites/Hammer.png"),

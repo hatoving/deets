@@ -28,12 +28,12 @@ var finalTime = 70
 var customMode = false
 
 @onready var lastMenu = $PauseUI/Main
-@onready var hotbarSelectedTex = preload("res://Sprites/Inventory/hotbar_1.png")
-@onready var hotbarNotSelectedTex = preload("res://Sprites/Inventory/hotbar_0.png")
 @onready var gameUI: CanvasLayer = $GameUI
 @onready var shopUI: CanvasLayer = $ShopUI
 @onready var miscUI: CanvasLayer = $Misc
 
+func _ready() -> void:
+	$GameUI/Control.modulate = Color(1, 1, 1, 0)
 
 func _process(delta: float) -> void:
 	if SaveData.gameSave.whereAt < 1:
@@ -109,8 +109,8 @@ func _process(delta: float) -> void:
 			shopUI_SteediumAdd = 0
 
 		if currentGameLoop != null:
-			$GameUI/Control.get_node("Hotbar" + str(int(currentGameLoop.currentlySelectedItem))).texture = hotbarSelectedTex
-			$GameUI/Control.get_node("Hotbar" + str(int(!currentGameLoop.currentlySelectedItem))).texture = hotbarNotSelectedTex
+			$GameUI/Control.get_node("Hotbar" + str(int(currentGameLoop.currentlySelectedItem))).modulate = Color.WHITE
+			$GameUI/Control.get_node("Hotbar" + str(int(!currentGameLoop.currentlySelectedItem))).modulate = Color("696969")
 
 			for i in range(2):
 				$GameUI/Control.get_node("ItemDesc" + str(i)).modulate = lerp($GameUI/Control.get_node("ItemDesc" + str(i)).modulate, Color.TRANSPARENT, 1.0 * delta)

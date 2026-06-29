@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8m5cfgjfhw4p"
-path="res://.godot/imported/hotbar_0.png-441fe665bc02744ecac60cd67335501d.ctex"
+uid="uid://vbfilc8y01eh"
+path="res://.godot/imported/Triangle.png-e0d57b4c48f68eb992de8eddea5527e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Inventory/hotbar_0.png"
-dest_files=["res://.godot/imported/hotbar_0.png-441fe665bc02744ecac60cd67335501d.ctex"]
+source_file="res://Sprites/Triangle.png"
+dest_files=["res://.godot/imported/Triangle.png-e0d57b4c48f68eb992de8eddea5527e8.ctex"]
 
 [params]
 

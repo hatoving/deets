@@ -6,8 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bo8wjlgflvy5" path="res://Audio/cinematicBoom.ogg" id="3_ard7p"]
 [ext_resource type="Texture2D" uid="uid://dyf6n2m0j2rbc" path="res://Sprites/Crosshair.png" id="5_b1ap6"]
 [ext_resource type="Texture2D" uid="uid://bbnyqxwqertom" path="res://Sprites/Steedium.png" id="5_yl847"]
-[ext_resource type="Texture2D" uid="uid://cw444jus8r4r6" path="res://Sprites/Inventory/hotbar_1.png" id="6_0pijh"]
-[ext_resource type="Texture2D" uid="uid://dorvf4k7hfici" path="res://Sprites/Hammer.png" id="6_pbn0o"]
+[ext_resource type="Texture2D" uid="uid://bqy6gijagvxw5" path="res://Sprites/Circle.png" id="7_aqyct"]
+[ext_resource type="Texture2D" uid="uid://bddhyx4gnf47q" path="res://Sprites/Nothing.png" id="8_aqyct"]
 [ext_resource type="Shader" uid="uid://da0c37afaogwm" path="res://Shaders/SteediumUI.gdshader" id="8_yl847"]
 [ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Scenes/Options.tscn" id="9_vdf0c"]
 [ext_resource type="Texture2D" uid="uid://c552qij2v45do" path="res://Sprites/Achievements/UnlockStyle/Xbox/base.png" id="10_f86ji"]
@@ -278,7 +278,6 @@ bus = &"SFX"
 layer = 0
 
 [node name="Control" type="Control" parent="GameUI" unique_id=1405976614]
-modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -306,6 +305,7 @@ text = "00:00:00"
 fit_content = true
 
 [node name="SteediumAdd" type="RichTextLabel" parent="GameUI/Control" unique_id=696261740]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -428,6 +428,7 @@ scroll_active = false
 vertical_alignment = 1
 
 [node name="Hotbar0" type="TextureRect" parent="GameUI/Control" unique_id=1634779279]
+self_modulate = Color(0, 0, 0, 0.56078434)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -435,15 +436,37 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -84.0
-offset_top = -44.0
+offset_top = -47.0
 offset_right = -44.0
-offset_bottom = -4.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-texture = ExtResource("6_0pijh")
+texture = ExtResource("7_aqyct")
+expand_mode = 1
+
+[node name="BG" type="TextureRect" parent="GameUI/Control/Hotbar0" unique_id=197824434]
+modulate = Color(1, 1, 1, 0.07058824)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.1, 1.1)
+texture = ExtResource("7_aqyct")
+expand_mode = 1
 
 [node name="Tex" type="TextureRect" parent="GameUI/Control/Hotbar0" unique_id=2082264089]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -458,11 +481,14 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(25, 25)
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.2, 1.2)
 mouse_filter = 2
-texture = ExtResource("6_pbn0o")
+texture = ExtResource("8_aqyct")
 stretch_mode = 5
 
 [node name="Hotbar1" type="TextureRect" parent="GameUI/Control" unique_id=1681289753]
+self_modulate = Color(0, 0, 0, 0.56078434)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -470,15 +496,37 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 33.0
-offset_top = -44.0
+offset_top = -47.0
 offset_right = 73.0
-offset_bottom = -4.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-texture = ExtResource("6_0pijh")
+texture = ExtResource("7_aqyct")
+expand_mode = 1
+
+[node name="BG" type="TextureRect" parent="GameUI/Control/Hotbar1" unique_id=1263715333]
+modulate = Color(1, 1, 1, 0.07058824)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.1, 1.1)
+texture = ExtResource("7_aqyct")
+expand_mode = 1
 
 [node name="Tex" type="TextureRect" parent="GameUI/Control/Hotbar1" unique_id=888965449]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -493,8 +541,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(25, 25)
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.2, 1.2)
 mouse_filter = 2
-texture = ExtResource("6_pbn0o")
+texture = ExtResource("8_aqyct")
 stretch_mode = 5
 
 [node name="ItemStack0" type="RichTextLabel" parent="GameUI/Control" unique_id=1593888057]
@@ -505,9 +555,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -75.0
-offset_top = -19.0
+offset_top = -22.0
 offset_right = -14.999634
-offset_bottom = -1.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(30, 6)
@@ -530,9 +580,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 42.0
-offset_top = -19.0
+offset_top = -22.0
 offset_right = 102.0
-offset_bottom = -1.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(30, 6)
@@ -1108,6 +1158,7 @@ bus = &"SFX"
 
 [node name="PauseUI" type="CanvasLayer" parent="." unique_id=858292930]
 layer = 98
+visible = false
 
 [node name="BG" type="ColorRect" parent="PauseUI" unique_id=444911643]
 anchors_preset = 15
