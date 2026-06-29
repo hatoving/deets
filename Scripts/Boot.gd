@@ -48,15 +48,13 @@ func _on_timer_timeout() -> void:
 
 
 func _on_click_mouse_entered() -> void:
-	click.kill()
-	click = create_tween()
-	click.tween_property($Click/Button, "scale", Vector2(1.025, 1.025), 0.25).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
+	$Click/Button.modulate = Color("ff930d")
+	$Click/Button.scale = Vector2(1.025, 1.025)
 
 
 func _on_click_mouse_exited() -> void:
-	click.kill()
-	click = create_tween()
-	click.tween_property($Click/Button, "scale", Vector2.ONE, 0.25).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN)
+	$Click/Button.modulate = Color.WHITE
+	$Click/Button.scale = Vector2.ONE
 
 
 func _on_click_pressed() -> void:

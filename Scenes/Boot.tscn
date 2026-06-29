@@ -27,6 +27,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Button" type="TextureButton" parent="Click" unique_id=1794261642]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
