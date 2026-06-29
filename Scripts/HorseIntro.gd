@@ -7,13 +7,13 @@ extends Sprite3D
 var time = 0
 var y_offset = 0
 var dialogue = [
-	preload("res://Audio/HorseIntro/00.ogg"),
-	preload("res://Audio/HorseIntro/1.ogg"),
-	preload("res://Audio/HorseIntro/1a.ogg"),
-	preload("res://Audio/HorseIntro/2.ogg"),
-	preload("res://Audio/HorseIntro/2a.ogg"),
-	preload("res://Audio/HorseIntro/3.ogg"),
-	preload("res://Audio/HorseIntro/4.ogg"),
+	preload("res://Audio/MysticalHonse/00.ogg"),
+	preload("res://Audio/MysticalHonse/1.ogg"),
+	preload("res://Audio/MysticalHonse/1a.ogg"),
+	preload("res://Audio/MysticalHonse/2.ogg"),
+	preload("res://Audio/MysticalHonse/2a.ogg"),
+	preload("res://Audio/MysticalHonse/3.ogg"),
+	preload("res://Audio/MysticalHonse/4.ogg"),
 ]
 var index = -1
 var indexDuration = 0.0

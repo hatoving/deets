@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://n2wdukr0u5a4" path="res://Fonts/Determination Mono.ttf" id="2_jkr2r"]
 [ext_resource type="Texture2D" uid="uid://c7g3u3vm4w46j" path="res://Sprites/EndingStory/0.png" id="3_3v033"]
 [ext_resource type="AudioStream" uid="uid://cwopsks5axvv1" path="res://Audio/Undertale.ogg" id="3_7d0o6"]
-[ext_resource type="AudioStream" uid="uid://br2xwujouy4ip" path="res://Audio/UnoDolla.ogg" id="4_rj42i"]
+[ext_resource type="AudioStream" uid="uid://br2xwujouy4ip" path="res://Audio/MysticalHonse/UnoDolla.ogg" id="4_rj42i"]
 [ext_resource type="Texture2D" uid="uid://dva6xbvi05s0m" path="res://Sprites/EndingStory/logo.png" id="5_5p1fv"]
 [ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="7_keknu"]
 
