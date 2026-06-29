@@ -1158,7 +1158,6 @@ bus = &"SFX"
 
 [node name="PauseUI" type="CanvasLayer" parent="." unique_id=858292930]
 layer = 98
-visible = false
 
 [node name="BG" type="ColorRect" parent="PauseUI" unique_id=444911643]
 anchors_preset = 15
