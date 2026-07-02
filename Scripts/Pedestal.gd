@@ -1,6 +1,13 @@
 class_name Pedestal
 extends InteractableStaticBody3D
 
+const COLORS = [
+	Color("ff0000"),
+	Color("ffff00"),
+	Color("00ff00"),
+	Color("0000ff")
+]
+
 @export var destroy = false
 
 var time = 0
@@ -75,7 +82,11 @@ func triggerDestroy():
 	isInteractable = false
 
 
-func _changeHorseItem(index):
+func _setIndex(index):
+	var color: Color = COLORS[index]
+	$Light.light_color = color
+	$Mesh.material_override.emission = color
+	
 	match index:
 		0:
 			$Sprite.texture = load("res://Sprites/HorseShoe.png")

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cqayeesy3rwr8" path="res://Scripts/Pedestal.gd" id="1_a4acq"]
 [ext_resource type="Texture2D" uid="uid://c15s7gp3mqm6n" path="res://Textures/concrete_ground.png" id="2_qa4e5"]
 [ext_resource type="Texture2D" uid="uid://8ipef6mif31a" path="res://Models/Pedestal/pedestal.png" id="3_a4acq"]
-[ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="4_y8u6w"]
 [ext_resource type="ArrayMesh" uid="uid://d22ux22wcqaku" path="res://Models/Pedestal/pedestal.obj" id="5_a4acq"]
 [ext_resource type="Texture2D" uid="uid://dap7igbcngsk1" path="res://Sprites/HorseItemGrave.png" id="6_47o7j"]
 [ext_resource type="Texture2D" uid="uid://nbrjnwp7ckmh" path="res://Sprites/HorseWhistle.png" id="7_wmbla"]
@@ -17,14 +16,42 @@ albedo_texture = ExtResource("2_qa4e5")
 uv1_triplanar = true
 texture_filter = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kb20i"]
-shading_mode = 0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4acq"]
 albedo_texture = ExtResource("3_a4acq")
-texture_filter = 2
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.17
+texture_filter = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2lyj"]
+[sub_resource type="Shader" id="Shader_ejmnu"]
+resource_local_to_scene = true
+code = "shader_type spatial;
+render_mode cull_front, unshaded;
+
+uniform vec4 outline_color : source_color;
+uniform float outline_width = 1.0;
+
+void vertex() {
+	vec4 clip_position = PROJECTION_MATRIX * (MODELVIEW_MATRIX * vec4(VERTEX, 1.0));
+	vec3 clip_normal = mat3(PROJECTION_MATRIX) * (mat3(MODELVIEW_MATRIX) * NORMAL);
+
+	vec2 offset = normalize(clip_normal.xy) / VIEWPORT_SIZE * clip_position.w * outline_width * 2.0;
+
+	clip_position.xy += offset;
+
+	POSITION = clip_position;
+}
+
+void fragment() {
+	ALBEDO = outline_color.rgb;
+	if (outline_color.a < 1.0) {
+		ALPHA = outline_color.a;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejmnu"]
 render_priority = 0
-shader = ExtResource("4_y8u6w")
+shader = SubResource("Shader_ejmnu")
 shader_parameter/outline_color = Color(1, 1, 1, 0)
 shader_parameter/outline_width = 0.0
 
@@ -45,8 +72,8 @@ material = SubResource("StandardMaterial3D_qbq3j")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1922021038]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.5, 0, 0.5)
-material_override = SubResource("StandardMaterial3D_kb20i")
-material_overlay = SubResource("ShaderMaterial_d2lyj")
+material_override = SubResource("StandardMaterial3D_a4acq")
+material_overlay = SubResource("ShaderMaterial_ejmnu")
 mesh = ExtResource("5_a4acq")
 
 [node name="Grave" type="Sprite3D" parent="." unique_id=1444086433]
@@ -60,6 +87,11 @@ texture = ExtResource("6_47o7j")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_d2lyj")
 
+[node name="Light" type="OmniLight3D" parent="." unique_id=858433951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+light_color = Color(1, 0, 0, 1)
+light_energy = 1.777
+
 [node name="Sprite" type="Sprite3D" parent="." unique_id=1429761725]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 1.5, 0.5)
 billboard = 1
@@ -69,7 +101,7 @@ texture = ExtResource("7_wmbla")
 [node name="Audio" type="AudioStreamPlayer3D" parent="." unique_id=1189148429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, 0.5)
 stream = ExtResource("8_v2v5q")
-volume_db = -15.0
+volume_db = -10.0
 autoplay = true
 panning_strength = 3.0
 bus = &"SFX_Filtered"

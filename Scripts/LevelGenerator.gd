@@ -286,7 +286,7 @@ func generateMaze():
 					pedestal.name = "Pedestal" + str(_valuableItemCount)
 					levelGenNode.get_node("NavReg/Valuable").add_child(pedestal)
 
-					pedestal._changeHorseItem(_valuableItemCount)
+					pedestal._setIndex(_valuableItemCount)
 					_valuableItemCount += 1
 					if _valuableItemCount == SaveData.getGameSetting("items", "valuable_amount"):
 						break
