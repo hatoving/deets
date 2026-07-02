@@ -14,7 +14,7 @@ var settings = {
 	"gameplay.leaderboard": true,
 }
 var gameSettings = {
-	"maze.width": 80,
+	"maze.width": 50,
 	"maze.height": 50,
 	"maze.steedium_spawn_ratio": 0.006,
 	"maze.disable_spooky": false,
@@ -39,7 +39,7 @@ var gameSettings = {
 	},
 }
 var defaultGameSettings = {
-	"maze.width": 80,
+	"maze.width": 50,
 	"maze.height": 50,
 	"maze.steedium_spawn_ratio": 0.006,
 	"maze.disable_spooky": false,

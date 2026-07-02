@@ -186,13 +186,13 @@ diag_closed = Array[AudioStream]([ExtResource("49_tehex"), ExtResource("50_16s2q
 [node name="Dialogue" type="AudioStreamPlayer3D" parent="Haykeeper" unique_id=1710309507]
 transform = Transform3D(1.295, 0, 0, 0, 1.295, 0, 0, 0, 1.295, 0, 1.379, 0)
 stream = ExtResource("12_oixqg")
-volume_db = -5.0
+volume_db = 5.0
 bus = &"SFX_Filtered"
 
 [node name="Glitch" type="AudioStreamPlayer3D" parent="Haykeeper" unique_id=807815157]
 transform = Transform3D(1.295, 0, 0, 0, 1.295, 0, 0, 0, 1.295, 0, 1.379, 0)
 stream = ExtResource("13_q4bv4")
-volume_db = -15.0
+volume_db = -25.0
 bus = &"SFX_Filtered"
 
 [node name="Breathing" type="AudioStreamPlayer3D" parent="Haykeeper" unique_id=2030850472]

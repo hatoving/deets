@@ -80,7 +80,7 @@ func _ready() -> void:
 	steediumRegenTimer = steediumRegenDuration
 
 	pedestalAmount = SaveData.gameSettings["items.valuable_amount"]
-	itemsInInventory = SaveData.gameSettings["items.start"]
+	itemsInInventory = SaveData.gameSettings["items.start"].duplicate(true)
 	horseSpawnTimer = SaveData.getGameSetting("horse", "spawn_duration")
 	horseAmount = SaveData.getGameSetting("horse", "amount")
 
