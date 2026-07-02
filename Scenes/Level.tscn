@@ -55,7 +55,7 @@ environment = SubResource("Environment_myinc")
 
 [node name="LevelGen" type="Node" parent="." unique_id=1986595901 node_paths=PackedStringArray("levelGenNode")]
 script = ExtResource("1_myinc")
-mazeWidth = 80
+mazeWidth = 50
 mazeHeight = 50
 levelGenNode = NodePath("../LevelGeometry")
 

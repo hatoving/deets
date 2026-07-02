@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cqayeesy3rwr8" path="res://Scripts/Pedestal.gd" id="1_a4acq"]
 [ext_resource type="Texture2D" uid="uid://c15s7gp3mqm6n" path="res://Textures/concrete_ground.png" id="2_qa4e5"]
-[ext_resource type="Texture2D" uid="uid://8ipef6mif31a" path="res://Models/Pedestal/pedestal.png" id="3_a4acq"]
 [ext_resource type="ArrayMesh" uid="uid://d22ux22wcqaku" path="res://Models/Pedestal/pedestal.obj" id="5_a4acq"]
 [ext_resource type="Texture2D" uid="uid://dap7igbcngsk1" path="res://Sprites/HorseItemGrave.png" id="6_47o7j"]
 [ext_resource type="Texture2D" uid="uid://nbrjnwp7ckmh" path="res://Sprites/HorseWhistle.png" id="7_wmbla"]
@@ -16,8 +15,12 @@ albedo_texture = ExtResource("2_qa4e5")
 uv1_triplanar = true
 texture_filter = 2
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ciap"]
+load_path = "res://.godot/imported/pedestal.png-413610e5a04c385065a0db505fee0efd.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4acq"]
-albedo_texture = ExtResource("3_a4acq")
+resource_local_to_scene = true
+albedo_texture = SubResource("CompressedTexture2D_6ciap")
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 0.17
