@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MedalResource" load_steps=4 format=3 uid="uid://bgelva7gqsnhi"]
+[gd_resource type="Resource" script_class="MedalResource" format=3 uid="uid://bgelva7gqsnhi"]
 
 [ext_resource type="Script" uid="uid://c8bs42473sond" path="res://addons/newgrounds/data/medal_resource.gd" id="1_ueqw3"]
 
@@ -21,7 +21,4 @@ name = "Fuck this shit"
 description = "Leave."
 icon_url = "//apifiles.ngfiles.com/medals/60000/60127/84246_fuckthisshit.webp"
 id = 84246
-secret = false
-unlocked = false
-value = 0
 difficulty = 1

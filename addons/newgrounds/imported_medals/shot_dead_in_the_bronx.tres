@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MedalResource" load_steps=4 format=3 uid="uid://cdcmthmhqylfd"]
+[gd_resource type="Resource" script_class="MedalResource" format=3 uid="uid://cdcmthmhqylfd"]
 
 [ext_resource type="Script" uid="uid://c8bs42473sond" path="res://addons/newgrounds/data/medal_resource.gd" id="1_6l3nr"]
 
@@ -21,7 +21,4 @@ name = "Shot dead in the bronx"
 description = "Shoot the horse."
 icon_url = "//apifiles.ngfiles.com/medals/60000/60127/84251_shotdeadinthebronx.webp"
 id = 84251
-secret = false
-unlocked = false
-value = 0
 difficulty = 2

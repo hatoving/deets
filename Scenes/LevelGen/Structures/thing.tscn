@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cabo3sduy6jas"]
+[gd_scene format=3 uid="uid://cabo3sduy6jas"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gf8vj"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1w5yi"]
 data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
 
-[node name="Thing" type="StaticBody3D"]
+[node name="Thing" type="StaticBody3D" unique_id=38902299]
 collision_layer = 786433
 
-[node name="Mesh" type="CSGMesh3D" parent="."]
+[node name="Mesh" type="CSGMesh3D" parent="." unique_id=1151348167]
 transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0.5, -0.1, 0.5)
 mesh = SubResource("BoxMesh_gf8vj")
 
-[node name="Col" type="CollisionShape3D" parent="."]
+[node name="Col" type="CollisionShape3D" parent="." unique_id=1393140527]
 transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0.5, -0.1, 0.5)
 shape = SubResource("ConcavePolygonShape3D_1w5yi")

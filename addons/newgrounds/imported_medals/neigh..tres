@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MedalResource" load_steps=4 format=3 uid="uid://b0ofgm5pfil4j"]
+[gd_resource type="Resource" script_class="MedalResource" format=3 uid="uid://b0ofgm5pfil4j"]
 
 [ext_resource type="Script" uid="uid://c8bs42473sond" path="res://addons/newgrounds/data/medal_resource.gd" id="1_f5df6"]
 
@@ -21,7 +21,4 @@ name = "Neigh."
 description = "Translated: Die."
 icon_url = "//apifiles.ngfiles.com/medals/60000/60127/84248_neigh.webp"
 id = 84248
-secret = false
-unlocked = false
-value = 0
 difficulty = 1

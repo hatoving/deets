@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MedalResource" load_steps=4 format=3 uid="uid://cf0otoedc1p76"]
+[gd_resource type="Resource" script_class="MedalResource" format=3 uid="uid://cf0otoedc1p76"]
 
 [ext_resource type="Script" uid="uid://c8bs42473sond" path="res://addons/newgrounds/data/medal_resource.gd" id="1_hjkrp"]
 
@@ -21,7 +21,4 @@ name = "The prize of a lifetime"
 description = "Beat the game."
 icon_url = "//apifiles.ngfiles.com/medals/60000/60127/84253_theprizeofalifetime.webp"
 id = 84253
-secret = false
-unlocked = false
-value = 0
 difficulty = 3

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MedalResource" load_steps=4 format=3 uid="uid://bg12clbi5n7ye"]
+[gd_resource type="Resource" script_class="MedalResource" format=3 uid="uid://bg12clbi5n7ye"]
 
 [ext_resource type="Script" uid="uid://c8bs42473sond" path="res://addons/newgrounds/data/medal_resource.gd" id="1_cgb5n"]
 
@@ -21,7 +21,4 @@ name = "This one was super hard, guys"
 description = "Beat a custom game with any settings."
 icon_url = "//apifiles.ngfiles.com/medals/60000/60127/84249_thisonewassuperhardguys.webp"
 id = 84249
-secret = false
-unlocked = false
-value = 0
 difficulty = 1

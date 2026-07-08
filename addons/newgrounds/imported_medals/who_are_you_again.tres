@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MedalResource" load_steps=4 format=3 uid="uid://0jgynqsl77lt"]
+[gd_resource type="Resource" script_class="MedalResource" format=3 uid="uid://0jgynqsl77lt"]
 
 [ext_resource type="Script" uid="uid://c8bs42473sond" path="res://addons/newgrounds/data/medal_resource.gd" id="1_h6uj1"]
 
@@ -21,7 +21,4 @@ name = "Who are you again?"
 description = "Get all of the questions wrong."
 icon_url = "//apifiles.ngfiles.com/medals/60000/60127/84247_whoareyouagain.webp"
 id = 84247
-secret = false
-unlocked = false
-value = 0
 difficulty = 1

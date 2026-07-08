@@ -19,6 +19,7 @@ dest_files=["res://.godot/imported/ShopSign.png-7ca5cc94a4de4d785c2615aca5f2b9ea
 
 compress/mode=2
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

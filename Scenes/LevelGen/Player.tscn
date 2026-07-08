@@ -19,7 +19,7 @@ radius = 0.65
 height = 0.875
 radius = 0.653
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=1179362362]
 collision_layer = 819203
 collision_mask = 32771
 axis_lock_angular_x = true
@@ -29,75 +29,75 @@ floor_max_angle = 0.0
 script = ExtResource("1_0qd5t")
 startingRotation = Vector2(-0.019, -2.37)
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=699588860]
 transform = Transform3D(-0.642788, 0, -0.766044, 0, 1, 0, 0.766044, 0, -0.642788, 0, 1.135, 0)
 
-[node name="Cam" type="Camera3D" parent="Head"]
+[node name="Cam" type="Camera3D" parent="Head" unique_id=502903298]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 current = true
 fov = 90.0
 
-[node name="Ray" type="RayCast3D" parent="Head/Cam"]
+[node name="Ray" type="RayCast3D" parent="Head/Cam" unique_id=467797308]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(1, 0, 0)
 debug_shape_custom_color = Color(0, 0, 0, 0)
 
-[node name="GunRay" type="RayCast3D" parent="Head/Cam"]
+[node name="GunRay" type="RayCast3D" parent="Head/Cam" unique_id=1410713878]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(30, 0, 0)
 collision_mask = 3
 debug_shape_custom_color = Color(0, 0, 0, 0)
 
-[node name="Col" type="CollisionShape3D" parent="."]
+[node name="Col" type="CollisionShape3D" parent="." unique_id=1966381092]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 shape = SubResource("CapsuleShape3D_ntcih")
 
-[node name="Pop" type="AudioStreamPlayer3D" parent="."]
+[node name="Pop" type="AudioStreamPlayer3D" parent="." unique_id=269858279]
 stream = ExtResource("2_iqexb")
 volume_db = -25.0
 bus = &"SFX_Filtered"
 
-[node name="Falling" type="AudioStreamPlayer3D" parent="."]
+[node name="Falling" type="AudioStreamPlayer3D" parent="." unique_id=889561489]
 stream = ExtResource("3_qngga")
 volume_db = -20.0
 bus = &"SFX_Filtered"
 
-[node name="Appear" type="AudioStreamPlayer3D" parent="."]
+[node name="Appear" type="AudioStreamPlayer3D" parent="." unique_id=1702895233]
 stream = ExtResource("3_om2gm")
 volume_db = -10.0
 bus = &"SFX_Filtered"
 
-[node name="Gun" type="AudioStreamPlayer3D" parent="."]
+[node name="Gun" type="AudioStreamPlayer3D" parent="." unique_id=966229163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 stream = ExtResource("5_qrlnb")
 volume_db = -10.0
 bus = &"SFX_Filtered"
 
-[node name="Footstep" type="AudioStreamPlayer3D" parent="."]
+[node name="Footstep" type="AudioStreamPlayer3D" parent="." unique_id=1898074651]
 stream = ExtResource("2_ntcih")
 volume_db = 2.0
 bus = &"SFX_Filtered"
 
-[node name="AreaFS" type="Area3D" parent="Footstep"]
+[node name="AreaFS" type="Area3D" parent="Footstep" unique_id=2145122694]
 collision_layer = 2
 collision_mask = 2
 input_ray_pickable = false
 monitoring = false
 script = ExtResource("3_pvqpi")
 
-[node name="Col" type="CollisionShape3D" parent="Footstep/AreaFS"]
+[node name="Col" type="CollisionShape3D" parent="Footstep/AreaFS" unique_id=841920314]
 shape = SubResource("SphereShape3D_pvqpi")
 debug_color = Color(0.882204, 0.295087, 0.422071, 0.42)
 
-[node name="CollectableRange" type="Area3D" parent="."]
+[node name="CollectableRange" type="Area3D" parent="." unique_id=1898132632]
 collision_layer = 16
 collision_mask = 16
 input_ray_pickable = false
 
-[node name="Col" type="CollisionShape3D" parent="CollectableRange"]
+[node name="Col" type="CollisionShape3D" parent="CollectableRange" unique_id=74654700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438, 0)
 shape = SubResource("CylinderShape3D_pvqpi")
 debug_color = Color(0.882204, 0.295087, 0.422071, 0.42)

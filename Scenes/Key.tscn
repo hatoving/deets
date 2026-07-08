@@ -19,21 +19,21 @@ shader_parameter/outline_width = 0.0
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_40kd0"]
 points = PackedVector3Array(-0.740455, 0.0416736, -0.0575659, -0.463181, 0.70716, -0.0575659, 0.895566, 0.291284, -0.0575659, -0.407587, -0.0137953, 0.0256294, 0.839972, 0.429744, 0.0256294, -0.879266, 0.457479, 0.0256294, 0.784552, 0.20808, 0.0256294, -0.407587, -0.0137953, -0.0575659, -0.879266, 0.457479, -0.0575659, 0.756755, 0.485213, -0.0575659, -0.851469, 0.152611, 0.0256294, 0.756755, 0.485213, 0.0256294, -0.823498, 0.568417, 0.0256294, 0.784552, 0.20808, -0.0575659, -0.685035, 0.679354, -0.0575659, -0.629615, -0.0137953, 0.0256294, -0.879266, 0.235815, -0.0575659, -0.526654, 0.67783, 0.0222448, 0.895566, 0.374275, 0.0256294, -0.629615, -0.0137953, -0.0575659, -0.712832, 0.0139391, 0.0256294, -0.823498, 0.568417, -0.0575659, 0.895566, 0.374275, -0.0298206, -0.879266, 0.235815, 0.0256294, 0.895566, 0.291284, -0.00210781, -0.823498, 0.124877, -0.0575659, -0.574021, 0.70716, -0.0575659, 0.895566, 0.346682, -0.0575659, -0.740455, 0.65162, -0.0575659, 0.895566, 0.319018, 0.0256294, -0.623795, 0.649964, 0.0219544, 0.867769, 0.263549, -0.00210781)
 
-[node name="Key" type="StaticBody3D"]
+[node name="Key" type="StaticBody3D" unique_id=1480811892]
 script = ExtResource("1_mwybp")
 hint = "press [color=yellow]Left Mouse Button[/color] to pick up"
 metadata/_custom_type_script = "uid://df4754xvyo7jm"
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1145217302]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_2hkn8")
 material_overlay = SubResource("ShaderMaterial_1jc8s")
 mesh = ExtResource("3_rnhaa")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1746655962]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_40kd0")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=1355308379]
 stream = ExtResource("4_rnhaa")
 bus = &"SFX_Filtered"

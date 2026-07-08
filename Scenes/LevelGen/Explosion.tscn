@@ -74,10 +74,10 @@ script/source = "extends AudioStreamPlayer3D
 [sub_resource type="SphereShape3D" id="SphereShape3D_xgve6"]
 radius = 800.0
 
-[node name="Explosion" type="Node3D"]
+[node name="Explosion" type="Node3D" unique_id=508758323]
 script = ExtResource("1_eiqix")
 
-[node name="Sprite" type="Sprite3D" parent="."]
+[node name="Sprite" type="Sprite3D" parent="." unique_id=1476961715]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 billboard = 1
 no_depth_test = true
@@ -85,25 +85,23 @@ texture_filter = 0
 texture = ExtResource("1_uagtg")
 hframes = 17
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=727769325]
 callback_mode_method = 1
-libraries = {
-&"": SubResource("AnimationLibrary_pop8o")
-}
+libraries/ = SubResource("AnimationLibrary_pop8o")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=1589024445]
 stream = ExtResource("2_eiqix")
 volume_db = -25.0
 bus = &"SFX_Filtered"
 script = SubResource("GDScript_nqlub")
 
-[node name="Area" type="Area3D" parent="."]
+[node name="Area" type="Area3D" parent="." unique_id=1009580187]
 collision_layer = 2
 collision_mask = 2
 input_ray_pickable = false
 monitoring = false
 script = ExtResource("4_nqlub")
 
-[node name="Col" type="CollisionShape3D" parent="Area"]
+[node name="Col" type="CollisionShape3D" parent="Area" unique_id=890767428]
 shape = SubResource("SphereShape3D_xgve6")
 debug_color = Color(0.882204, 0.295087, 0.422071, 0.42)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://c63b5awj52f4h"]
+[gd_scene format=4 uid="uid://c63b5awj52f4h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucjpd"]
 resource_name = "LeatherExecutiveChair1"
@@ -28,13 +28,12 @@ blend_shape_mode = 0
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mygun"]
 points = PackedVector3Array(-0.22983, -0.39323, 0.177382, 0.22335, 0.304499, -0.359315, -0.231858, 0.397127, 0.804037, -0.345915, -0.0879754, -0.339518, 0.360707, -0.166454, -0.339518, 0.262595, 0.20636, 0.877218, -0.228109, 0.304499, -0.339518, -0.0318133, -0.362732, -0.359315, -0.309422, -0.195616, 0.455441, 0.262595, -0.382311, 0.308014, -0.188793, 0.20636, 0.896892, 0.330266, 0.223861, 0.411785, 0.340771, -0.193734, 0.453649, 0.254085, 0.407663, 0.818249, -0.24766, -0.382311, 0.308014, 0.282217, 0.26526, -0.359315, -0.295781, 0.223861, 0.411785, 0.380401, -0.0879754, -0.339518, -0.306599, -0.166454, -0.359315, -0.24766, 0.226021, 0.837992, 0.268018, -0.399021, 0.194657, 0.22335, 0.20636, 0.896892, -0.24766, 0.284838, -0.339518, 0.0456, -0.3503, -0.337806, -0.326221, -0.166454, -0.339518, 0.341085, -0.166454, -0.359315, 0.282217, 0.226021, 0.818318, 0.335488, 0.136657, 0.45063, -0.301002, 0.136657, 0.45063, 0.380401, -0.127215, -0.300292, -0.345915, -0.127215, -0.300292, -0.180841, 0.330485, 0.853736)
 
-[node name="ExecutiveChair1" type="StaticBody3D"]
+[node name="ExecutiveChair1" type="StaticBody3D" unique_id=2085081464]
 
-[node name="ExecutiveChair1" type="MeshInstance3D" parent="."]
+[node name="ExecutiveChair1" type="MeshInstance3D" parent="." unique_id=1238671148]
 transform = Transform3D(1, 0, 0, 0, -1.19209e-07, 1, 0, -1, -1.19209e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ku8ud")
-skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2126570335]
 transform = Transform3D(1, 0, 0, 0, -1.19209e-07, 1, 0, -1, -1.19209e-07, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_mygun")
