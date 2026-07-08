@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cfbgonrsbcx3g"]
 
 [ext_resource type="Script" uid="uid://b736yw3fod466" path="res://Scripts/Ending.gd" id="1_v0lf2"]
-[ext_resource type="FontFile" uid="uid://n2wdukr0u5a4" path="res://Fonts/Determination Mono.ttf" id="2_jkr2r"]
 [ext_resource type="AudioStream" uid="uid://cxseejbfqxb8w" path="res://Audio/Music/Canon in HORSE.mp3" id="2_keknu"]
 [ext_resource type="Texture2D" uid="uid://c7g3u3vm4w46j" path="res://Sprites/EndingStory/0.png" id="3_3v033"]
 [ext_resource type="AudioStream" uid="uid://bo8wjlgflvy5" path="res://Audio/cinematicBoom.ogg" id="3_keknu"]
 [ext_resource type="AudioStream" uid="uid://br2xwujouy4ip" path="res://Audio/MysticalHonse/UnoDolla.ogg" id="4_rj42i"]
+[ext_resource type="FontFile" uid="uid://ckbyu7w4e5nyt" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus-regular.ttf" id="6_keknu"]
 [ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="7_keknu"]
 [ext_resource type="Texture2D" uid="uid://e08kqxq7cpkj" path="res://Sprites/Logo/Logo.png" id="8_keknu"]
 
@@ -61,7 +61,7 @@ offset_right = 217.0
 offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("2_jkr2r")
+theme_override_fonts/normal_font = ExtResource("6_keknu")
 theme_override_font_sizes/normal_font_size = 26
 text = "as the player fell down,
 escaping from the hors..."

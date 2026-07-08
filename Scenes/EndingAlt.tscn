@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cxseejbfqxb8w" path="res://Audio/Music/Canon in HORSE.mp3" id="2_i4pcr"]
 [ext_resource type="AudioStream" uid="uid://bo8wjlgflvy5" path="res://Audio/cinematicBoom.ogg" id="3_i4pcr"]
 [ext_resource type="Texture2D" uid="uid://c7g3u3vm4w46j" path="res://Sprites/EndingStory/0.png" id="5_c1l3a"]
-[ext_resource type="FontFile" uid="uid://n2wdukr0u5a4" path="res://Fonts/Determination Mono.ttf" id="6_17gcq"]
+[ext_resource type="FontFile" uid="uid://ckbyu7w4e5nyt" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus-regular.ttf" id="5_i4pcr"]
 [ext_resource type="Texture2D" uid="uid://e08kqxq7cpkj" path="res://Sprites/Logo/Logo.png" id="6_i4pcr"]
 
 [node name="EndingAlt" type="Control" unique_id=1883454251]
@@ -65,7 +65,7 @@ offset_right = 217.0
 offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("6_17gcq")
+theme_override_fonts/normal_font = ExtResource("5_i4pcr")
 theme_override_font_sizes/normal_font_size = 26
 text = "as the player fell down,
 escaping from the hors..."
