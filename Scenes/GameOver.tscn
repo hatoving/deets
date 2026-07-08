@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://be1rwkc43ok1p"]
 
 [ext_resource type="Script" uid="uid://dxjwb1vspecc3" path="res://Scripts/GameOver.gd" id="1_xl4ts"]
-[ext_resource type="AudioStream" uid="uid://cwopsks5axvv1" path="res://Audio/Undertale.ogg" id="3_758bs"]
+[ext_resource type="AudioStream" uid="uid://bo8wjlgflvy5" path="res://Audio/cinematicBoom.ogg" id="2_uib17"]
 [ext_resource type="FontFile" uid="uid://ckbyu7w4e5nyt" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus-regular.ttf" id="3_uib17"]
 [ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="4_uib17"]
 
@@ -18,7 +18,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Undertale" type="AudioStreamPlayer" parent="." unique_id=452542467]
-stream = ExtResource("3_758bs")
+stream = ExtResource("2_uib17")
 pitch_scale = 0.36
 bus = &"SFX_Filtered"
 

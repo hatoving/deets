@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cfbgonrsbcx3g"]
 
 [ext_resource type="Script" uid="uid://b736yw3fod466" path="res://Scripts/Ending.gd" id="1_v0lf2"]
-[ext_resource type="AudioStream" uid="uid://dghpqn0ykdodc" path="res://Audio/Music/Toby Fox - His Theme.ogg" id="1_yqk5q"]
 [ext_resource type="FontFile" uid="uid://n2wdukr0u5a4" path="res://Fonts/Determination Mono.ttf" id="2_jkr2r"]
+[ext_resource type="AudioStream" uid="uid://cxseejbfqxb8w" path="res://Audio/Music/Canon in HORSE.mp3" id="2_keknu"]
 [ext_resource type="Texture2D" uid="uid://c7g3u3vm4w46j" path="res://Sprites/EndingStory/0.png" id="3_3v033"]
-[ext_resource type="AudioStream" uid="uid://cwopsks5axvv1" path="res://Audio/Undertale.ogg" id="3_7d0o6"]
+[ext_resource type="AudioStream" uid="uid://bo8wjlgflvy5" path="res://Audio/cinematicBoom.ogg" id="3_keknu"]
 [ext_resource type="AudioStream" uid="uid://br2xwujouy4ip" path="res://Audio/MysticalHonse/UnoDolla.ogg" id="4_rj42i"]
-[ext_resource type="Texture2D" uid="uid://dva6xbvi05s0m" path="res://Sprites/EndingStory/logo.png" id="5_5p1fv"]
 [ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="7_keknu"]
+[ext_resource type="Texture2D" uid="uid://e08kqxq7cpkj" path="res://Sprites/Logo/Logo.png" id="8_keknu"]
 
 [node name="Ending" type="CanvasLayer" unique_id=305351409]
 script = ExtResource("1_v0lf2")
@@ -21,13 +21,13 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=38563041]
-stream = ExtResource("1_yqk5q")
+stream = ExtResource("2_keknu")
 volume_db = -2.0
 autoplay = true
 bus = &"Music"
 
 [node name="Undertale" type="AudioStreamPlayer" parent="." unique_id=650452395]
-stream = ExtResource("3_7d0o6")
+stream = ExtResource("3_keknu")
 volume_db = -2.0
 bus = &"SFX"
 
@@ -100,14 +100,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -122.0
-offset_top = -27.5
-offset_right = 122.0
-offset_bottom = 27.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.22, 0.22)
 pivot_offset = Vector2(122, 27.5)
-texture = ExtResource("5_5p1fv")
+pivot_offset_ratio = Vector2(0.437, 0.475)
+texture = ExtResource("8_keknu")
 stretch_mode = 5
 
 [node name="Fade" type="ColorRect" parent="." unique_id=738141978]
