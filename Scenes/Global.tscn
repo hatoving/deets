@@ -4,15 +4,16 @@
 [ext_resource type="AudioStream" uid="uid://cii7iu7prh802" path="res://Audio/Music/Aftermath.mp3" id="2_vdf0c"]
 [ext_resource type="AudioStream" uid="uid://bca883k51ebnc" path="res://Audio/Click.wav" id="3_1rf5l"]
 [ext_resource type="AudioStream" uid="uid://bo8wjlgflvy5" path="res://Audio/cinematicBoom.ogg" id="3_ard7p"]
-[ext_resource type="Texture2D" uid="uid://dyf6n2m0j2rbc" path="res://Sprites/Crosshair.png" id="5_b1ap6"]
 [ext_resource type="Texture2D" uid="uid://bbnyqxwqertom" path="res://Sprites/Steedium.png" id="5_yl847"]
 [ext_resource type="Texture2D" uid="uid://bqy6gijagvxw5" path="res://Sprites/Circle.png" id="7_aqyct"]
 [ext_resource type="Texture2D" uid="uid://bddhyx4gnf47q" path="res://Sprites/Nothing.png" id="8_aqyct"]
 [ext_resource type="Shader" uid="uid://da0c37afaogwm" path="res://Shaders/SteediumUI.gdshader" id="8_yl847"]
 [ext_resource type="PackedScene" uid="uid://dacext5dba2fr" path="res://Scenes/Options.tscn" id="9_vdf0c"]
 [ext_resource type="Texture2D" uid="uid://c552qij2v45do" path="res://Sprites/Achievements/UnlockStyle/Xbox/base.png" id="10_f86ji"]
+[ext_resource type="Texture2D" uid="uid://cu6uyobyyy4sg" path="res://Sprites/SmallCircle.png" id="11_aqyct"]
 [ext_resource type="Texture2D" uid="uid://diokyotbvmhgi" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon_bg.png" id="11_x5224"]
 [ext_resource type="Texture2D" uid="uid://bsbqko746uxke" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon_rings.png" id="12_jjvpv"]
+[ext_resource type="Texture2D" uid="uid://vbfilc8y01eh" path="res://Sprites/Triangle.png" id="12_upcey"]
 [ext_resource type="Texture2D" uid="uid://cro5w2iqg4lvt" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon2.png" id="13_27fww"]
 [ext_resource type="Texture2D" uid="uid://wgdxqav2xfn3" path="res://Sprites/Achievements/UnlockStyle/Xbox/icon1.png" id="14_h7sld"]
 [ext_resource type="AudioStream" uid="uid://djc67ry27fng0" path="res://Audio/xbox.ogg" id="15_j5bh2"]
@@ -1046,7 +1047,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Crosshair" type="TextureRect" parent="Misc/Control" unique_id=471143050]
-modulate = Color(1, 1, 1, 0.498039)
+modulate = Color(1, 1, 1, 0.5019608)
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1059,9 +1061,40 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.45, 0.45)
 mouse_filter = 2
-texture = ExtResource("5_b1ap6")
+texture = ExtResource("11_aqyct")
 stretch_mode = 5
+
+[node name="TriangleHolder" type="Control" parent="Misc/Control" unique_id=995538437]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite" type="TextureRect" parent="Misc/Control/TriangleHolder" unique_id=1247036003]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 236.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.042, 0.082)
+pivot_offset_ratio = Vector2(0.06, -0.055)
+offset_transform_enabled = true
+texture = ExtResource("12_upcey")
 
 [node name="Fade" type="ColorRect" parent="Misc/Control" unique_id=1961379671]
 layout_mode = 1

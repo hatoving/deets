@@ -16,6 +16,7 @@ var shopUI_SteediumAddTimer = 0.0
 var gameUI_eventTimer = 0.0
 var gameUI_eventAlphaTarget = 0.0
 var gameUI_reveal = false
+var crosshairTriangleTween: Tween
 var uiFade = false
 var inShopUI = false
 var met_haykeeper = false
@@ -36,6 +37,10 @@ func _ready() -> void:
 	$GameUI/Control.modulate = Color(1, 1, 1, 0)
 
 func _process(delta: float) -> void:
+	if currentPlayer:
+		if !currentPlayer.onPeek.is_connected(_onPlayerPeek):
+			currentPlayer.onPeek.connect(_onPlayerPeek)
+	
 	if SaveData.gameSave.whereAt < 1:
 		if Global.os == "Web":
 			$PauseUI/Main/Exit.visible = false
@@ -119,6 +124,8 @@ func _process(delta: float) -> void:
 				$GameUI/Control.get_node("Hotbar" + str(i) + "/Tex").texture = ((currentGameLoop.items[(currentGameLoop.itemsInInventory[i])["item"]]))["tex"]
 				$GameUI/Control.get_node("Hotbar" + str(i) + "/Tex").scale = $GameUI/Control.get_node("Hotbar" + str(i) + "/Tex").scale.lerp(Vector2(0.5, 0.5), 8.0 * delta)
 				$GameUI/Control.get_node("ItemStack" + str(i)).text = str((currentGameLoop.itemsInInventory[i])["stack"])
+
+	$Misc/Control/TriangleHolder.modulate.a = lerp($Misc/Control/TriangleHolder.modulate.a, 0.0, delta * 1.25)
 
 	$PauseUI.visible = pauseGame
 
@@ -261,6 +268,18 @@ func _togglePause():
 		$PauseUI.visible = false
 		if lastMenu:
 			lastMenu.visible = false
+
+
+func _onPlayerPeek(peeking, left):
+	if crosshairTriangleTween:
+		crosshairTriangleTween.kill()
+	crosshairTriangleTween = create_tween().set_parallel(true)
+
+	if peeking:
+		crosshairTriangleTween.tween_property($Misc/Control/TriangleHolder, "rotation_degrees", -180.0 if left else 180.0, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	else:
+		crosshairTriangleTween.tween_property($Misc/Control/TriangleHolder, "rotation_degrees", 0.0, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	$Misc/Control/TriangleHolder.modulate.a = 1.0
 
 
 func _onPauseMain_ResumePressed() -> void:

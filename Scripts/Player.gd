@@ -11,6 +11,8 @@ const JUMP_VELOCITY = 4.5
 @export var startingRotation: Vector2
 @export var jumpAtStart = true
 
+signal onPeek(peeking: bool)
+var lookedLeftLast = false
 var lerpCameraPosToCustom = false
 var lerpHeadXToCustom = false
 var lerpHeadYToCustom = false
@@ -118,12 +120,14 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("deets_peek"):
 			if not peeking:
 				peeking = true
+				onPeek.emit(peeking, lookedLeftLast)
 				targetRotY += deg_to_rad(180)
 				$Head.rotation.y = targetRotY
 
 		if Input.is_action_just_released("deets_peek"):
 			if peeking:
 				peeking = false
+				onPeek.emit(peeking, lookedLeftLast)
 				targetRotY -= deg_to_rad(180)
 				$Head.rotation.y = targetRotY
 
@@ -215,6 +219,14 @@ func _input(event: InputEvent) -> void:
 			targetRotY -= event.relative.x * lookSensitviity
 			targetRotX -= event.relative.y * lookSensitviity
 			targetRotX = clamp(targetRotX, deg_to_rad(-90), deg_to_rad(90))
+
+	if event is InputEventMouseMotion:
+		$Head.rotation.y -= event.relative.x * lookSensitviity
+
+		if event.relative.x < 0:
+			lookedLeftLast = true
+		elif event.relative.x > 0:
+			lookedLeftLast = false
 
 	if event.is_action_pressed("deets_ui"):
 		hidingUI = true
