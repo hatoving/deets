@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 					$Dialogue.stream = dialogue[0]
 					$Dialogue.play()
 					indexUpdate = false
-					indexDuration = 5.0
+					indexDuration = 4.5
 				1:
 					$Dialogue.stream = dialogue[1]
 					$Dialogue.play()
@@ -80,7 +80,7 @@ func _process(delta: float) -> void:
 						3:
 							index = 9
 							cutsceneTimer = 0.0
-							indexDuration = 10.0
+							indexDuration = 9.0
 					indexUpdate = false
 				4:
 					$Dialogue.stream = dialogue[2]
