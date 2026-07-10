@@ -85,10 +85,11 @@ func _process(delta: float) -> void:
 		%Ray.enabled = true
 		if %Ray.is_colliding():
 			var collider = %Ray.get_collider()
-			if collider is InteractableStaticBody3D:
-				currentRayBody = collider
-			if collider.get_parent() is InteractableStaticBody3D:
-				currentRayBody = collider.get_parent()
+			if collider:
+				if collider is InteractableStaticBody3D:
+					currentRayBody = collider
+				if collider.get_parent() is InteractableStaticBody3D:
+					currentRayBody = collider.get_parent()
 		else:
 			lastRayBody = currentRayBody
 			if lastRayBody:
