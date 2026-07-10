@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("deets_delete"):
 		deleteTimer -= delta
 		if deleteTimer <= 0.0:
-			deleteFile("gameSave.dat")
+			deleteFile("game.dat")
 			SaveData._loadGame()
 
 			Global.get_node("MainMenu").stop()

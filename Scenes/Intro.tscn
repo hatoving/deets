@@ -17,9 +17,9 @@
 [ext_resource type="Script" uid="uid://df4754xvyo7jm" path="res://Scripts/InteractableStaticBody3D.gd" id="6_dbfec"]
 [ext_resource type="Script" uid="uid://cda6c414u36ja" path="res://Scripts/DoorExitIntro.gd" id="6_f4n53"]
 [ext_resource type="AudioStream" uid="uid://cqtn58ujw5ib7" path="res://Audio/ReverseCymbal.mp3" id="6_lv6ny"]
-[ext_resource type="AudioStream" uid="uid://dxlpic76lpw51" path="res://Audio/MysticalHonse/Correct.ogg" id="6_swg0i"]
+[ext_resource type="AudioStream" uid="uid://dxlpic76lpw51" path="res://Audio/Correct.ogg" id="6_swg0i"]
 [ext_resource type="ArrayMesh" uid="uid://bev17fqrcxpqq" path="res://Models/Board/Board.obj" id="7_dfov6"]
-[ext_resource type="AudioStream" uid="uid://dcoglb0wupioh" path="res://Audio/MysticalHonse/Wrong.ogg" id="7_hqww8"]
+[ext_resource type="AudioStream" uid="uid://dcoglb0wupioh" path="res://Audio/Wrong.ogg" id="7_hqww8"]
 [ext_resource type="Shader" uid="uid://bwq4bbqxpdf2d" path="res://Shaders/Outline.gdshader" id="7_ixiwt"]
 [ext_resource type="Texture2D" uid="uid://c74exlkoyglbs" path="res://Models/Board/texture.png" id="7_swg0i"]
 [ext_resource type="AudioStream" uid="uid://ceajalb5y1vhf" path="res://Audio/Haykeeper/NoNo.ogg" id="8_hqww8"]
@@ -103,6 +103,7 @@ player = NodePath("../Player")
 orig_y = 17
 
 [node name="Dialogue" type="AudioStreamPlayer3D" parent="Horse" unique_id=1312953371]
+volume_db = 3.0
 bus = &"SFX_Filtered"
 
 [node name="Cymbal" type="AudioStreamPlayer" parent="Horse" unique_id=562398817]

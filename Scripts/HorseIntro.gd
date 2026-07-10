@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 					$Dialogue.stream = dialogue[0]
 					$Dialogue.play()
 					indexUpdate = false
-					indexDuration = 5.5
+					indexDuration = 5.0
 				1:
 					$Dialogue.stream = dialogue[1]
 					$Dialogue.play()
@@ -67,7 +67,7 @@ func _process(delta: float) -> void:
 								cutsceneTimer = 2.0
 								indexDuration = 2.0
 							else:
-								indexDuration = 7.5
+								indexDuration = 4.5
 						2:
 							if gotItRight:
 								index = 7
@@ -76,7 +76,7 @@ func _process(delta: float) -> void:
 							else:
 								index = 6
 								cutsceneTimer = 0.0
-								indexDuration = 5.0
+								indexDuration = 7.0
 						3:
 							index = 9
 							cutsceneTimer = 0.0
@@ -91,7 +91,7 @@ func _process(delta: float) -> void:
 					$Dialogue.stream = dialogue[3]
 					$Dialogue.play()
 					indexUpdate = false
-					indexDuration = 5.5
+					indexDuration = 6.0
 				6:
 					whichOneRight = 0
 					setAnswers(["horse", "donkey", "magical\nunicorn"])
@@ -101,7 +101,7 @@ func _process(delta: float) -> void:
 					$Dialogue.stream = dialogue[4]
 					$Dialogue.play()
 					indexUpdate = false
-					indexDuration = 5.0
+					indexDuration = 5.5
 				8:
 					$Dialogue.stream = dialogue[5]
 					$Dialogue.play()
@@ -117,6 +117,7 @@ func _process(delta: float) -> void:
 					$Dialogue.play()
 					indexUpdate = false
 					indexDuration = 6.18
+
 				11:
 					Global.allowToPause = false
 

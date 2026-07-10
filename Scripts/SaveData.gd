@@ -223,7 +223,7 @@ func _saveSettings():
 
 func _saveGame():
 	print("Saving encrypted game!")
-	var file := FileAccess.open_encrypted_with_pass("user://gameSave.dat", FileAccess.WRITE, "Bitches&Horses&Lmao!!@l")
+	var file := FileAccess.open_encrypted_with_pass("user://game.dat", FileAccess.WRITE, "Bitches&Horses&Lmao!!@l")
 	if file:
 		var json_string = JSON.stringify(gameSave)
 		file.store_string(json_string)
@@ -234,12 +234,12 @@ func _saveGame():
 
 func _loadGame():
 	print("Loading encrypted game!")
-	if not FileAccess.file_exists("user://gameSave.dat"):
+	if not FileAccess.file_exists("user://game.dat"):
 		gameSave = defaultGameSave.duplicate(true)
 		print("Save file not found.")
 		return
 
-	var file := FileAccess.open_encrypted_with_pass("user://gameSave.dat", FileAccess.READ, "Bitches&Horses&Lmao!!@l")
+	var file := FileAccess.open_encrypted_with_pass("user://game.dat", FileAccess.READ, "Bitches&Horses&Lmao!!@l")
 	if file:
 		var content := file.get_as_text()
 		file.close()
