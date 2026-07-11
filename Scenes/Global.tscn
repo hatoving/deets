@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c62jfox75hss4"]
+[gd_scene format=3 uid="uid://dlrm8f4ewhnc5"]
 
 [ext_resource type="Script" uid="uid://bi5jsvga2767g" path="res://Scripts/Global.gd" id="1_75gqh"]
 [ext_resource type="AudioStream" uid="uid://cii7iu7prh802" path="res://Audio/Music/Aftermath.mp3" id="2_vdf0c"]
@@ -20,6 +20,11 @@
 [ext_resource type="AudioStream" uid="uid://djc67ry27fng0" path="res://Audio/xbox.ogg" id="15_j5bh2"]
 [ext_resource type="FontFile" uid="uid://beh54modajv7u" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-regular.ttf" id="17_aqyct"]
 [ext_resource type="FontFile" uid="uid://dmsb2c13mo1lf" path="res://Fonts/8BitOperatorPlus/8bitoperatorplus8-bold.ttf" id="18_upcey"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5va02"]
+shader = ExtResource("8_yl847")
+shader_parameter/influence = 0.23999999463552
+shader_parameter/offset = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aqyct"]
 shader = ExtResource("8_yl847")
@@ -411,6 +416,25 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Texture" type="TextureRect" parent="GameUI/Control/Steedium" unique_id=1815444033]
+z_index = -1
+material = SubResource("ShaderMaterial_5va02")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_yl847")
 
 [node name="Hotbar0" type="TextureRect" parent="GameUI/Control" unique_id=1634779279]
 self_modulate = Color(0, 0, 0, 0.56078434)
