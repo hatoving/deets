@@ -160,7 +160,7 @@ func _process(delta: float) -> void:
 			($WorldEnvironment.environment as Environment).fog_light_color = Color.NAVAJO_WHITE
 			Global.currentPlayer._onGun()
 
-	Global.get_node("GameUI/Control/Steedium/Text").text = str(steediumCollected)
+	Global.get_node("GameUI/Control/Steedium").text = str(steediumCollected)
 	if steediumBonusAmount > 0:
 		steediumModTimer -= delta
 		if steediumModTimer <= 0.0:
