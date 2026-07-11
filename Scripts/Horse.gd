@@ -307,6 +307,7 @@ func _process(delta: float) -> void:
 			lerpAnim = false
 			waitTimer += delta
 
+			$Col.set_deferred("disabled", true)
 			munchTimer -= delta
 			yumTimer -= delta
 			if munchTimer <= 0.0:
@@ -324,6 +325,7 @@ func _process(delta: float) -> void:
 			if waitTimer >= max:
 				chaseTimer = 0.0
 				waitTimer = 1.0
+				$Col.set_deferred("disabled", false)
 				if Global.currentGameLoop.endGame:
 					currentState = STATE.CHASING
 				else:
